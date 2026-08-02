@@ -3,40 +3,36 @@ import PlanCard from '@/components/PlanCard';
 
 const features = [
   {
-    title: 'Hébergement local en France',
+    title: 'Serveur basé en France',
     description:
-      'Un serveur unique hébergé à Paris sur Equinix PA5, conçu pour de faibles latences et une expérience locale.',
+      "Hébergé à Paris pour réduire la latence pour toute l'Europe, avec un datacenter Equinix PA5 et un réseau haut débit.",
   },
   {
     title: 'Panneau Pterodactyl accessible',
     description:
-      'Administration simple via Pterodactyl : SFTP, console en direct, gestion des fichiers et redémarrage en un clic.',
-  },
-  {
-    title: 'HTTPS automatique',
-    description: 'Un sous-domaine sécurisé est configuré automatiquement pour chaque application.',
-  },
+      "Interface claire pour gérer vos services : accès SFTP, console en temps réel et redémarrage en quelques clics.",
+  }
 ];
 
 const plans = [
   {
     title: 'Free Plan',
     price: '0 €/mois',
-    description: 'Hébergement sans frais pour les projets de démarrage, petits sites et bots de test.',
+    description: 'Idéal pour expérimenter : bots de test, mini-sites et prototypes.',
     accent: 'green' as const,
     features: [
       'CPU : 40%',
       'RAM : 256 Mo',
       'Swap : 128 Mo',
       'Stockage : 512 Mo',
-      'Bases de données : 0',
-      'Block IO Weight : 150',
+      'Bases de données : non incluses',
+      'I/O : faible priorité',
     ],
   },
   {
     title: 'Basic Plan',
     price: '1,39 €/mois',
-    description: 'Une première offre stable avec base de données et plus de mémoire.',
+    description: "Offre d'entrée pour des projets légers avec base de données et plus de mémoire.",
     accent: 'blue' as const,
     features: [
       'CPU : 60%',
@@ -44,13 +40,13 @@ const plans = [
       'Swap : 256 Mo',
       'Stockage : 1 Go',
       'Bases de données : 1',
-      'Block IO Weight : 250',
+      'I/O : usage standard',
     ],
   },
   {
-    title: 'Pro Plan',
+    title: 'Pro',
     price: '2,99 €/mois',
-    description: 'Pour les services actifs, bots Discord et petites APIs à forte utilisation.',
+    description: 'Pour bots actifs, petites APIs et sites à trafic régulier.',
     accent: 'yellow' as const,
     features: [
       'CPU : 80%',
@@ -58,13 +54,13 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 2 Go',
       'Bases de données : 2',
-      'Block IO Weight : 400',
+      'I/O : priorité moyenne',
     ],
   },
   {
-    title: 'Premium Plan',
+    title: 'Premium',
     price: '4,49 €/mois',
-    description: 'Ressources maximales pour des projets intensifs et un trafic plus élevé.',
+    description: 'Ressources renforcées pour services en production et trafic élevé.',
     accent: 'orange' as const,
     features: [
       'CPU : 100%',
@@ -72,31 +68,31 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 3 Go',
       'Bases de données : 3',
-      'Block IO Weight : 500',
+      'I/O : priorité élevée',
     ],
   },
 ];
 
 const faqs = [
   {
-    question: 'Est-ce que l’hébergement est vraiment gratuit ?',
+    question: 'Le plan Gratuit est-il vraiment sans frais ?',
     answer:
-      'Oui. Le Free Plan est gratuit et sans carte bancaire, idéal pour tester un bot, une API ou un petit site.',
+      "Oui — le forfait Gratuit ne demande pas de carte et convient pour des essais et petits projets.",
   },
   {
-    question: 'Quels services puis-je déployer ?',
+    question: 'Quelles technologies sont supportées ?',
     answer:
-      'Vous pouvez déployer Node.js, Python, Discord bots, sites web statiques et applications compatibles Pterodactyl.',
+      'Node.js, Python, C#, Java, Golang, Rust et nginx sont supportés.',
   },
   {
-    question: 'Puis-je gérer mon serveur via Discord ?',
+    question: 'La gestion via Discord est-elle possible ?',
     answer:
-      'Oui, la configuration et la gestion se font depuis le bot Discord pour plus de rapidité et de simplicité.',
+      'Oui, la création et la configuration se font depuis le bot Discord pour plus de rapidité et de simplicité.',
   },
   {
-    question: 'Où est situé le serveur ?',
+    question: 'Où sont hébergés les serveurs ?',
     answer:
-      'Le service repose sur un serveur unique hébergé en France, dans le datacenter Equinix PA5 à Paris.',
+      "Notre infrastructure est située en France (datacenter Equinix PA5), pour réduire la latence pour toute l'Europe.",
   },
 ];
 
@@ -105,10 +101,10 @@ export default function Home() {
     <>
       <section className="section intro">
         <div className="section-header">
-          <span className="badge">Equinix PA5, Paris</span>
+          <span className="badge">Paris — Equinix PA5</span>
           <h1>Hébergement français pour Node.js, Python, Discord et sites web.</h1>
           <p className="section-description">
-            Consolex1 propose un hébergement accessible sur un serveur en France, avec HTTPS automatique et administration Pterodactyl.
+            Consolex1 fournit un accès direct à un serveur français, avec déploiement simplifié et panneau d'administration via Pterodactyl.
           </p>
         </div>
       </section>
@@ -122,7 +118,7 @@ export default function Home() {
       <section className="section plans-section" id="plans">
         <div className="section-header">
           <h2>Nos offres</h2>
-          <p>Quatre plans clairs pour tester, lancer et faire évoluer votre application.</p>
+          <p>Des options adaptées aux tests, au développement et même à la production.</p>
         </div>
         <div className="plans-grid">
           {plans.map((plan) => (
@@ -134,7 +130,7 @@ export default function Home() {
       <section className="section faq-section">
         <div className="section-header">
           <h2>FAQ</h2>
-          <p>Informations essentielles pour choisir le bon plan et démarrer rapidement.</p>
+          <p>Réponses pratiques pour démarrer et comprendre les limites de l’offre.</p>
         </div>
         <div className="faq-grid">
           {faqs.map((item) => (
@@ -148,11 +144,11 @@ export default function Home() {
 
       <section className="cta-banner">
         <div>
-          <h2>Lancez votre projet en quelques minutes.</h2>
-          <p>Rejoignez Discord et hébergez votre application sur consolex1 avec un serveur français.</p>
+          <h2>Démarrez en quelques minutes.</h2>
+          <p>Rejoignez notre Discord pour créer et déployer rapidement votre projet.</p>
         </div>
         <a className="button button-primary" href="https://discord.consolex1.com">
-          Ouvrir Discord
+          Rejoindre Discord
         </a>
       </section>
     </>

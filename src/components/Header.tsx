@@ -28,10 +28,10 @@ export default function Header() {
         </div>
 
         <div className="hero-copy">
-          <p className="eyebrow">Serveur français Equinix PA5</p>
-          <h1>Hébergement Node.js, Python, Discord et sites web en France.</h1>
+          <p className="eyebrow">Basé à Paris — datacenter Equinix PA5</p>
+          <h1>Hébergez rapidement vos apps, bots et sites web.</h1>
           <p className="hero-text">
-            Consolex1 propose un accès direct à un serveur en France, avec un panneau Pterodactyl simple et HTTPS automatique.
+            Consolex1 met à disposition un serveur situé en France, avec un panneau Pterodactyl intuitif.
           </p>
 
           <div className="hero-actions">
@@ -39,12 +39,12 @@ export default function Header() {
               Rejoindre Discord
             </a>
             <a className="button button-secondary" href="#plans">
-              Voir les offres
+              Découvrir nos offres
             </a>
           </div>
 
           <p className="hero-note">
-            Statut public : <a href="https://status.consolex1.com">status.consolex1.com</a>
+            État des services : <a href="https://status.consolex1.com">status.consolex1.com</a>
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ const plans = [
   {
     title: 'Free Plan',
     price: '0 €/mois',
-    description: 'Hébergement gratuit pour un petit projet, un bot ou un site de test.',
+    description: 'Parfait pour tester et expérimenter sans engagement.',
     accent: 'green' as const,
     features: [
       'CPU : 40%',
@@ -18,7 +18,7 @@ const plans = [
   {
     title: 'Basic Plan',
     price: '1,39 €/mois',
-    description: 'Un premier plan abordable avec une base de données et plus de mémoire.',
+    description: "Entrée de gamme stable avec base de données et plus de capacité.",
     accent: 'blue' as const,
     features: [
       'CPU : 60%',
@@ -30,9 +30,9 @@ const plans = [
     ],
   },
   {
-    title: 'Pro Plan',
+    title: 'Pro',
     price: '2,99 €/mois',
-    description: 'Pour bots, APIs et sites actifs avec plus de mémoire et de stockage.',
+    description: 'Conçu pour les services en ligne et les bots à usage régulier.',
     accent: 'yellow' as const,
     features: [
       'CPU : 80%',
@@ -44,7 +44,7 @@ const plans = [
     ],
   },
   {
-    title: 'Premium Plan',
+    title: 'Premium',
     price: '4,49 €/mois',
     description: 'Ressources intensives pour des applications permanentes ou des services plus lourds.',
     accent: 'orange' as const,
@@ -61,7 +61,7 @@ const plans = [
 
 export const metadata = {
   title: 'Tarifs',
-  description: 'Découvrez les plans consolex1 : Free, Basic, Pro et Premium pour héberger vos projets.',
+  description: "Comparez les offres consolex1 et choisissez celle qui convient à votre projet.",
 };
 
 export default function TarifPage() {
@@ -69,7 +69,7 @@ export default function TarifPage() {
     <section className="section">
       <div className="section-header">
         <h1>Nos tarifs</h1>
-        <p>Quatre offres claires pour lancer un projet, héberger un bot ou déployer une application.</p>
+        <p>Options simples et transparents pour tester, développer et mettre en production.</p>
       </div>
       <div className="plans-grid">
         {plans.map((plan) => (
