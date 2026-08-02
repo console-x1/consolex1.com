@@ -38,6 +38,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <head>
+        <link rel="icon" type="image/png" href="/avatar.png" />
+      </head>
       <body>
         <div className="page-shell">
           <Header />
