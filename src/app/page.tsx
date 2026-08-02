@@ -94,6 +94,22 @@ const faqs = [
     answer:
       "Notre infrastructure est située en France (datacenter Equinix PA5), pour réduire la latence pour toute l'Europe.",
   },
+  {
+    question: 'Combien de backups sont disponibles ?',
+    answer: 'Les plans payants incluent deux backups, tandis que le plan gratuit ne propose pas de backups intégrés.',
+  },
+  {
+    question: 'Mon serveur peut-il être suspendu pour inactivité ?',
+    answer: 'Seul les serveurs gratuit nessecitent une modification de fichier tout les 7 jours pour éviter la suspension. Les plans payants ne sont pas soumis à cette restriction.',
+  },
+  {
+    question: 'Mon serveur est suspendu, que faire ?',
+    answer: 'Si votre serveur est suspendu, vous pouvez le réactiver avec la commande /unsuspend sur notre bot Discord. Si vous avez besoin d’aide, contactez-nous sur Discord.',
+  },
+  {
+    question: 'Mon serveur sera-t-il supprimé si je ne le réactive pas ?',
+    answer: 'Oui, les serveurs suspendus sont automatiquement supprimés après 7 jours de suspension. Assurez-vous de réactiver votre serveur à temps pour éviter toute perte de données.',
+  }
 ];
 
 export default function Home() {

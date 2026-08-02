@@ -390,6 +390,12 @@ a {
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .footer-bar a {
   white-space: nowrap;
 }
