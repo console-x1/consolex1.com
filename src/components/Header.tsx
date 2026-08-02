@@ -45,14 +45,14 @@ const labels = {
 
 const routeMap: Record<Locale, { pricing: string; faq: string; home: string }> = {
   fr: {
-    pricing: './tarif',
-    faq: './faq',
-    home: './',
+    pricing: '/tarif',
+    faq: '/faq',
+    home: '/',
   },
   en: {
-    pricing: './en/pricing',
-    faq: './en/faq',
-    home: './en',
+    pricing: '/en/pricing',
+    faq: '/en/faq',
+    home: '/en',
   },
 };
 
@@ -107,7 +107,7 @@ export default function Header({ locale }: HeaderProps) {
             <a className="button button-primary" href="https://discord.consolex1.com">
               {text.heroButtonPrimary}
             </a>
-            <a className="button button-secondary" href={`${routeMap[locale].home}#plans`}>
+            <a className="button button-secondary" href="#plans">
               {text.heroButtonSecondary}
             </a>
           </div>

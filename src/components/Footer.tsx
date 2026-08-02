@@ -9,9 +9,9 @@ type FooterProps = {
 const footerLinks = {
   fr: {
     text: '© 2026 consolex1. Hébergement européen, en français, pour tous vos projets.',
-    legal: './mentions',
-    terms: './cgu',
-    privacy: './politique-de-confidentialite',
+    legal: '/mentions',
+    terms: '/cgu',
+    privacy: '/politique-de-confidentialite',
     statusUrl: 'https://status.consolex1.com',
     legalLabel: 'Mentions légales',
     termsLabel: 'CGU',
@@ -20,9 +20,9 @@ const footerLinks = {
   },
   en: {
     text: '© 2026 consolex1. French hosting for bots, apps and websites.',
-    legal: './en/legal-notice',
-    terms: './en/terms',
-    privacy: './en/privacy-policy',
+    legal: '/en/legal-notice',
+    terms: '/en/terms',
+    privacy: '/en/privacy-policy',
     statusUrl: 'https://status.consolex1.com',
     legalLabel: 'Legal notice',
     termsLabel: 'Terms',
