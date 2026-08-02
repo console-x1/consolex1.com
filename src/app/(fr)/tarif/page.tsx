@@ -2,7 +2,7 @@ import PlanCard from '@/components/PlanCard';
 
 const plans = [
   {
-    title: 'Free Plan',
+    title: 'Free',
     price: '0 €/mois',
     description: 'Parfait pour tester et expérimenter sans engagement.',
     accent: 'green' as const,
@@ -16,7 +16,7 @@ const plans = [
     ],
   },
   {
-    title: 'Basic Plan',
+    title: 'Basic',
     price: '1,39 €/mois',
     description: "Entrée de gamme stable avec base de données et plus de capacité.",
     accent: 'blue' as const,

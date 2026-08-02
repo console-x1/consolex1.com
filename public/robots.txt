@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-
-Host : https://consolex1.com/
+Host: https://consolex1.com
 Sitemap: https://consolex1.com/sitemap.xml

@@ -1,6 +1,13 @@
 export const metadata = {
-  title: 'Conditions générales d’utilisation',
+  title: 'CGU',
   description: 'Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.',
+  keywords: ['CGU', 'conditions générales', 'service consolex1', 'association'],
+  openGraph: {
+    title: 'CGU consolex1',
+    description: 'Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.',
+    url: 'https://consolex1.com/cgu',
+    images: ['/consolex1-host.png'],
+  },
 };
 
 export default function CGUPage() {

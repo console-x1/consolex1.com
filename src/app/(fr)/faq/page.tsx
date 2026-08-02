@@ -1,6 +1,13 @@
 export const metadata = {
   title: 'FAQ',
   description: "Réponses aux questions courantes sur l'offre, la localisation des serveurs et les limitations.",
+  keywords: ['FAQ', 'consolex1 comment', 'consolex1 suspend', 'hébergement français', 'discord bot', 'pterodactyl', 'questions'],
+  openGraph: {
+    title: 'FAQ consolex1',
+    description: "Réponses aux questions courantes sur l'offre, la localisation des serveurs et les limitations.",
+    url: 'https://consolex1.com/faq',
+    images: ['/consolex1-host.png'],
+  },
 };
 
 const faqs = [

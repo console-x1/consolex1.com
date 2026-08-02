@@ -1,6 +1,32 @@
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
+export const metadata = {
+  title: 'Accueil',
+  description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+  keywords: [
+    'hébergement français',
+    'discord bot',
+    'node.js',
+    'python',
+    'pterodactyl',
+    'hébergement gratuit',
+  ],
+  openGraph: {
+    title: 'consolex1 — Hébergement français pour bots et applications',
+    description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    url: 'https://consolex1.com',
+    siteName: 'consolex1',
+    images: ['/consolex1-host.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'consolex1 — Hébergement français',
+    description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    images: ['/consolex1-host.png'],
+  },
+};
+
 const features = [
   {
     title: 'Serveur basé en France',
