@@ -60,7 +60,7 @@ jobs:
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
           #
           # Enable Pages site configuration if it is not already enabled.
-          enablement: all
+#          enablement: all
           static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
