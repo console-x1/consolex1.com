@@ -21,7 +21,7 @@ export default function PlanCard({ title, price, description, features, accent }
       </ul>
       <div className="plan-action">
         <a className="button button-secondary" href="https://discord.consolex1.com">
-          {price === 'Gratuit' ? 'Discord' : 'Unavailable'}
+          {price.startsWith("0 €/") ? 'Discord' : 'Unavailable'}
         </a>
       </div>
     </article>
