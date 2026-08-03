@@ -29,6 +29,7 @@ export default function PrivacyPolicyPage() {
         <h2>Cookies et suivi</h2>
         <p>Le site peut utiliser des cookies pour améliorer l’expérience et mémoriser des préférences de navigation.</p>
         <p>Ces cookies ne sont pas utilisés pour profiler ou revendre des informations personnelles.</p>
+        <p>Nous utilisons Google Analytics uniquement avec votre consentement via le bandeau de cookies ; vous pouvez choisir d'anonymiser votre adresse IP.</p>
 
         <h2>Sécurité et audits</h2>
         <p>Des vérifications sont menées par l’administration ainsi que par des scripts automatisés pour contrôler les services hébergés.</p>

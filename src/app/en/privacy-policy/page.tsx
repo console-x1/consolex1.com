@@ -29,6 +29,7 @@ export default function EnPrivacyPolicyPage() {
         <h2>Cookies and tracking</h2>
         <p>The site may use cookies to improve experience and remember browsing preferences.</p>
         <p>Cookies are not used for profiling or selling personal information.</p>
+        <p>We use Google Analytics only with your consent via the cookie banner; you can choose to anonymize your IP address.</p>
 
         <h2>Security and audits</h2>
         <p>Administrative and automated checks monitor hosted services for abuse.</p>
