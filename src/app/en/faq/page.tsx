@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Which technologies are supported?',
-    answer: 'Node.js, Python, nginx, Java, Golang, C# and Rust are supported through Pterodactyl.',
+    answer: 'Node.js, Python, nginx, Java, Golang and Rust are supported through Pterodactyl.',
   },
   {
     question: 'Where is the server located?',

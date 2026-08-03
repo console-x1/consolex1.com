@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Quelles technologies sont prises en charge ?',
-    answer: 'Les environnements Node.js et Python, nginx, Java, Golang, C# et Rust sont pris en charge via Pterodactyl.',
+    answer: 'Les environnements Node.js et Python, nginx, Java, Golang et Rust sont pris en charge via Pterodactyl.',
   },
   {
     question: 'Où est situé le serveur ?',

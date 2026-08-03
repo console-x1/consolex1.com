@@ -108,7 +108,7 @@ const faqs = [
   {
     question: 'Quelles technologies sont supportées ?',
     answer:
-      'Node.js, Python, C#, Java, Golang, Rust et nginx sont supportés.',
+      'Node.js, Python, Java, Golang, Rust et nginx sont supportés.',
   },
   {
     question: 'La gestion via Discord est-elle possible ?',

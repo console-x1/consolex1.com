@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: 'Which technologies are supported?',
-    answer: 'Node.js, Python, C#, Java, Golang, Rust, and nginx are supported.',
+    answer: 'Node.js, Python, Java, Golang, Rust, and nginx are supported.',
   },
   {
     question: 'Can I manage my instance via Discord?',
