@@ -86,7 +86,7 @@ export default function ConsentBanner() {
   const m = locale === 'en' ? messages.en : messages.fr;
 
   return (
-    <div style={{position: 'fixed', left: 12, right: 12, bottom: 12, zIndex: 9999, background: 'white', border: '1px solid #ddd', padding: 16, borderRadius: 8, boxShadow: '0 6px 18px rgba(0,0,0,0.08)'}}>
+    <div style={{position: 'fixed', left: 12, right: 12, bottom: 12, zIndex: 9999, background: 'rgba(255, 0, 0, 0.3)', border: '1px solid #ddd', padding: 16, borderRadius: 8, boxShadow: '0 6px 18px rgba(0,0,0,0.08)'}}>
       <div style={{display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between'}}>
         <div style={{flex: 1}}>
           <strong>{m.title}</strong>
@@ -99,8 +99,8 @@ export default function ConsentBanner() {
           </label>
         </div>
         <div style={{display: 'flex', gap: 8}}>
-          <button onClick={decline} style={{padding: '8px 12px', background: '#f3f3f3', border: '1px solid #ccc', borderRadius: 6}}>{m.decline}</button>
-          <button onClick={accept} style={{padding: '8px 12px', background: '#0b67ff', color: 'white', border: 'none', borderRadius: 6}}>{m.accept}</button>
+          <button onClick={decline} style={{padding: '8px 12px', background: '#ffaa00', border: '1px solid #ccc', borderRadius: 6}}>{m.decline}</button>
+          <button onClick={accept} style={{padding: '8px 12px', background: '#440bff', color: 'white', border: 'none', borderRadius: 6}}>{m.accept}</button>
         </div>
       </div>
     </div>
