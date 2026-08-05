@@ -2,18 +2,20 @@
 
 import { useEffect, useState } from "react";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+interface ConsentBannerProps {
+  gaId: string;
+}
 
-function loadGtag(anonymize: boolean) {
-  if (!GA_ID) {
+function loadGtag(gaId: string, anonymize: boolean) {
+  if (!gaId) {
     console.warn('Google Analytics ID is not defined.');
     return;
   }
 
-  const hasScript = document.querySelector(`script[data-gtag="${GA_ID}"]`);
+  const hasScript = document.querySelector(`script[data-gtag="${gaId}"]`);
   if (hasScript) {
     console.log('GA already loaded, reconfiguring with anonymize:', anonymize);
-    ;(window as any).gtag?.("config", GA_ID, { anonymize_ip: anonymize });
+    ;(window as any).gtag?.("config", gaId, { anonymize_ip: anonymize });
     ;(window as any).gtag?.("event", "page_view", {
       page_path: window.location.pathname,
       page_location: window.location.href,
@@ -21,11 +23,11 @@ function loadGtag(anonymize: boolean) {
     return;
   }
 
-  console.log('Loading GA script for', GA_ID, 'anonymize:', anonymize);
+  console.log('Loading GA script for', gaId, 'anonymize:', anonymize);
   const script = document.createElement("script");
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  script.setAttribute("data-gtag", GA_ID);
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+  script.setAttribute("data-gtag", gaId);
   document.head.appendChild(script);
 
   ;(window as any).dataLayer = (window as any).dataLayer || [];
@@ -34,14 +36,14 @@ function loadGtag(anonymize: boolean) {
   }
   ;(window as any).gtag = gtag;
   gtag("js", new Date());
-  gtag("config", GA_ID, { anonymize_ip: anonymize });
+  gtag("config", gaId, { anonymize_ip: anonymize });
   gtag("event", "page_view", {
     page_path: window.location.pathname,
     page_location: window.location.href,
   });
 }
 
-export default function ConsentBanner() {
+export default function ConsentBanner({ gaId }: ConsentBannerProps) {
   const [visible, setVisible] = useState(false);
   const [anonymize, setAnonymize] = useState(true);
   const [locale, setLocale] = useState<'fr' | 'en'>('fr');
@@ -86,7 +88,7 @@ export default function ConsentBanner() {
   function accept() {
     const data = { accepted: true, anonymize };
     localStorage.setItem("ga_consent", JSON.stringify(data));
-    loadGtag(anonymize);
+    loadGtag(gaId, anonymize);
     setVisible(false);
   }
 
