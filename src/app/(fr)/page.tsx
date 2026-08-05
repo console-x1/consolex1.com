@@ -2,7 +2,7 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'Accueil',
+  title: 'consolex1 [HOST] - Accueil',
   description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
   keywords: [
     'hébergement français',
