@@ -17,6 +17,11 @@ export const metadata: Metadata = {
       en: '/en',
     },
   },
+  icons: {
+    icon: '/avatar.png',
+    shortcut: '/avatar.png',
+    apple: '/avatar.png',
+  },
   openGraph: {
     title: 'consolex1 — Hébergement Node.js, Python et Discord',
     description:
