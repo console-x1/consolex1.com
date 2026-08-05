@@ -23,10 +23,10 @@ function loadGtag(anonymize: boolean) {
 
   console.log('Loading GA script for', GA_ID, 'anonymize:', anonymize);
   const script = document.createElement("script");
-  script.async = true;
+  script.async = false;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   script.setAttribute("data-gtag", GA_ID);
-  document.head.appendChild(script);
+  document.body.appendChild(script);
 
   ;(window as any).dataLayer = (window as any).dataLayer || [];
   function gtag(...args: any[]) {
