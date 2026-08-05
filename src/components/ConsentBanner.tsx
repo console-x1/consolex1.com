@@ -5,12 +5,23 @@ import { useEffect, useState } from "react";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 function loadGtag(anonymize: boolean) {
-  if (!GA_ID) return;
-  if (document.querySelector(`script[data-gtag="${GA_ID}"]`)) {
-    ;(window as any).gtag?.("config", GA_ID, { anonymize_ip: anonymize });
+  if (!GA_ID) {
+    console.warn('Google Analytics ID is not defined.');
     return;
   }
 
+  const hasScript = document.querySelector(`script[data-gtag="${GA_ID}"]`);
+  if (hasScript) {
+    console.log('GA already loaded, reconfiguring with anonymize:', anonymize);
+    ;(window as any).gtag?.("config", GA_ID, { anonymize_ip: anonymize });
+    ;(window as any).gtag?.("event", "page_view", {
+      page_path: window.location.pathname,
+      page_location: window.location.href,
+    });
+    return;
+  }
+
+  console.log('Loading GA script for', GA_ID, 'anonymize:', anonymize);
   const script = document.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -24,6 +35,10 @@ function loadGtag(anonymize: boolean) {
   ;(window as any).gtag = gtag;
   gtag("js", new Date());
   gtag("config", GA_ID, { anonymize_ip: anonymize });
+  gtag("event", "page_view", {
+    page_path: window.location.pathname,
+    page_location: window.location.href,
+  });
 }
 
 export default function ConsentBanner() {
