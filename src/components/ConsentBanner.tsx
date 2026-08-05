@@ -27,15 +27,14 @@ function loadGtag(anonymize: boolean) {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   script.setAttribute("data-gtag", GA_ID);
   document.body.appendChild(script);
-  
-  document.body.appendChild(document.createElement("script")).textContent =
-    `<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'G-EJ2TRQ6G75');
-      </script>`;
+  document.body.appendChild(document.createElement("script")).textContent =
+    `window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EJ2TRQ6G75');
+    `;
 
   ; (window as any).dataLayer = (window as any).dataLayer || [];
   function gtag(...args: any[]) {
