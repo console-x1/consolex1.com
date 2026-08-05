@@ -11,6 +11,17 @@ export const metadata = {
     'python',
     'pterodactyl',
     'free hosting',
+    'hosting',
+    'free',
+    'host free',
+    'host',
+    'free host',
+    'cloud',
+    'server',
+    'nodejs',
+    'node',
+    'py',
+    'js'
   ],
   openGraph: {
     title: 'consolex1 — French hosting for bots and applications',
