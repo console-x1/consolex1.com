@@ -61,7 +61,7 @@ export default function ConsentBanner({ gaId }: ConsentBannerProps) {
       }
       const data = JSON.parse(stored);
       if (data?.accepted) {
-        loadGtag(Boolean(data.anonymize));
+        loadGtag(gaId, Boolean(data.anonymize));
       }
     } catch (e) {
       setVisible(true);
