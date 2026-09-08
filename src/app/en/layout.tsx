@@ -46,6 +46,20 @@ export const metadata: Metadata = {
       'Consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
     images: ['/consolex1-host.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: '08prDTjOnPv4gj_vo9ZDxHiQK85IzV99y_0F0FKYyLg',
+  }
 };
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
