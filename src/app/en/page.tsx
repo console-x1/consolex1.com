@@ -1,27 +1,22 @@
+import Link from 'next/link';
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'consolex1 [HOST] — Home',
-  description: 'Consolex1 provides French hosting for Discord bots, websites and Python applications.',
+  title: 'Consolex1 | French hosting for Discord bots, Node.js and Python apps',
+  description: 'Consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with infrastructure in France and a Pterodactyl panel.',
   keywords: [
     'french hosting',
     'discord bot hosting',
-    'node.js',
-    'python',
+    'node.js hosting',
+    'python hosting',
+    'host discord bot',
     'pterodactyl',
     'free hosting',
-    'hosting',
-    'free',
-    'host free',
-    'host',
-    'free host',
-    'cloud',
-    'server',
-    'nodejs',
-    'node',
-    'py',
-    'js'
+    'hosting in france',
+    'france cloud server',
+    'node js hosting',
+    'python server'
   ],
   openGraph: {
     title: 'consolex1 — French hosting for bots and applications',
@@ -133,6 +128,34 @@ const faqs = [
   },
 ];
 
+const relatedPages = [
+  {
+    title: 'Discord bot hosting',
+    description: 'Learn how to host a Discord bot in France with a dependable setup.',
+    href: '/en/hebergement-bot-discord',
+  },
+  {
+    title: 'Node.js hosting',
+    description: 'A useful page for APIs, services and web apps built on Node.js.',
+    href: '/en/hebergement-nodejs',
+  },
+  {
+    title: 'Python hosting',
+    description: 'A practical route for Python scripts, bots and lightweight backends.',
+    href: '/en/hebergement-python',
+  },
+  {
+    title: 'Pterodactyl hosting',
+    description: 'Understand the panel used to manage services quickly and clearly.',
+    href: '/en/hebergement-pterodactyl',
+  },
+  {
+    title: 'Hosting in France',
+    description: 'A helpful page for projects looking for an EU-based deployment option.',
+    href: '/en/hebergement-france',
+  },
+];
+
 export default function EnHome() {
   return (
     <>
@@ -175,6 +198,21 @@ export default function EnHome() {
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <h2>Popular use cases</h2>
+          <p>Dedicated pages to better match the most common hosting searches.</p>
+        </div>
+        <div className="cards-grid">
+          {relatedPages.map((page) => (
+            <Link key={page.href} href={page.href} className="card">
+              <h2>{page.title}</h2>
+              <p>{page.description}</p>
+            </Link>
           ))}
         </div>
       </section>

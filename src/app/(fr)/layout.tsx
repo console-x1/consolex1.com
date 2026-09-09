@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'consolex1 — Hébergement français pour bots, sites et applications',
+    default: 'Consolex1 | Hébergement français pour bots Discord, Node.js, Python et services web',
     template: '%s | consolex1',
   },
   description:
-    'Consolex1 propose un hébergement gratuit et bon marché en France pour sites web, APIs, Discord bots et applications Python.',
+    'Consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python, avec infrastructure locale en France et panneau Pterodactyl.',
   metadataBase: new URL('https://consolex1.com'),
   alternates: {
     canonical: 'https://consolex1.com',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     apple: '/avatar.png',
   },
   openGraph: {
-    title: 'consolex1 — Hébergement Node.js, Python et Discord',
+    title: 'Consolex1 | Hébergement français pour bots Discord, Node.js et Python',
     description:
-      'Hébergez vos projets en France sur un serveur Equinix PA5 avec un panel Pterodactyl et support Discord.',
+      'Hébergez vos bots Discord, APIs, sites web et applications Python en France avec Consolex1 et un panel Pterodactyl.',
     url: 'https://consolex1.com',
     siteName: 'consolex1',
     type: 'website',

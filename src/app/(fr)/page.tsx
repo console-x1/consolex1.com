@@ -1,24 +1,23 @@
+import Link from 'next/link';
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'consolex1 [HOST] - Accueil',
-  description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+  title: 'Consolex1 | Hébergement français pour bots Discord, Node.js et Python',
+  description: 'Consolex1 propose un hébergement français pour bots Discord, APIs, sites web et applications Node.js/Python, avec infrastructure en France et panel Pterodactyl.',
   keywords: [
     'hébergement français',
-    'discord bot',
-    'node.js',
-    'python',
+    'hébergeur français',
+    'hébergement bot discord',
+    'hébergement node.js',
+    'hébergement python',
+    'hébergement discord',
     'pterodactyl',
     'hébergement gratuit',
-    'hebergement',
-    'heberg',
-    'cloud',
-    'serveur',
-    'nodejs',
-    'node',
-    'py',
-    'js'
+    'cloud france',
+    'serveur france',
+    'bot discord france',
+    'api node.js'
   ],
   openGraph: {
     title: 'consolex1 — Hébergement français pour bots et applications',
@@ -146,6 +145,34 @@ const faqs = [
   }
 ];
 
+const relatedPages = [
+  {
+    title: 'Hébergement bot Discord',
+    description: 'Tout ce qu’il faut savoir pour lancer un bot Discord en France.',
+    href: '/hebergement-bot-discord',
+  },
+  {
+    title: 'Hébergement Node.js',
+    description: 'Idéal pour les APIs, les services web et les projets performants.',
+    href: '/hebergement-nodejs',
+  },
+  {
+    title: 'Hébergement Python',
+    description: 'Pour les scripts, bots et applications Python simples à déployer.',
+    href: '/hebergement-python',
+  },
+  {
+    title: 'Hébergement Pterodactyl',
+    description: 'Découvrez le panel utilisé pour gérer vos services rapidement.',
+    href: '/hebergement-pterodactyl',
+  },
+  {
+    title: 'Hébergement en France',
+    description: 'Un point d’entrée utile pour les projets européens et francophones.',
+    href: '/hebergement-france',
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -188,6 +215,21 @@ export default function Home() {
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <h2>Cas d’usage populaires</h2>
+          <p>Des pages dédiées pour mieux répondre aux recherches les plus fréquentes.</p>
+        </div>
+        <div className="cards-grid">
+          {relatedPages.map((page) => (
+            <Link key={page.href} href={page.href} className="card">
+              <h2>{page.title}</h2>
+              <p>{page.description}</p>
+            </Link>
           ))}
         </div>
       </section>

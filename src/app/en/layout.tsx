@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'consolex1 — French hosting for bots, apps and websites',
+    default: 'Consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
     template: '%s | consolex1',
   },
   description:
-    'Consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
+    'Consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
   metadataBase: new URL('https://consolex1.com'),
   alternates: {
     canonical: 'https://consolex1.com/en',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     apple: '/avatar.png',
   },
   openGraph: {
-    title: 'consolex1 — French hosting for bots, apps and websites',
+    title: 'Consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
     description:
-      'Consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
+      'Host your Discord bots, APIs, websites and Python apps in France with Consolex1 and a simple Pterodactyl control panel.',
     url: 'https://consolex1.com/en',
     siteName: 'consolex1',
     type: 'website',
