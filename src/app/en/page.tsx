@@ -209,7 +209,7 @@ export default function EnHome() {
         </div>
         <div className="cards-grid">
           {relatedPages.map((page) => (
-            <Link key={page.href} href={page.href} className="card">
+            <Link key={page.href} href={page.href} className="card" style={{ textDecoration: 'none' }}>
               <h2>{page.title}</h2>
               <p>{page.description}</p>
             </Link>

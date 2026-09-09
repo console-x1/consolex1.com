@@ -72,7 +72,6 @@ export default function EnHebergementPythonPage() {
         <div className="cards-grid">
           {notes.map((item) => (
             <article key={item} className="card">
-              <h2>Tip</h2>
               <p>{item}</p>
             </article>
           ))}

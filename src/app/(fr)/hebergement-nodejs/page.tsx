@@ -74,7 +74,6 @@ export default function HebergementNodejsPage() {
         <div className="cards-grid">
           {checklist.map((item) => (
             <article key={item} className="card">
-              <h2>Étape clé</h2>
               <p>{item}</p>
             </article>
           ))}

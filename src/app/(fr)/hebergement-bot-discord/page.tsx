@@ -136,7 +136,7 @@ export default function HebergementBotDiscordPage() {
         </div>
         <div className="cards-grid">
           {relatedLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="card">
+            <Link key={item.href} href={item.href} className="card" style={{ textDecoration: 'none' }}>
               <h2>{item.title}</h2>
               <p>Découvrir la page dédiée à ce cas d’usage.</p>
             </Link>

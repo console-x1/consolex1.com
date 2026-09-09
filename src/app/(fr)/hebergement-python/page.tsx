@@ -72,7 +72,6 @@ export default function HebergementPythonPage() {
         <div className="cards-grid">
           {notes.map((item) => (
             <article key={item} className="card">
-              <h2>Conseil</h2>
               <p>{item}</p>
             </article>
           ))}
