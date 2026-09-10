@@ -66,7 +66,7 @@ export const metadata = {
     title: 'Consolex1 pricing',
     description: 'Compare Consolex1 plans and choose the package for your project.',
     url: 'https://consolex1.com/en/pricing',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

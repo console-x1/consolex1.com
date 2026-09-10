@@ -24,13 +24,13 @@ export const metadata = {
     description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
     url: 'https://consolex1.com',
     siteName: 'consolex1',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'consolex1 — Hébergement français',
     description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

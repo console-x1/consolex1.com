@@ -6,7 +6,7 @@ export const metadata = {
     title: 'Consolex1 privacy policy',
     description: 'Privacy policy for Consolex1, describing data handling and user privacy protections.',
     url: 'https://consolex1.com/en/privacy-policy',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

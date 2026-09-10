@@ -6,7 +6,7 @@ export const metadata = {
     title: 'CGU consolex1',
     description: 'Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.',
     url: 'https://consolex1.com/cgu',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata = {
     title: 'Consolex1 terms',
     description: 'Consolex1 terms of use describing rights, obligations, and service commitments.',
     url: 'https://consolex1.com/en/terms',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

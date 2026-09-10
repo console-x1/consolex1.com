@@ -5,7 +5,7 @@ export const metadata = {
     title: 'Consolex1 legal notice',
     description: 'Legal information about Consolex1, including publisher details and hosting terms.',
     url: 'https://consolex1.com/en/mentions',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 

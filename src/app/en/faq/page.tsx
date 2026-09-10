@@ -6,7 +6,7 @@ export const metadata = {
     title: 'Consolex1 FAQ',
     description: 'Answers to common questions about Consolex1 hosting, server location, and limitations.',
     url: 'https://consolex1.com/en/faq',
-    images: ['/consolex1-host.png'],
+    images: ['/avatar.png'],
   },
 };
 
