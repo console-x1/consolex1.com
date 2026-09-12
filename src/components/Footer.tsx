@@ -12,12 +12,10 @@ const footerLinks = {
     legal: '/mentions',
     terms: '/cgu',
     privacy: '/politique-de-confidentialite',
-    reviews: '/avis',
     statusUrl: 'https://status.consolex1.com',
     legalLabel: 'Mentions légales',
     termsLabel: 'CGU',
     privacyLabel: 'Politique de confidentialité',
-    reviewsLabel: 'Avis clients',
     statusLabel: 'Statut',
   },
   en: {
@@ -25,12 +23,10 @@ const footerLinks = {
     legal: '/en/legal-notice',
     terms: '/en/terms',
     privacy: '/en/privacy-policy',
-    reviews: '/en/avis',
     statusUrl: 'https://status.consolex1.com',
     legalLabel: 'Legal notice',
     termsLabel: 'Terms',
     privacyLabel: 'Privacy policy',
-    reviewsLabel: 'Customer reviews',
     statusLabel: 'Status',
   },
 };
@@ -51,11 +47,6 @@ export default function Footer({ locale }: FooterProps) {
         <Link href={links.privacy} locale={locale}>
           {links.privacyLabel}
         </Link>
-        {links.reviews && (
-          <Link href={links.reviews} locale={locale}>
-            {links.reviewsLabel}
-          </Link>
-        )}
         <a href={links.statusUrl}>{links.statusLabel}</a>
       </div>
     </footer>
