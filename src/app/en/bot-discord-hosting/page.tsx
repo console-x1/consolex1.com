@@ -64,11 +64,11 @@ const faqs = [
 ];
 
 const relatedLinks = [
-  { title: 'Discord bot Node.js hosting', href: '/en/hebergement-bot-discord-nodejs' },
-  { title: 'Discord bot Python hosting', href: '/en/hebergement-bot-discord-python' },
-  { title: 'Node.js hosting', href: '/en/hebergement-nodejs' },
-  { title: 'Python hosting', href: '/en/hebergement-python' },
-  { title: 'Hosting in France', href: '/en/hebergement-france' },
+  { title: 'Discord bot Node.js hosting', href: '/en/bot-discord-nodejs-hosting' },
+  { title: 'Discord bot Python hosting', href: '/en/bot-discord-python-hosting' },
+  { title: 'Node.js hosting', href: '/en/nodejs-hosting' },
+  { title: 'Python hosting', href: '/en/python-hosting' },
+  { title: 'Hosting in France', href: '/en/france-hosting' },
 ];
 
 export default function EnHebergementBotDiscordPage() {

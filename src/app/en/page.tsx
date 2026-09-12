@@ -132,27 +132,27 @@ const relatedPages = [
   {
     title: 'Discord bot hosting',
     description: 'Learn how to host a Discord bot in France with a dependable setup.',
-    href: '/en/hebergement-bot-discord',
+    href: '/en/bot-discord-hosting',
   },
   {
     title: 'Node.js hosting',
     description: 'A useful page for APIs, services and web apps built on Node.js.',
-    href: '/en/hebergement-nodejs',
+    href: '/en/nodejs-hosting',
   },
   {
     title: 'Python hosting',
     description: 'A practical route for Python scripts, bots and lightweight backends.',
-    href: '/en/hebergement-python',
+    href: '/en/python-hosting',
   },
   {
     title: 'Pterodactyl hosting',
     description: 'Understand the panel used to manage services quickly and clearly.',
-    href: '/en/hebergement-pterodactyl',
+    href: '/en/pterodactyl-hosting',
   },
   {
     title: 'Hosting in France',
     description: 'A helpful page for projects looking for an EU-based deployment option.',
-    href: '/en/hebergement-france',
+    href: '/en/france-hosting',
   },
 ];
 
