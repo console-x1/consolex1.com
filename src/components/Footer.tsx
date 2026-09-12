@@ -14,11 +14,13 @@ const footerLinks = {
     privacy: '/politique-de-confidentialite',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
+    trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
     legalLabel: 'Mentions légales',
     termsLabel: 'CGU',
     privacyLabel: 'Politique de confidentialité',
     statusLabel: 'Statut',
     mapsLabel: 'Google Maps',
+    trustpilotLabel: 'Trustpilot',
   },
   en: {
     text: '© 2026 consolex1. French hosting for bots, apps and websites.',
@@ -27,11 +29,13 @@ const footerLinks = {
     privacy: '/en/privacy-policy',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
+    trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
     legalLabel: 'Legal notice',
     termsLabel: 'Terms',
     privacyLabel: 'Privacy policy',
     statusLabel: 'Status',
     mapsLabel: 'Google Maps',
+    trustpilotLabel: 'Trustpilot',
   },
 };
 
@@ -55,12 +59,9 @@ export default function Footer({ locale }: FooterProps) {
         <a href={links.mapsUrl} target="_blank" rel="noopener noreferrer">
           {links.mapsLabel}
         </a>
-      </div>
-
-      <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-
-      <div className="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a70fc65701e0ea478abf809" data-style-height="52px" data-style-width="100%" data-token="9bbb22b8-6ceb-49ad-ae58-488a62eb3245">
-        <a href="https://www.trustpilot.com/review/consolex1.com" target="_blank" rel="noopener">Trustpilot</a>
+        <a href={links.trustpilotUrl} target="_blank" rel="noopener noreferrer">
+          {links.trustpilotLabel}
+        </a>
       </div>
     </footer>
   );
