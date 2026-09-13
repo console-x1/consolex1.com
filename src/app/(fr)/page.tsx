@@ -110,12 +110,16 @@ const faqs = [
   {
     question: 'Le plan Gratuit est-il vraiment sans frais ?',
     answer:
-      "Oui — le forfait Gratuit ne demande pas de carte et convient pour des essais et petits projets. J’ai créé ce service parce que, quand j’étais plus jeune, j’avais aussi besoin d’un free host pour apprendre et tester. Aujourd’hui, je veux pouvoir aider les autres de la même manière, tandis que les plans payants servent uniquement à financer la machine.",
+      "Oui — le forfait Gratuit ne demande pas de carte et convient pour des essais et petits projets.",
+  },
+  {
+    question: 'Pourquoi faire un plan gratuit ?',
+    answer: 'J’ai créé ce service parce que, quand j’étais plus jeune, j’avais aussi besoin d’un free host pour apprendre et tester. Aujourd’hui, je veux pouvoir aider les autres de la même manière, tandis que les plans payants servent uniquement à financer la machine.'
   },
   {
     question: 'Quelles technologies sont supportées ?',
     answer:
-      'Node.js, Python, Java, Golang, Rust et nginx sont supportés.',
+      'Les technologies Node.js, Python, Java, Golang, Rust et nginx sont supportés.',
   },
   {
     question: 'La gestion via Discord est-elle possible ?',
@@ -142,6 +146,10 @@ const faqs = [
   {
     question: 'Mon serveur sera-t-il supprimé si je ne le réactive pas ?',
     answer: 'Oui, les serveurs suspendus sont automatiquement supprimés après 7 jours de suspension. Assurez-vous de réactiver votre serveur à temps pour éviter toute perte de données.',
+  },
+  {
+    question: 'Pourquoi consolex1 au lieu d\'un VPS ?',
+    answer: 'Contrairement à un VPS, vous n\'avez pas besoin de gérer l\'infrastructure. Heberger vos projets devient plus simple et rapide, avec un panneau intuitif et des ressources adaptées à vos besoins.',
   }
 ];
 

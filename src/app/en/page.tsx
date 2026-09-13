@@ -108,7 +108,11 @@ const plans = [
 const faqs = [
   {
     question: 'Is the Free Plan really free?',
-    answer: 'Yes — the Free plan requires no payment details and is meant for testing and small projects. I created this service because, when I was younger, I also needed a free host to learn and test. Today, with the means and capabilities available, I want to offer the same help to others, allowing everyone to start for free. The paid plans exist only to help finance the infrastructure and support the project in the long term.',
+    answer: 'Yes — the Free plan requires no payment details and is meant for testing and small projects.',
+  },
+  {
+    question: 'Why offer a free plan?',
+    answer: 'I created this service because, when I was younger, I also needed a free host to learn and test. Today, with the means and capabilities available, I want to offer the same help to others, allowing everyone to start for free. The paid plans exist only to help finance the infrastructure and support the project in the long term.',
   },
   {
     question: 'Which technologies are supported?',
@@ -125,6 +129,10 @@ const faqs = [
   {
     question: 'How many backups are available?',
     answer: 'Paid plans include two backups, while the free plan does not include automated backups.',
+  },
+  {
+    question: 'Why consolex1 instead of a VPS?',
+    answer: 'Unlike a VPS, you do not need to manage the infrastructure. Hosting your projects becomes simpler and faster, with an intuitive panel and resources tailored to your needs.',
   },
 ];
 
