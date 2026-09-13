@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Pterodactyl Hosting | Consolex1',
+  title: 'Pterodactyl Hosting | consolex1',
   description:
-    'Learn how to use Pterodactyl with Consolex1 to manage your apps, Discord bots and web services with ease.',
+    'Learn how to use Pterodactyl with consolex1 to manage your apps, Discord bots and web services with ease.',
   keywords: [
     'pterodactyl hosting',
     'pterodactyl france',
@@ -36,10 +36,10 @@ export default function EnHebergementPterodactylPage() {
     <>
       <section className="section intro">
         <div className="section-header">
-          <span className="badge">Pterodactyl • Consolex1</span>
+          <span className="badge">Pterodactyl • consolex1</span>
           <h1>Hosting with Pterodactyl</h1>
           <p className="section-description">
-            Consolex1 offers a hosting environment for web projects, Discord bots and Node.js/Python applications, with simple service management through Pterodactyl.
+            consolex1 offers a hosting environment for web projects, Discord bots and Node.js/Python applications, with simple service management through Pterodactyl.
           </p>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function EnHebergementPterodactylPage() {
       <section className="cta-banner">
         <div>
           <h2>Ready to manage services more simply?</h2>
-          <p>Consolex1 can be a practical starting point for hosting web projects, Discord bots and various applications.</p>
+          <p>consolex1 can be a practical starting point for hosting web projects, Discord bots and various applications.</p>
         </div>
         <Link className="button button-primary" href="/en/pricing">
           View plans

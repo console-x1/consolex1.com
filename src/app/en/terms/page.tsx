@@ -1,10 +1,10 @@
 export const metadata = {
   title: 'Terms',
-  description: 'Consolex1 terms of use describing rights, obligations, and service commitments.',
+  description: 'consolex1 terms of use describing rights, obligations, and service commitments.',
   keywords: ['terms', 'consolex1 terms', 'conditions', 'hosting service'],
   openGraph: {
-    title: 'Consolex1 terms',
-    description: 'Consolex1 terms of use describing rights, obligations, and service commitments.',
+    title: 'consolex1 terms',
+    description: 'consolex1 terms of use describing rights, obligations, and service commitments.',
     url: 'https://consolex1.com/en/terms',
     images: ['/avatar.png'],
   },
@@ -15,7 +15,7 @@ export default function EnTermsPage() {
     <section className="section legal-page">
       <div className="section-header">
         <h1>Terms of use</h1>
-        <p>The terms and conditions for using the Consolex1 service.</p>
+        <p>The terms and conditions for using the consolex1 service.</p>
       </div>
       <div className="legal-content">
         <h2>Acceptance</h2>
@@ -32,7 +32,7 @@ export default function EnTermsPage() {
         <p>This includes services deployed to hide, redirect, or relay activity that violates third-party terms.</p>
 
         <h2>Association plans</h2>
-        <p>Consolex1 is intended as an association-style project. This status is not yet official.</p>
+        <p>consolex1 is intended as an association-style project. This status is not yet official.</p>
         <p>No paid services are offered until the status is formalized.</p>
 
         <h2>Security reviews</h2>
@@ -41,7 +41,7 @@ export default function EnTermsPage() {
         <p>They do not collect passwords, private keys, or user authentication data.</p>
 
         <h2>Liability</h2>
-        <p>Consolex1 cannot guarantee uninterrupted availability.</p>
+        <p>consolex1 cannot guarantee uninterrupted availability.</p>
         <p>Users remain responsible for their own data backups and protection.</p>
       </div>
     </section>

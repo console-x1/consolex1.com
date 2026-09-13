@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement bot Discord en France | Consolex1',
+  title: 'Hébergement bot Discord en France | consolex1',
   description:
-    'Hébergez votre bot Discord en France sur Consolex1 avec Node.js, Python, Pterodactyl, backups et infrastructure locale.',
+    'Hébergez votre bot Discord en France sur consolex1 avec Node.js, Python, Pterodactyl, backups et infrastructure locale.',
   keywords: [
     'hébergement bot discord',
     'bot discord france',
@@ -30,7 +30,7 @@ const highlights = [
   {
     title: 'Compatible Node.js et Python',
     description:
-      'Consolex1 prend en charge les bots Discord Node.js, Python, Java, Golang, Rust et nginx selon les besoins du projet.',
+      'consolex1 prend en charge les bots Discord Node.js, Python, Java, Golang, Rust et nginx selon les besoins du projet.',
   },
   {
     title: 'Idéal pour les projets sérieux',
@@ -80,14 +80,14 @@ export default function HebergementBotDiscordPage() {
           <span className="badge">Hébergement bot Discord • France</span>
           <h1>Hébergement de bot Discord en France</h1>
           <p className="section-description">
-            Consolex1 vous aide à héberger rapidement un bot Discord en France, avec un environnement stable, des ressources adaptées et une gestion simple via Pterodactyl.
+            consolex1 vous aide à héberger rapidement un bot Discord en France, avec un environnement stable, des ressources adaptées et une gestion simple via Pterodactyl.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-header">
-          <h2>Pourquoi choisir Consolex1 pour un bot Discord ?</h2>
+          <h2>Pourquoi choisir consolex1 pour un bot Discord ?</h2>
         </div>
         <div className="cards-grid">
           {highlights.map((item) => (
@@ -147,7 +147,7 @@ export default function HebergementBotDiscordPage() {
       <section className="cta-banner">
         <div>
           <h2>Prêt à lancer votre bot Discord ?</h2>
-          <p>Commencez sur Consolex1, en France, avec une infrastructure faite pour les applications et services Discord.</p>
+          <p>Commencez sur consolex1, en France, avec une infrastructure faite pour les applications et services Discord.</p>
         </div>
         <Link className="button button-primary" href="/tarif">
           Voir les offres

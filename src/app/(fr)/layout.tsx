@@ -4,17 +4,17 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Consolex1 | Hébergement français pour bots Discord, Node.js, Python et services web',
+    default: 'consolex1 | Hébergement français pour bots Discord, Node.js, Python et services web',
     template: '%s | consolex1',
   },
   description:
-    'Consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python, avec infrastructure locale en France et panneau Pterodactyl.',
+    'consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python, avec infrastructure locale en France et panneau Pterodactyl.',
   metadataBase: new URL('https://consolex1.com'),
   alternates: {
     canonical: 'https://consolex1.com',
     languages: {
-      fr: '/',
-      en: '/en',
+      fr: 'https://consolex1.com/',
+      en: 'https://consolex1.com/en',
     },
   },
   icons: {
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     apple: '/avatar.png',
   },
   openGraph: {
-    title: 'Consolex1 | Hébergement français pour bots Discord, Node.js et Python',
+    title: 'consolex1 | Hébergement français pour bots Discord, Node.js et Python',
     description:
-      'Hébergez vos bots Discord, APIs, sites web et applications Python en France avec Consolex1 et un panel Pterodactyl.',
+      'Hébergez vos bots Discord, APIs, sites web et applications Python en France avec consolex1 et un panel Pterodactyl.',
     url: 'https://consolex1.com',
     siteName: 'consolex1',
     type: 'website',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'consolex1 — Hébergement français',
     description:
-      'Consolex1 propose un hébergement français accessible pour bots Discord, sites web, APIs et applications Python.',
+      'consolex1 propose un hébergement français accessible pour bots Discord, sites web, APIs et applications Python.',
     images: ['/avatar.png'],
   },
   robots: {
@@ -76,7 +76,7 @@ export default function FrLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-shell">
       <Header locale="fr" />
-      <main>{children}</main>
+      <main lang="fr">{children}</main>
       <Footer locale="fr" />
     </div>
   );

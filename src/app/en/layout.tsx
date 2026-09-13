@@ -4,17 +4,17 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
+    default: 'consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
     template: '%s | consolex1',
   },
   description:
-    'Consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
+    'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
   metadataBase: new URL('https://consolex1.com'),
   alternates: {
     canonical: 'https://consolex1.com/en',
     languages: {
-      fr: '/',
-      en: '/en',
+      fr: 'https://consolex1.com/',
+      en: 'https://consolex1.com/en',
     },
   },
   icons: {
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     apple: '/avatar.png',
   },
   openGraph: {
-    title: 'Consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
+    title: 'consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
     description:
-      'Host your Discord bots, APIs, websites and Python apps in France with Consolex1 and a simple Pterodactyl control panel.',
+      'Host your Discord bots, APIs, websites and Python apps in France with consolex1 and a simple Pterodactyl control panel.',
     url: 'https://consolex1.com/en',
     siteName: 'consolex1',
     type: 'website',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'consolex1 — French hosting',
     description:
-      'Consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
+      'consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
     images: ['/avatar.png'],
   },
   robots: {
@@ -67,7 +67,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-shell">
       <Header locale="en" />
-      <main>{children}</main>
+      <main lang="en">{children}</main>
       <Footer locale="en" />
     </div>
   );

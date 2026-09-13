@@ -51,7 +51,7 @@ function loadGtag(anonymize: boolean) {
 
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false);
-  const [anonymize, setAnonymize] = useState(true);
+  const [anonymize, setAnonymize] = useState(false);
   const [locale, setLocale] = useState<'fr' | 'en'>('fr');
 
   useEffect(() => {
@@ -109,21 +109,36 @@ export default function ConsentBanner() {
   const m = locale === 'en' ? messages.en : messages.fr;
 
   return (
-    <div style={{ position: 'fixed', left: 12, right: 12, bottom: 12, zIndex: 9999, background: 'rgba(255, 0, 0, 0.5)', border: '1px solid #ddd', padding: 16, borderRadius: 8, boxShadow: '0 6px 18px rgba(0,0,0,0.08)' }}>
-      <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ flex: 1 }}>
-          <strong>{m.title}</strong>
-          <div style={{ marginTop: 6 }}>
+    <div
+      style={{
+        position: 'fixed',
+        left: 12,
+        right: 12,
+        bottom: 12,
+        zIndex: 9999,
+        background: 'rgba(17, 24, 39, 0.95)',
+        color: '#f9fafb',
+        border: '1px solid rgba(148, 163, 184, 0.5)',
+        padding: 16,
+        borderRadius: 12,
+        boxShadow: '0 12px 28px rgba(15, 23, 42, 0.28)',
+        backdropFilter: 'blur(8px)',
+      }}
+    >
+      <div style={{ display: 'flex', gap: 16, alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        <div style={{ flex: 1, minWidth: 240 }}>
+          <strong style={{ display: 'block', fontSize: 16 }}>{m.title}</strong>
+          <div style={{ marginTop: 6, lineHeight: 1.5, fontSize: 14 }}>
             {m.desc}
           </div>
-          <label style={{ display: 'block', marginTop: 8 }}>
-            <input type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />{' '}
+          <label style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10, fontSize: 14, cursor: 'pointer' }}>
+            <input type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />
             {m.anonymizeLabel}
           </label>
         </div>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <button onClick={decline} style={{ padding: '8px 12px', background: '#ffaa00', border: '1px solid #ccc', borderRadius: 6 }}>{m.decline}</button>
-          <button onClick={accept} style={{ padding: '8px 12px', background: '#440bff', color: 'white', border: 'none', borderRadius: 6 }}>{m.accept}</button>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <button onClick={decline} style={{ padding: '10px 14px', background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', borderRadius: 8, cursor: 'pointer' }}>{m.decline}</button>
+          <button onClick={accept} style={{ padding: '10px 14px', background: '#8b5cf6', color: '#ffffff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>{m.accept}</button>
         </div>
       </div>
     </div>

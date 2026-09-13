@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Discord Bot Node.js Hosting in France | Consolex1',
+  title: 'Discord Bot Node.js Hosting in France | consolex1',
   description:
-    'Discover Node.js Discord bot hosting in France with Consolex1, including Pterodactyl, stability and simple deployment.',
+    'Discover Node.js Discord bot hosting in France with consolex1, including Pterodactyl, stability and simple deployment.',
   keywords: [
     'discord bot node.js hosting',
     'node.js bot discord europe',
@@ -24,7 +24,7 @@ const sections = [
       'Depending on guild count, commands and queued tasks, you usually start on a small plan and scale as needed.',
   },
   {
-    title: 'What Consolex1 brings',
+    title: 'What consolex1 brings',
     description:
       'A France-based hosting setup with access to the Pterodactyl panel, SFTP and console tools for easier deployment.',
   },
@@ -38,7 +38,7 @@ export default function EnHebergementBotDiscordNodejsPage() {
           <span className="badge">Node.js • Discord</span>
           <h1>Discord bot Node.js hosting in France</h1>
           <p className="section-description">
-            If you want to deploy a Discord bot in Node.js with a reliable base and a simple environment, Consolex1 can be a useful option.
+            If you want to deploy a Discord bot in Node.js with a reliable base and a simple environment, consolex1 can be a useful option.
           </p>
         </div>
       </section>

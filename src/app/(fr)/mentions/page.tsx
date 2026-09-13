@@ -19,13 +19,14 @@ export default function MentionsPage() {
       </div>
       <div className="legal-content">
         <h2>Éditeur du service</h2>
-        <p>Consolex1 est un projet porté par une équipe indépendante basée en France.</p>
+        <p>consolex1 est un projet porté par une équipe indépendante basée en France.</p>
         <p>Adresse de contact : France.</p>
         <p>Email de contact : contact@consolex1.com</p>
 
         <h2>Statut</h2>
         <p>Le projet est actuellement en phase de structuration et n’est pas encore officiellement constitué en association.</p>
         <p>Jusqu’à l’obtention de ce statut, aucune offre payante ne sera commercialisée par le service.</p>
+        <p>consolex1 a été créé parce que, quand j’étais plus jeune, j’avais moi aussi besoin d’un free host pour tester, apprendre et développer mes projets. Aujourd’hui, avec les moyens et les capacités nécessaires, je veux offrir cette même aide aux autres, en permettant à chacun de pouvoir commencer gratuitement. Les offres payantes existent uniquement pour aider à financer la machine et soutenir le projet à long terme.</p>
 
         <h2>Hébergement</h2>
         <p>Le site vitrine est hébergé sur GitHub Pages, tandis que les services d’hébergement pour les applications sont fournis depuis un serveur basé en France.</p>

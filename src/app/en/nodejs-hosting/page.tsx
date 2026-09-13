@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Node.js Hosting in France | Consolex1',
+  title: 'Node.js Hosting in France | consolex1',
   description:
-    'Host your Node.js applications in France with Consolex1, including Pterodactyl, simple deployment and resources for APIs and web services.',
+    'Host your Node.js applications in France with consolex1, including Pterodactyl, simple deployment and resources for APIs and web services.',
   keywords: [
     'node.js hosting',
     'node.js france',
@@ -48,7 +48,7 @@ export default function EnHebergementNodejsPage() {
           <span className="badge">Node.js • France</span>
           <h1>Node.js hosting in France</h1>
           <p className="section-description">
-            Consolex1 offers hosting for Node.js projects, from APIs to Discord bots, with french infrastructure and a Pterodactyl panel.
+            consolex1 offers hosting for Node.js projects, from APIs to Discord bots, with french infrastructure and a Pterodactyl panel.
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function EnHebergementNodejsPage() {
       <section className="cta-banner">
         <div>
           <h2>Need reliable Node.js hosting?</h2>
-          <p>Consolex1 provides a solid base to start, test and scale your web apps or Discord services.</p>
+          <p>consolex1 provides a solid base to start, test and scale your web apps or Discord services.</p>
         </div>
         <Link className="button button-primary" href="/en/pricing">
           Compare plans

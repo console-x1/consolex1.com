@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement Pterodactyl | Consolex1',
+  title: 'Hébergement Pterodactyl | consolex1',
   description:
-    'Découvrez comment utiliser Pterodactyl avec Consolex1 pour gérer vos apps, bots Discord et services web en toute simplicité.',
+    'Découvrez comment utiliser Pterodactyl avec consolex1 pour gérer vos apps, bots Discord et services web en toute simplicité.',
   keywords: [
     'hébergement pterodactyl',
     'pterodactyl france',
@@ -36,10 +36,10 @@ export default function HebergementPterodactylPage() {
     <>
       <section className="section intro">
         <div className="section-header">
-          <span className="badge">Pterodactyl • Consolex1</span>
+          <span className="badge">Pterodactyl • consolex1</span>
           <h1>Hébergement avec Pterodactyl</h1>
           <p className="section-description">
-            Consolex1 propose un environnement d’hébergement pensé pour des projets web, bots Discord et applications Node.js/Python, avec une gestion simplifiée via Pterodactyl.
+            consolex1 propose un environnement d’hébergement pensé pour des projets web, bots Discord et applications Node.js/Python, avec une gestion simplifiée via Pterodactyl.
           </p>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function HebergementPterodactylPage() {
       <section className="cta-banner">
         <div>
           <h2>Prêt à gérer vos services plus simplement ?</h2>
-          <p>Consolex1 peut être un point d’entrée pratique pour héberger des projets web, bots Discord et applications diverses.</p>
+          <p>consolex1 peut être un point d’entrée pratique pour héberger des projets web, bots Discord et applications diverses.</p>
         </div>
         <Link className="button button-primary" href="/tarif">
           Voir les plans

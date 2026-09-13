@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Discord Bot Hosting in France | Consolex1',
+  title: 'Discord Bot Hosting in France | consolex1',
   description:
-    'Host your Discord bot in France with Consolex1, using Node.js, Python, Pterodactyl, backups and a local infrastructure.',
+    'Host your Discord bot in France with consolex1, using Node.js, Python, Pterodactyl, backups and a local infrastructure.',
   keywords: [
     'discord bot hosting',
     'discord bot europe',
@@ -29,7 +29,7 @@ const highlights = [
   {
     title: 'Compatible with Node.js and Python',
     description:
-      'Consolex1 supports Discord bots in Node.js, Python, Java, Golang, Rust and nginx depending on project needs.',
+      'consolex1 supports Discord bots in Node.js, Python, Java, Golang, Rust and nginx depending on project needs.',
   },
   {
     title: 'Great for serious projects',
@@ -79,14 +79,14 @@ export default function EnHebergementBotDiscordPage() {
           <span className="badge">Discord bot hosting • France</span>
           <h1>Discord bot hosting in France</h1>
           <p className="section-description">
-            Consolex1 helps you host a Discord bot in France with a stable environment, appropriate resources and simple management through Pterodactyl.
+            consolex1 helps you host a Discord bot in France with a stable environment, appropriate resources and simple management through Pterodactyl.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-header">
-          <h2>Why choose Consolex1 for a Discord bot?</h2>
+          <h2>Why choose consolex1 for a Discord bot?</h2>
         </div>
         <div className="cards-grid">
           {highlights.map((item) => (
@@ -146,7 +146,7 @@ export default function EnHebergementBotDiscordPage() {
       <section className="cta-banner">
         <div>
           <h2>Ready to launch your Discord bot?</h2>
-          <p>Start with Consolex1 in France, using infrastructure made for Discord apps and services.</p>
+          <p>Start with consolex1 in France, using infrastructure made for Discord apps and services.</p>
         </div>
         <Link className="button button-primary" href="/en/pricing">
           View plans

@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
       </div>
       <div className="legal-content">
         <h2>Données personnelles</h2>
-        <p>Consolex1 ne collecte pas de données personnelles sensibles directement sur le site vitrine.</p>
+        <p>consolex1 ne collecte pas de données personnelles sensibles directement sur le site vitrine.</p>
         <p>Les données partagées via Discord sont gérées par Discord et soumises à leurs conditions de confidentialité.</p>
 
         <h2>Non revente des données</h2>

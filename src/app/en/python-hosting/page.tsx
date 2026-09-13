@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Python Hosting in France | Consolex1',
+  title: 'Python Hosting in France | consolex1',
   description:
-    'Host your Python applications, scripts and services in France with Consolex1 and Pterodactyl.',
+    'Host your Python applications, scripts and services in France with consolex1 and Pterodactyl.',
   keywords: [
     'python hosting',
     'python france',
@@ -46,14 +46,14 @@ export default function EnHebergementPythonPage() {
           <span className="badge">Python • France</span>
           <h1>Python hosting in France</h1>
           <p className="section-description">
-            Consolex1 supports Python applications, whether they are scripts, Discord bots, APIs or lightweight web services.
+            consolex1 supports Python applications, whether they are scripts, Discord bots, APIs or lightweight web services.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-header">
-          <h2>Why consider Consolex1 for Python?</h2>
+          <h2>Why consider consolex1 for Python?</h2>
         </div>
         <div className="cards-grid">
           {useCases.map((item) => (
@@ -81,7 +81,7 @@ export default function EnHebergementPythonPage() {
       <section className="cta-banner">
         <div>
           <h2>Need to host a Python project?</h2>
-          <p>Consolex1 offers a simple and local base for launching your apps, scripts and bots in Europe.</p>
+          <p>consolex1 offers a simple and local base for launching your apps, scripts and bots in Europe.</p>
         </div>
         <Link className="button button-primary" href="/en/pricing">
           See plans

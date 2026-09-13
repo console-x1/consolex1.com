@@ -3,8 +3,8 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'Consolex1 | French hosting for Discord bots, Node.js and Python apps',
-  description: 'Consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with infrastructure in France and a Pterodactyl panel.',
+  title: 'consolex1 | French hosting for Discord bots, Node.js and Python apps',
+  description: 'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with infrastructure in France and a Pterodactyl panel.',
   keywords: [
     'french hosting',
     'discord bot hosting',
@@ -20,7 +20,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'consolex1 — French hosting for bots and applications',
-    description: 'Consolex1 provides French hosting for Discord bots, websites and Python applications.',
+    description: 'consolex1 provides French hosting for Discord bots, websites and Python applications.',
     url: 'https://consolex1.com/en',
     siteName: 'consolex1',
     images: ['/avatar.png'],
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'consolex1 — French hosting',
-    description: 'Consolex1 provides French hosting for Discord bots, websites and Python applications.',
+    description: 'consolex1 provides French hosting for Discord bots, websites and Python applications.',
     images: ['/avatar.png'],
   },
 };
@@ -108,7 +108,7 @@ const plans = [
 const faqs = [
   {
     question: 'Is the Free Plan really free?',
-    answer: 'Yes — the Free plan requires no payment details and is meant for testing and small projects.',
+    answer: 'Yes — the Free plan requires no payment details and is meant for testing and small projects. I created this service because, when I was younger, I also needed a free host to learn and test. Today, with the means and capabilities available, I want to offer the same help to others, allowing everyone to start for free. The paid plans exist only to help finance the infrastructure and support the project in the long term.',
   },
   {
     question: 'Which technologies are supported?',
@@ -164,7 +164,7 @@ export default function EnHome() {
           <span className="badge">Paris — Equinix PA5</span>
           <h1>French hosting for Node.js, Python, Discord and websites.</h1>
           <p className="section-description">
-            Consolex1 provides direct access to a French server with simplified deployment and a Pterodactyl control panel.
+            consolex1 provides direct access to a French server with simplified deployment and a Pterodactyl control panel.
           </p>
         </div>
       </section>

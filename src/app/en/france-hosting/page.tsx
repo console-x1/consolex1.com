@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hosting in France | Consolex1',
+  title: 'Hosting in France | consolex1',
   description:
-    'Hosting in France for Discord bots, APIs, web services and Node.js/Python apps with Consolex1.',
+    'Hosting in France for Discord bots, APIs, web services and Node.js/Python apps with consolex1.',
   keywords: [
     'hosting in france',
     'french hosting',
@@ -45,7 +45,7 @@ export default function EnHebergementFrancePage() {
           <span className="badge">France • Equinix PA5</span>
           <h1>Hosting in France</h1>
           <p className="section-description">
-            Consolex1 offers hosting based in France for web projects, Discord bots, Node.js apps and Python applications.
+            consolex1 offers hosting based in France for web projects, Discord bots, Node.js apps and Python applications.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function EnHebergementFrancePage() {
       <section className="cta-banner">
         <div>
           <h2>Looking for a French host?</h2>
-          <p>Consolex1 can be a practical option if you want a simple panel and a fast path to deployment.</p>
+          <p>consolex1 can be a practical option if you want a simple panel and a fast path to deployment.</p>
         </div>
         <Link className="button button-primary" href="/en/pricing">
           Explore plans

@@ -1,10 +1,10 @@
 export const metadata = {
   title: 'FAQ',
-  description: 'Answers to common questions about Consolex1 hosting, server location, and limitations.',
+  description: 'Answers to common questions about consolex1 hosting, server location, and limitations.',
   keywords: ['FAQ', 'consolex1 help', 'hosting questions', 'discord bot', 'pterodactyl', 'French hosting'],
   openGraph: {
-    title: 'Consolex1 FAQ',
-    description: 'Answers to common questions about Consolex1 hosting, server location, and limitations.',
+    title: 'consolex1 FAQ',
+    description: 'Answers to common questions about consolex1 hosting, server location, and limitations.',
     url: 'https://consolex1.com/en/faq',
     images: ['/avatar.png'],
   },

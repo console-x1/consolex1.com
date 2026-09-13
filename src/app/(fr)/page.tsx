@@ -3,8 +3,8 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'Consolex1 | Hébergement français pour bots Discord, Node.js et Python',
-  description: 'Consolex1 propose un hébergement français pour bots Discord, APIs, sites web et applications Node.js/Python, avec infrastructure en France et panel Pterodactyl.',
+  title: 'consolex1 | Hébergement français pour bots Discord, Node.js et Python',
+  description: 'consolex1 propose un hébergement français pour bots Discord, APIs, sites web et applications Node.js/Python, avec infrastructure en France et panel Pterodactyl.',
   keywords: [
     'hébergement français',
     'hébergeur français',
@@ -21,7 +21,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'consolex1 — Hébergement français pour bots et applications',
-    description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    description: 'consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
     url: 'https://consolex1.com',
     siteName: 'consolex1',
     images: ['/avatar.png'],
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'consolex1 — Hébergement français',
-    description: 'Consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    description: 'consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
     images: ['/avatar.png'],
   },
 };
@@ -110,7 +110,7 @@ const faqs = [
   {
     question: 'Le plan Gratuit est-il vraiment sans frais ?',
     answer:
-      "Oui — le forfait Gratuit ne demande pas de carte et convient pour des essais et petits projets.",
+      "Oui — le forfait Gratuit ne demande pas de carte et convient pour des essais et petits projets. J’ai créé ce service parce que, quand j’étais plus jeune, j’avais aussi besoin d’un free host pour apprendre et tester. Aujourd’hui, je veux pouvoir aider les autres de la même manière, tandis que les plans payants servent uniquement à financer la machine.",
   },
   {
     question: 'Quelles technologies sont supportées ?',
@@ -181,7 +181,7 @@ export default function Home() {
           <span className="badge">Paris — Equinix PA5</span>
           <h1>Hébergement français pour Node.js, Python, Discord et sites web.</h1>
           <p className="section-description">
-            Consolex1 fournit un accès direct à un serveur français, avec déploiement simplifié et panneau d'administration via Pterodactyl.
+            consolex1 fournit un accès direct à un serveur français, avec déploiement simplifié et panneau d'administration via Pterodactyl.
           </p>
         </div>
       </section>

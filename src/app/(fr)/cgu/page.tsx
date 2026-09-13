@@ -32,7 +32,7 @@ export default function CGUPage() {
         <p>Cela inclut les services déployés pour cacher, rediriger ou relayer des activités en violation des conditions d’utilisation de tiers.</p>
 
         <h2>Engagement associatif</h2>
-        <p>Consolex1 se positionne comme un projet à vocation associative. Ce statut n’est pas encore officiel aujourd’hui.</p>
+        <p>consolex1 se positionne comme un projet à vocation associative. Ce statut n’est pas encore officiel aujourd’hui.</p>
         <p>Dans cette attente, aucun service payant ne sera vendu.</p>
 
         <h2>Vérifications de sécurité</h2>
@@ -41,7 +41,7 @@ export default function CGUPage() {
         <p>Ils ne récupèrent ni mots de passe, ni clés privées, ni informations de connexion utilisateur.</p>
 
         <h2>Responsabilité</h2>
-        <p>Consolex1 ne peut garantir une disponibilité ininterrompue du service.</p>
+        <p>consolex1 ne peut garantir une disponibilité ininterrompue du service.</p>
         <p>La sauvegarde et la protection des données restent à la charge de l’utilisateur.</p>
       </div>
     </section>

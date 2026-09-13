@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement en France | Consolex1',
+  title: 'Hébergement en France | consolex1',
   description:
-    'Hébergement en France pour bots Discord, APIs, services web et applications Node.js/Python avec Consolex1.',
+    'Hébergement en France pour bots Discord, APIs, services web et applications Node.js/Python avec consolex1.',
   keywords: [
     'hébergement france',
     'hébergement français',
@@ -40,7 +40,7 @@ export default function HebergementFrancePage() {
           <span className="badge">France • Datacenter Equinix PA5</span>
           <h1>Hébergement en France</h1>
           <p className="section-description">
-            Consolex1 propose un hébergement basé en France pour les projets web, les bots Discord, les applications Node.js et Python et les petits services utiles au quotidien.
+            consolex1 propose un hébergement basé en France pour les projets web, les bots Discord, les applications Node.js et Python et les petits services utiles au quotidien.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function HebergementFrancePage() {
       <section className="cta-banner">
         <div>
           <h2>Vous cherchez un hébergeur français ?</h2>
-          <p>Consolex1 peut être une solution pratique si vous voulez commencer rapidement avec un panel intuitif et des services plats.</p>
+          <p>consolex1 peut être une solution pratique si vous voulez commencer rapidement avec un panel intuitif et des services plats.</p>
         </div>
         <Link className="button button-primary" href="/tarif">
           Explorer les offres

@@ -1,10 +1,10 @@
 export const metadata = {
   title: 'Privacy policy',
-  description: 'Privacy policy for Consolex1, describing data handling and user privacy protections.',
+  description: 'Privacy policy for consolex1, describing data handling and user privacy protections.',
   keywords: ['privacy policy', 'personal data', 'GDPR', 'consolex1'],
   openGraph: {
-    title: 'Consolex1 privacy policy',
-    description: 'Privacy policy for Consolex1, describing data handling and user privacy protections.',
+    title: 'consolex1 privacy policy',
+    description: 'Privacy policy for consolex1, describing data handling and user privacy protections.',
     url: 'https://consolex1.com/en/privacy-policy',
     images: ['/avatar.png'],
   },
@@ -15,11 +15,11 @@ export default function EnPrivacyPolicyPage() {
     <section className="section legal-page">
       <div className="section-header">
         <h1>Privacy policy</h1>
-        <p>How Consolex1 handles data and protects user privacy.</p>
+        <p>How consolex1 handles data and protects user privacy.</p>
       </div>
       <div className="legal-content">
         <h2>Personal data</h2>
-        <p>Consolex1 does not collect sensitive personal data directly through the showcase site.</p>
+        <p>consolex1 does not collect sensitive personal data directly through the showcase site.</p>
         <p>Data shared through Discord is managed by Discord and covered by their privacy terms.</p>
 
         <h2>No resale</h2>

@@ -18,7 +18,7 @@ const labels = {
     eyebrow: 'Basé à Paris — datacenter Equinix PA5',
     title: 'Hébergez rapidement vos apps, bots et sites web.',
     description:
-      'Consolex1 met à disposition un serveur situé en France, avec un panneau Pterodactyl intuitif.',
+      'consolex1 met à disposition un serveur situé en France, avec un panneau Pterodactyl intuitif.',
     statusText: "État des services :",
     alternate: 'English',
     alert: 'Vous cherchiez le profil de consolex1 et non pas l’hébergeur ?',
@@ -35,7 +35,7 @@ const labels = {
     eyebrow: 'Hosted in Paris — Equinix PA5',
     title: 'Host your apps, bots and websites quickly.',
     description:
-      'Consolex1 provides a French server with an easy Pterodactyl panel and automated HTTPS certificates.',
+      'consolex1 provides a French server with an easy Pterodactyl panel and automated HTTPS certificates.',
     statusText: 'Check service status:',
     alternate: 'Français',
     alert: 'Looking for the consolex1 profile instead of hosting?',

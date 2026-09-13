@@ -61,10 +61,10 @@ const plans = [
 
 export const metadata = {
   title: 'Pricing',
-  description: 'Compare Consolex1 plans and choose the package for your project.',
+  description: 'Compare consolex1 plans and choose the package for your project.',
   openGraph: {
-    title: 'Consolex1 pricing',
-    description: 'Compare Consolex1 plans and choose the package for your project.',
+    title: 'consolex1 pricing',
+    description: 'Compare consolex1 plans and choose the package for your project.',
     url: 'https://consolex1.com/en/pricing',
     images: ['/avatar.png'],
   },

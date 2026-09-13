@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement Bot Discord Python en France | Consolex1',
+  title: 'Hébergement Bot Discord Python en France | consolex1',
   description:
-    'Hébergez votre bot Discord Python en France avec Consolex1, une infrastructure locale et des outils de gestion simplifiés.',
+    'Hébergez votre bot Discord Python en France avec consolex1, une infrastructure locale et des outils de gestion simplifiés.',
   keywords: [
     'hébergement bot discord python',
     'bot discord python france',
@@ -25,7 +25,7 @@ const sections = [
       'Pour un bot Python, la RAM, la stabilité et les logs sont souvent plus importantes que le CPU purement nominal.',
   },
   {
-    title: 'Ce que Consolex1 apporte',
+    title: 'Ce que consolex1 apporte',
     description:
       'Une solution hébergement orientée développement, avec interface Pterodactyl et serveur localisé en France pour les projets européens.',
   },
@@ -39,7 +39,7 @@ export default function HebergementBotDiscordPythonPage() {
           <span className="badge">Python • Discord</span>
           <h1>Hébergement bot Discord Python en France</h1>
           <p className="section-description">
-            Consolex1 propose une base simple pour héberger un bot Discord Python en France, avec un environnement stable et des outils de gestion accessibles.
+            consolex1 propose une base simple pour héberger un bot Discord Python en France, avec un environnement stable et des outils de gestion accessibles.
           </p>
         </div>
       </section>

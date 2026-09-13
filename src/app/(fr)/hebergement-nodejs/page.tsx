@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement Node.js en France | Consolex1',
+  title: 'Hébergement Node.js en France | consolex1',
   description:
-    'Hébergez vos applications Node.js en France avec Consolex1, Pterodactyl, deployment simple et ressources adaptées aux APIs et services web.',
+    'Hébergez vos applications Node.js en France avec consolex1, Pterodactyl, deployment simple et ressources adaptées aux APIs et services web.',
   keywords: [
     'hébergement nodejs',
     'hébergement node.js',
@@ -48,7 +48,7 @@ export default function HebergementNodejsPage() {
           <span className="badge">Node.js • France</span>
           <h1>Hébergement Node.js en France</h1>
           <p className="section-description">
-            Consolex1 est une solution d’hébergement pour les projets Node.js, des APIs aux bots Discord, avec une infrastructure basée en France et un panel Pterodactyl.
+            consolex1 est une solution d’hébergement pour les projets Node.js, des APIs aux bots Discord, avec une infrastructure basée en France et un panel Pterodactyl.
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function HebergementNodejsPage() {
       <section className="cta-banner">
         <div>
           <h2>Besoin d’un hébergement Node.js fiable ?</h2>
-          <p>Consolex1 propose une base solide pour démarrer, tester et faire évoluer vos applications web ou Discord.</p>
+          <p>consolex1 propose une base solide pour démarrer, tester et faire évoluer vos applications web ou Discord.</p>
         </div>
         <Link className="button button-primary" href="/tarif">
           Comparer les plans

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Hébergement Python en France | Consolex1',
+  title: 'Hébergement Python en France | consolex1',
   description:
-    'Hébergez vos applications Python, scripts et services web en France avec Consolex1 et Pterodactyl.',
+    'Hébergez vos applications Python, scripts et services web en France avec consolex1 et Pterodactyl.',
   keywords: [
     'hébergement python',
     'python france',
@@ -46,14 +46,14 @@ export default function HebergementPythonPage() {
           <span className="badge">Python • France</span>
           <h1>Hébergement Python en France</h1>
           <p className="section-description">
-            Consolex1 prend en charge les applications Python, qu’il s’agisse de scripts, de bots Discord, d’APIs ou de petits services web.
+            consolex1 prend en charge les applications Python, qu’il s’agisse de scripts, de bots Discord, d’APIs ou de petits services web.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-header">
-          <h2>Pourquoi considérer Consolex1 pour Python ?</h2>
+          <h2>Pourquoi considérer consolex1 pour Python ?</h2>
         </div>
         <div className="cards-grid">
           {useCases.map((item) => (
@@ -81,7 +81,7 @@ export default function HebergementPythonPage() {
       <section className="cta-banner">
         <div>
           <h2>Vous avez un projet Python à héberger ?</h2>
-          <p>Consolex1 offre une base simple et locale pour lancer vos applications, scripts et bots en Europe.</p>
+          <p>consolex1 offre une base simple et locale pour lancer vos applications, scripts et bots en Europe.</p>
         </div>
         <Link className="button button-primary" href="/tarif">
           Voir les plans
