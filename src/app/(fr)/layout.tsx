@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://consolex1.com',
     languages: {
-      fr: 'https://consolex1.com/',
       en: 'https://consolex1.com/en',
     },
   },

@@ -3,7 +3,7 @@ import ConsentBanner from '../components/ConsentBanner';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <html lang="fr">
       <body>
         {children}
         <ConsentBanner />

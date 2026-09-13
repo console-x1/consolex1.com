@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     canonical: 'https://consolex1.com/en',
     languages: {
       fr: 'https://consolex1.com/',
-      en: 'https://consolex1.com/en',
     },
   },
   icons: {
