@@ -1,5 +1,6 @@
 import './globals.css';
 import ConsentBanner from '../components/ConsentBanner';
+import TrafficTradeBanner from '../components/TrafficTradeBanner';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,8 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <ConsentBanner />
-        <div></div>
-        <script src="https://traffictrade.fr/ads.js" data-token="HW04Dr84486h3iZWdQVUM3zpdyC1ZIpv" ></script>
+        <TrafficTradeBanner />
       </body>
     </html>
   );
