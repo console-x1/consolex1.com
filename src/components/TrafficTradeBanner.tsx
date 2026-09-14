@@ -33,6 +33,14 @@ export default function TrafficTradeBanner() {
       <div className="ad-slot-inner">
         <span className="ad-slot-label">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
         <div ref={containerRef} className="ad-slot-frame" />
+        <a
+          className="ad-slot-credit"
+          href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {isEnglish ? "Powered by TrafficTrade.fr" : "Propulsé par TrafficTrade.fr"}
+        </a>
       </div>
     </div>
   );
