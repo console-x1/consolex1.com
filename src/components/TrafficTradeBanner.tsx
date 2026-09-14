@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const TRAFFICTRADE_TOKEN = "HW04Dr84486h3iZWdQVUM3zpdyC1ZIpv";
 
 export default function TrafficTradeBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  useEffect(() => {
+    setIsEnglish(pathname?.startsWith("/en") ?? false);
+  }, [pathname]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -21,5 +28,12 @@ export default function TrafficTradeBanner() {
     container.appendChild(script);
   }, []);
 
-  return <div ref={containerRef} />;
+  return (
+    <div className="ad-slot">
+      <div className="ad-slot-inner">
+        <span className="ad-slot-label">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
+        <div ref={containerRef} className="ad-slot-frame" />
+      </div>
+    </div>
+  );
 }
