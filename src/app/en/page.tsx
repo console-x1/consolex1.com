@@ -63,7 +63,7 @@ const plans = [
   },
   {
     title: 'Basic Plan',
-    price: '1.39 €/month',
+    price: '1.49 €/month',
     description: 'Entry-level offer for light projects with database support.',
     accent: 'blue' as const,
     features: [
@@ -77,7 +77,7 @@ const plans = [
   },
   {
     title: 'Pro',
-    price: '2.99 €/month',
+    price: '2.49 €/month',
     description: 'For active bots, small APIs and regular traffic sites.',
     accent: 'yellow' as const,
     features: [
@@ -91,7 +91,7 @@ const plans = [
   },
   {
     title: 'Premium',
-    price: '4.49 €/month',
+    price: '3.49 €/month',
     description: 'Stronger resources for production services and heavier traffic.',
     accent: 'orange' as const,
     features: [
