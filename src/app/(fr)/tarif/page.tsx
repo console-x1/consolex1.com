@@ -17,7 +17,7 @@ const plans = [
   },
   {
     title: 'Basic',
-    price: '1,39 €/mois',
+    price: '1,49 €/mois',
     description: "Entrée de gamme stable avec base de données et plus de capacité.",
     accent: 'blue' as const,
     features: [
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     title: 'Pro',
-    price: '2,99 €/mois',
+    price: '2,49 €/mois',
     description: 'Conçu pour les services en ligne et les bots à usage régulier.',
     accent: 'yellow' as const,
     features: [
@@ -45,7 +45,7 @@ const plans = [
   },
   {
     title: 'Premium',
-    price: '4,49 €/mois',
+    price: '3,49 €/mois',
     description: 'Ressources intensives pour des applications permanentes ou des services plus lourds.',
     accent: 'orange' as const,
     features: [
