@@ -170,7 +170,7 @@ export default function EnHome() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Paris — Equinix PA5</span>
-          <h1>French hosting for Node.js, Python, Discord and websites.</h1>
+          <h2>French hosting for Node.js, Python, Discord and websites.</h2>
           <p className="section-description">
             consolex1 provides direct access to a French server with simplified deployment and a Pterodactyl control panel.
           </p>

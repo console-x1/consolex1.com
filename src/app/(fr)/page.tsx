@@ -187,7 +187,7 @@ export default function Home() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Paris — Equinix PA5</span>
-          <h1>Hébergement français pour Node.js, Python, Discord et sites web.</h1>
+          <h2>Hébergement français pour Node.js, Python, Discord et sites web.</h2>
           <p className="section-description">
             consolex1 fournit un accès direct à un serveur français, avec déploiement simplifié et panneau d'administration via Pterodactyl.
           </p>
