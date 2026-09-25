@@ -7,11 +7,15 @@ export const metadata = {
   keywords: [
     'hébergement nodejs',
     'hébergement node.js',
+    'node.js hosting',
+    'node js hosting',
+    'hosting node.js',
     'node.js france',
     'api node.js',
     'serveur node.js',
+    'hébergement api node.js',
+    'pterodactyl hosting',
     'consolex1',
-    'pterodactyl',
   ],
 };
 

@@ -6,10 +6,14 @@ export const metadata = {
     'Learn how to use Pterodactyl with consolex1 to manage your apps, Discord bots and web services with ease.',
   keywords: [
     'pterodactyl hosting',
+    'hosting pterodactyl',
     'pterodactyl france',
     'pterodactyl panel',
-    'consolex1',
+    'panel hosting',
     'discord bot hosting',
+    'node.js hosting',
+    'python hosting',
+    'consolex1',
   ],
 };
 

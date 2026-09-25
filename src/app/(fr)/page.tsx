@@ -3,21 +3,26 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'consolex1 | Hébergement français pour bots Discord, Node.js et Python',
-  description: 'consolex1 propose un hébergement français pour bots Discord, APIs, sites web et applications Node.js/Python, avec infrastructure en France et panel Pterodactyl.',
+  title: 'Hébergement Discord, Node.js, Python et sites web en France | consolex1',
+  description: 'consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python avec serveurs en France et panel Pterodactyl.',
   keywords: [
     'hébergement français',
     'hébergeur français',
     'hébergement bot discord',
+    'hébergement discord',
     'hébergement node.js',
     'hébergement python',
-    'hébergement discord',
-    'pterodactyl',
-    'hébergement gratuit',
-    'cloud france',
-    'serveur france',
+    'hébergement site web france',
+    'hosting france',
     'bot discord france',
-    'api node.js'
+    'discord bot hosting',
+    'node js hosting',
+    'python hosting',
+    'pterodactyl hosting',
+    'serveur france',
+    'hébergement gratuit',
+    'api node.js',
+    'consolex1',
   ],
   openGraph: {
     title: 'consolex1 — Hébergement français pour bots et applications',

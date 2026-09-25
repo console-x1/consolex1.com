@@ -7,10 +7,14 @@ export const metadata = {
   keywords: [
     'hébergement france',
     'hébergement français',
-    'serveur en france',
     'hébergeur français',
-    'consolex1',
+    'hosting france',
+    'serveur en france',
+    'serveur hébergement france',
+    'france hosting',
     'equinix pa5',
+    'hebergement france',
+    'consolex1',
   ],
 };
 

@@ -6,12 +6,15 @@ export const metadata = {
     'Host your Node.js applications in France with consolex1, including Pterodactyl, simple deployment and resources for APIs and web services.',
   keywords: [
     'node.js hosting',
+    'nodejs hosting',
+    'hosting node.js',
     'node.js france',
     'host node.js app',
     'api node.js',
     'server node.js',
+    'web hosting france',
+    'pterodactyl hosting',
     'consolex1',
-    'pterodactyl',
   ],
 };
 

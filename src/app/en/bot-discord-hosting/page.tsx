@@ -6,11 +6,15 @@ export const metadata = {
     'Host your Discord bot in France with consolex1, using Node.js, Python, Pterodactyl, backups and a local infrastructure.',
   keywords: [
     'discord bot hosting',
-    'discord bot europe',
+    'hosting discord bot',
     'host discord bot',
+    'discord bot europe',
+    'bot discord host',
     'node.js bot discord',
     'python bot discord',
-    'pterodactyl',
+    'pterodactyl hosting',
+    'hosting in france',
+    'free discord bot hosting',
     'consolex1',
   ],
 };

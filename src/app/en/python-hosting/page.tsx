@@ -6,10 +6,13 @@ export const metadata = {
     'Host your Python applications, scripts and services in France with consolex1 and Pterodactyl.',
   keywords: [
     'python hosting',
+    'hosting python',
     'python france',
     'python server',
     'python app hosting',
     'discord bot python',
+    'best python hosting',
+    'pterodactyl hosting',
     'consolex1',
   ],
 };

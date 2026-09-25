@@ -6,10 +6,14 @@ export const metadata = {
     'Hébergez vos applications Python, scripts et services web en France avec consolex1 et Pterodactyl.',
   keywords: [
     'hébergement python',
+    'python hosting',
+    'hosting python',
     'python france',
     'serveur python',
     'application python',
     'bot python discord',
+    'hébergement applications python',
+    'pterodactyl hosting',
     'consolex1',
   ],
 };

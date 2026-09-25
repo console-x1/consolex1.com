@@ -3,20 +3,24 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
-  title: 'consolex1 | French hosting for Discord bots, Node.js and Python apps',
-  description: 'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with infrastructure in France and a Pterodactyl panel.',
+  title: 'French Hosting for Discord Bots, Node.js, Python and Websites | consolex1',
+  description: 'consolex1 provides reliable French hosting for Discord bots, APIs, websites, Node.js apps and Python services with a France-based server and Pterodactyl panel.',
   keywords: [
     'french hosting',
+    'hosting in france',
     'discord bot hosting',
+    'host discord bot',
+    'discord hosting',
+    'nodejs hosting',
     'node.js hosting',
     'python hosting',
-    'host discord bot',
-    'pterodactyl',
+    'web hosting france',
     'free hosting',
-    'hosting in france',
+    'pterodactyl hosting',
+    'server in france',
     'france cloud server',
-    'node js hosting',
-    'python server'
+    'python server',
+    'consolex1',
   ],
   openGraph: {
     title: 'consolex1 — French hosting for bots and applications',

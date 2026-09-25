@@ -8,11 +8,15 @@ export const metadata = {
     'hébergement bot discord',
     'bot discord france',
     'hébergement discord',
+    'discord bot hosting',
+    'host discord bot',
+    'hébergement bot discord france',
     'node.js bot discord',
     'python bot discord',
-    'pterodactyl',
+    'bot discord node.js',
+    'pterodactyl hosting',
+    'hébergeur discord',
     'consolex1',
-    'discord bot hosting',
   ],
 };
 
