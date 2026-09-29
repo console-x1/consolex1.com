@@ -60,6 +60,13 @@ const plans = [
 ];
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/tarif',
+      languages: {
+        fr: 'https://consolex1.com/tarif',
+        en: 'https://consolex1.com/en/pricing',
+      },
+    },
   title: 'Tarifs',
   description: "Comparez les offres consolex1 et choisissez celle qui convient à votre projet.",
 };

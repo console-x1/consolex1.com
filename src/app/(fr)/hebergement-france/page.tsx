@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/hebergement-france',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-france',
+        en: 'https://consolex1.com/en/france-hosting',
+      },
+    },
   title: 'Hébergement en France | consolex1',
   description:
     'Hébergement en France pour bots Discord, APIs, services web et applications Node.js/Python avec consolex1.',

@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/terms',
+      languages: {
+        fr: 'https://consolex1.com/cgu',
+        en: 'https://consolex1.com/en/terms',
+      },
+    },
   title: 'Terms',
   description: 'consolex1 terms of use describing rights, obligations, and service commitments.',
   keywords: ['terms', 'consolex1 terms', 'conditions', 'hosting service'],

@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/mentions',
+      languages: {
+        fr: 'https://consolex1.com/mentions',
+        en: 'https://consolex1.com/en/legal-notice',
+      },
+    },
   title: 'Mentions légales',
   description: 'Mentions légales de consolex1, expliquant l’éditeur, l’hébergement et le cadre juridique.',
   keywords: ['mentions légales', 'service consolex1', 'hébergement français', 'association'],

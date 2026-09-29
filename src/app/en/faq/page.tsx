@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/faq',
+      languages: {
+        fr: 'https://consolex1.com/faq',
+        en: 'https://consolex1.com/en/faq',
+      },
+    },
   title: 'FAQ',
   description: 'Answers to common questions about consolex1 hosting, server location, and limitations.',
   keywords: ['FAQ', 'consolex1 help', 'hosting questions', 'discord bot', 'pterodactyl', 'French hosting'],

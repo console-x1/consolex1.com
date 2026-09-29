@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/pterodactyl-hosting',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-pterodactyl',
+        en: 'https://consolex1.com/en/pterodactyl-hosting',
+      },
+    },
   title: 'Pterodactyl Hosting | consolex1',
   description:
     'Learn how to use Pterodactyl with consolex1 to manage your apps, Discord bots and web services with ease.',

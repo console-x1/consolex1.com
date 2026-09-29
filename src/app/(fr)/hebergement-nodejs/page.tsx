@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/hebergement-nodejs',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-nodejs',
+        en: 'https://consolex1.com/en/nodejs-hosting',
+      },
+    },
   title: 'Hébergement Node.js en France | consolex1',
   description:
     'Hébergez vos applications Node.js en France avec consolex1, Pterodactyl, deployment simple et ressources adaptées aux APIs et services web.',

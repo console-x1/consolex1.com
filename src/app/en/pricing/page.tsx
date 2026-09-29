@@ -60,6 +60,13 @@ const plans = [
 ];
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/pricing',
+      languages: {
+        fr: 'https://consolex1.com/tarif',
+        en: 'https://consolex1.com/en/pricing',
+      },
+    },
   title: 'Pricing',
   description: 'Compare consolex1 plans and choose the package for your project.',
   openGraph: {

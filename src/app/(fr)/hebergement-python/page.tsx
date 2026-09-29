@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/hebergement-python',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-python',
+        en: 'https://consolex1.com/en/python-hosting',
+      },
+    },
   title: 'Hébergement Python en France | consolex1',
   description:
     'Hébergez vos applications Python, scripts et services web en France avec consolex1 et Pterodactyl.',

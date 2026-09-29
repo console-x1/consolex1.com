@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/legal-notice',
+      languages: {
+        fr: 'https://consolex1.com/mentions',
+        en: 'https://consolex1.com/en/legal-notice',
+      },
+    },
   title: 'Legal notice',
   description: 'Legal information about consolex1, including publisher details and hosting terms.',
   openGraph: {

@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/politique-de-confidentialite',
+      languages: {
+        fr: 'https://consolex1.com/politique-de-confidentialite',
+        en: 'https://consolex1.com/en/privacy-policy',
+      },
+    },
   title: 'Politique de confidentialité',
   description: 'Politique de confidentialité de consolex1, décrivant le traitement des données et la protection de la vie privée.',
   keywords: ['politique de confidentialité', 'données personnelles', 'RGPD', 'consolex1'],

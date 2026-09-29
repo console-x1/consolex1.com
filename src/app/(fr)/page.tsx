@@ -3,6 +3,13 @@ import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/',
+      languages: {
+        fr: 'https://consolex1.com/',
+        en: 'https://consolex1.com/en',
+      },
+    },
   title: 'Hébergement Discord, Node.js, Python et sites web en France | consolex1',
   description: 'consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python avec serveurs en France et panel Pterodactyl.',
   keywords: [

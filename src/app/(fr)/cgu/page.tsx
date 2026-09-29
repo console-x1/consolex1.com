@@ -1,4 +1,11 @@
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/cgu',
+      languages: {
+        fr: 'https://consolex1.com/cgu',
+        en: 'https://consolex1.com/en/terms',
+      },
+    },
   title: 'CGU',
   description: 'Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.',
   keywords: ['CGU', 'conditions générales', 'service consolex1', 'association'],

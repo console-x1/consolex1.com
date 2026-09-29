@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/en/discord-bot-nodejs-hosting',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-bot-discord-nodejs',
+        en: 'https://consolex1.com/en/discord-bot-nodejs-hosting',
+      },
+    },
   title: 'Discord Bot Node.js Hosting in France | consolex1',
   description:
     'Discover Node.js Discord bot hosting in France with consolex1, including Pterodactyl, stability and simple deployment.',

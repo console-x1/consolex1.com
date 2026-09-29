@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export const metadata = {
+    alternates: {
+      canonical: 'https://consolex1.com/hebergement-bot-discord-python',
+      languages: {
+        fr: 'https://consolex1.com/hebergement-bot-discord-python',
+        en: 'https://consolex1.com/en/discord-bot-python-hosting',
+      },
+    },
   title: 'Hébergement Bot Discord Python en France | consolex1',
   description:
     'Hébergez votre bot Discord Python en France avec consolex1, une infrastructure locale et des outils de gestion simplifiés.',

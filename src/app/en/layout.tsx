@@ -25,12 +25,6 @@ export const metadata: Metadata = {
   description:
     'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
   metadataBase: new URL('https://consolex1.com'),
-  alternates: {
-    canonical: 'https://consolex1.com/en',
-    languages: {
-      fr: 'https://consolex1.com/',
-    },
-  },
   icons: {
     icon: '/avatar.png',
     shortcut: '/avatar.png',
