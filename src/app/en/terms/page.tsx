@@ -38,6 +38,12 @@ export default function EnTermsPage() {
         <p>Using proxies, VPNs, tunnels or mechanisms to hide connection origin or bypass third-party restrictions is banned.</p>
         <p>This includes services deployed to hide, redirect, or relay activity that violates third-party terms.</p>
 
+        <h2>Resource-intensive games and servers</h2>
+        <p>To preserve available resources for all our users, <strong>hosting BombSquad servers is not permitted on our free plans</strong>.</p>
+        <p>BombSquad can generate significant bandwidth and server resource usage, which is incompatible with the limits and objectives of our free plans.</p>
+        <p>This restriction applies to <strong>any BombSquad server</strong>, regardless of the number of players or the configuration used.</p>
+        <p>Paid plans may be used for this type of server, provided that our Terms of Service and applicable resource limits are respected.</p>
+
         <h2>Association plans</h2>
         <p>consolex1 is intended as an association-style project. This status is not yet official.</p>
         <p>No paid services are offered until the status is formalized.</p>

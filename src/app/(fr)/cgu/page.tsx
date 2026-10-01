@@ -38,6 +38,12 @@ export default function CGUPage() {
         <p>L’usage de proxy, VPN, tunnel ou de tout mécanisme visant à dissimuler l’origine d’une connexion ou à contourner des limitations est également interdit.</p>
         <p>Cela inclut les services déployés pour cacher, rediriger ou relayer des activités en violation des conditions d’utilisation de tiers.</p>
 
+        <h2>Jeux et serveurs gourmands en ressources</h2>
+        <p>Afin de préserver les ressources disponibles pour l’ensemble de nos utilisateurs, <strong>l’hébergement de serveurs BombSquad n’est pas autorisé sur nos offres gratuites</strong>.</p>
+        <p>BombSquad peut générer une consommation importante de bande passante et de ressources serveur, incompatible avec les limites et les objectifs de nos offres gratuites.</p>
+        <p>Cette restriction s’applique à <strong>tout serveur BombSquad</strong>, quel que soit le nombre de joueurs ou la configuration utilisée.</p>
+        <p>Les offres payantes peuvent être utilisées pour ce type de serveur, sous réserve du respect de nos CGU et des limites de ressources applicables.</p>
+
         <h2>Engagement associatif</h2>
         <p>consolex1 se positionne comme un projet à vocation associative. Ce statut n’est pas encore officiel aujourd’hui.</p>
         <p>Dans cette attente, aucun service payant ne sera vendu.</p>
