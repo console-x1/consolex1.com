@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -72,6 +73,8 @@ export default function EnHebergementFrancePage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="en" subject="a small project hosted in France" />
 
       <section className="cta-banner">
         <div>

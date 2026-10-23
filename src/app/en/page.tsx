@@ -10,8 +10,8 @@ export const metadata = {
         en: 'https://consolex1.com/en',
       },
     },
-  title: 'French Hosting for Discord Bots, Node.js, Python and Websites | consolex1',
-  description: 'consolex1 provides reliable French hosting for Discord bots, APIs, websites, Node.js apps and Python services with a France-based server and Pterodactyl panel.',
+  title: 'Free Hosting in France for Node.js, Python and Discord Bots | consolex1',
+  description: 'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots. Start at €0 without a credit card, on servers in Paris.',
   keywords: [
     'french hosting',
     'hosting in france',
@@ -30,16 +30,16 @@ export const metadata = {
     'consolex1',
   ],
   openGraph: {
-    title: 'consolex1 — French hosting for bots and applications',
-    description: 'consolex1 provides French hosting for Discord bots, websites and Python applications.',
+    title: 'Free hosting in France for apps and bots | consolex1',
+    description: 'A French free hosting provider for Node.js, Python and Discord bots, with a €0 plan and servers in Paris.',
     url: 'https://consolex1.com/en',
     siteName: 'consolex1',
     images: ['/avatar.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'consolex1 — French hosting',
-    description: 'consolex1 provides French hosting for Discord bots, websites and Python applications.',
+    title: 'Free hosting in France | consolex1',
+    description: 'Free Node.js, Python and Discord bot hosting in France, without a credit card.',
     images: ['/avatar.png'],
   },
 };
@@ -149,17 +149,17 @@ const faqs = [
 
 const relatedPages = [
   {
-    title: 'Discord bot hosting',
-    description: 'Learn how to host a Discord bot in France with a dependable setup.',
-    href: '/en/bot-discord-hosting',
+    title: 'Free Discord bot hosting',
+    description: 'Host a small Discord bot for free in France, subject to the published resource limits.',
+    href: '/en/discord-bot-hosting',
   },
   {
-    title: 'Node.js hosting',
+    title: 'Free Node.js hosting',
     description: 'A useful page for APIs, services and web apps built on Node.js.',
     href: '/en/nodejs-hosting',
   },
   {
-    title: 'Python hosting',
+    title: 'Free Python hosting',
     description: 'A practical route for Python scripts, bots and lightweight backends.',
     href: '/en/python-hosting',
   },
@@ -169,9 +169,24 @@ const relatedPages = [
     href: '/en/pterodactyl-hosting',
   },
   {
-    title: 'Hosting in France',
-    description: 'A helpful page for projects looking for an EU-based deployment option.',
-    href: '/en/france-hosting',
+    title: 'Free hosting in France',
+    description: 'Learn about the Paris location, the Equinix PA5 datacenter and free-plan limits.',
+    href: '/en/free-hosting-france',
+  },
+  {
+    title: 'Free hosting without a credit card',
+    description: 'Start on the €0 plan without entering card details.',
+    href: '/en/free-hosting-without-credit-card',
+  },
+  {
+    title: 'Free hosting',
+    description: 'Check supported runtimes, free resources and frequently asked questions.',
+    href: '/en/free-hosting',
+  },
+  {
+    title: 'Practical deployment guides',
+    description: 'Step-by-step instructions for Discord bots, Node.js and Python projects.',
+    href: '/en/guides',
   },
 ];
 
@@ -181,9 +196,9 @@ export default function EnHome() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Paris — Equinix PA5</span>
-          <h2>French hosting for Node.js, Python, Discord and websites.</h2>
+          <h1>Free hosting in France for Node.js, Python and Discord bots.</h1>
           <p className="section-description">
-            consolex1 provides direct access to a French server with simplified deployment and a Pterodactyl control panel.
+            consolex1 is a French free hosting provider for small apps and bots. Start at €0 without a credit card, with servers in Paris at Equinix PA5 and a Pterodactyl panel.
           </p>
         </div>
       </section>

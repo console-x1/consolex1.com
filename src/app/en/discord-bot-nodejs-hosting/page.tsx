@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -60,6 +61,8 @@ export default function EnHebergementBotDiscordNodejsPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="en" subject="a Discord bot built with Node.js" />
 
       <section className="cta-banner">
         <div>

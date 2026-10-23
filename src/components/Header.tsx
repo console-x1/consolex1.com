@@ -11,14 +11,15 @@ const labels = {
     brand: 'consolex1',
     tariffs: 'Tarifs',
     faq: 'FAQ',
+    guides: 'Guides',
     plans: 'Plans',
     discord: 'Discord',
     heroButtonPrimary: 'Rejoindre Discord',
     heroButtonSecondary: 'Découvrir nos offres',
     eyebrow: 'Basé à Paris — datacenter Equinix PA5',
-    title: 'Hébergez rapidement vos apps, bots et sites web.',
+    title: 'Hébergement gratuit pour vos apps, bots et sites web.',
     description:
-      'consolex1 met à disposition un serveur situé en France, avec un panneau Pterodactyl intuitif.',
+      'consolex1 est un hébergeur français gratuit pour vos petits projets Node.js, Python et bots Discord, sur une infrastructure à Paris.',
     statusText: "État des services :",
     alternate: 'English',
     alert: 'Vous cherchiez le profil de consolex1 et non pas l’hébergeur ?',
@@ -28,14 +29,15 @@ const labels = {
     brand: 'consolex1',
     tariffs: 'Pricing',
     faq: 'FAQ',
+    guides: 'Guides',
     plans: 'Plans',
     discord: 'Discord',
     heroButtonPrimary: 'Join Discord',
     heroButtonSecondary: 'View plans',
     eyebrow: 'Hosted in Paris — Equinix PA5',
-    title: 'Host your apps, bots and websites quickly.',
+    title: 'Free hosting for your apps, bots and websites.',
     description:
-      'consolex1 provides a French server with an easy Pterodactyl panel and automated HTTPS certificates.',
+      'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots, with infrastructure in Paris.',
     statusText: 'Check service status:',
     alternate: 'Français',
     alert: 'Looking for the consolex1 profile instead of hosting?',
@@ -43,15 +45,17 @@ const labels = {
   },
 };
 
-const routeMap: Record<Locale, { pricing: string; faq: string; home: string }> = {
+const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; home: string }> = {
   fr: {
     pricing: '/tarif',
     faq: '/faq',
+    guides: '/guides',
     home: '/',
   },
   en: {
     pricing: '/en/pricing',
     faq: '/en/faq',
+    guides: '/en/guides',
     home: '/en',
   },
 };
@@ -76,12 +80,15 @@ export default function Header({ locale }: HeaderProps) {
             {text.brand}
           </Link>
 
-          <nav className="nav-links" aria-label="Navigation principale">
+          <nav className="nav-links" aria-label={locale === 'en' ? 'Main navigation' : 'Navigation principale'}>
             <Link href={routeMap[locale].pricing}>
               {text.tariffs}
             </Link>
             <Link href={routeMap[locale].faq}>
               {text.faq}
+            </Link>
+            <Link href={routeMap[locale].guides}>
+              {text.guides}
             </Link>
             <a href={`${routeMap[locale].home}#plans`}>
               {text.plans}
@@ -100,14 +107,14 @@ export default function Header({ locale }: HeaderProps) {
 
         <div className="hero-copy">
           <p className="eyebrow">{text.eyebrow}</p>
-          <h1>{text.title}</h1>
+          <p className="hero-title">{text.title}</p>
           <p className="hero-text">{text.description}</p>
 
           <div className="hero-actions">
             <a className="button button-primary" href="https://discord.consolex1.com">
               {text.heroButtonPrimary}
             </a>
-            <a className="button button-secondary" href="#plans">
+            <a className="button button-secondary" href={`${routeMap[locale].home}#plans`}>
               {text.heroButtonSecondary}
             </a>
           </div>

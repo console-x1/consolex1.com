@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -68,6 +69,8 @@ export default function EnHebergementPterodactylPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="en" subject="a project managed with Pterodactyl" />
 
       <section className="cta-banner">
         <div>

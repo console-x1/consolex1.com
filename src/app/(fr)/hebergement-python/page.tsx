@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -8,7 +9,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/python-hosting',
       },
     },
-  title: 'Hébergement Python en France | consolex1',
+  title: 'Hébergement gratuit Python en France | consolex1',
   description:
     'Hébergez vos applications Python, scripts et services web en France avec consolex1 et Pterodactyl.',
   keywords: [
@@ -55,7 +56,7 @@ export default function HebergementPythonPage() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Python • France</span>
-          <h1>Hébergement Python en France</h1>
+          <h1>Hébergement gratuit Python en France</h1>
           <p className="section-description">
             consolex1 prend en charge les applications Python, qu’il s’agisse de scripts, de bots Discord, d’APIs ou de petits services web.
           </p>
@@ -88,6 +89,8 @@ export default function HebergementPythonPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="fr" subject="une petite application Python" />
 
       <section className="cta-banner">
         <div>

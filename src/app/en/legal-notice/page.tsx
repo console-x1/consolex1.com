@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'consolex1 legal notice',
     description: 'Legal information about consolex1, including publisher details and hosting terms.',
-    url: 'https://consolex1.com/en/mentions',
+    url: 'https://consolex1.com/en/legal-notice',
     images: ['/avatar.png'],
   },
 };

@@ -133,10 +133,12 @@ a {
   font-size: 0.85rem;
 }
 
-.hero-panel h1 {
+.hero-title {
   margin: 0;
   font-size: clamp(2.5rem, 4vw, 3.8rem);
   line-height: 1.05;
+  font-weight: 700;
+  color: white;
 }
 
 .hero-text {
@@ -201,6 +203,7 @@ a {
   margin-bottom: 2rem;
 }
 
+.section-header h1,
 .section-header h2 {
   margin: 0;
   font-size: clamp(2rem, 3vw, 2.75rem);

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -8,7 +9,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/discord-bot-hosting',
       },
     },
-  title: 'Discord Bot Hosting in France | consolex1',
+  title: 'Free Discord Bot Hosting in France | consolex1',
   description:
     'Host your Discord bot in France with consolex1, using Node.js, Python, Pterodactyl, backups and a local infrastructure.',
   keywords: [
@@ -75,8 +76,8 @@ const faqs = [
 ];
 
 const relatedLinks = [
-  { title: 'Discord bot Node.js hosting', href: '/en/bot-discord-nodejs-hosting' },
-  { title: 'Discord bot Python hosting', href: '/en/bot-discord-python-hosting' },
+  { title: 'Discord bot Node.js hosting', href: '/en/discord-bot-nodejs-hosting' },
+  { title: 'Discord bot Python hosting', href: '/en/discord-bot-python-hosting' },
   { title: 'Node.js hosting', href: '/en/nodejs-hosting' },
   { title: 'Python hosting', href: '/en/python-hosting' },
   { title: 'Hosting in France', href: '/en/france-hosting' },
@@ -88,9 +89,9 @@ export default function EnHebergementBotDiscordPage() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Discord bot hosting • France</span>
-          <h1>Discord bot hosting in France</h1>
+          <h1>Free Discord bot hosting in France</h1>
           <p className="section-description">
-            consolex1 helps you host a Discord bot in France with a stable environment, appropriate resources and simple management through Pterodactyl.
+            consolex1 is a French free hosting provider for small Discord bots, with a €0 plan, no credit card requirement and servers in Paris at Equinix PA5.
           </p>
         </div>
       </section>
@@ -153,6 +154,8 @@ export default function EnHebergementBotDiscordPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="en" subject="a small Discord bot" />
 
       <section className="cta-banner">
         <div>

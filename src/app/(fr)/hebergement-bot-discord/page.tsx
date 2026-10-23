@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -8,7 +9,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/discord-bot-hosting',
       },
     },
-  title: 'Hébergement bot Discord en France | consolex1',
+  title: 'Hébergement gratuit de bot Discord en France | consolex1',
   description:
     'Hébergez votre bot Discord en France sur consolex1 avec Node.js, Python, Pterodactyl, backups et infrastructure locale.',
   keywords: [
@@ -89,9 +90,9 @@ export default function HebergementBotDiscordPage() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Hébergement bot Discord • France</span>
-          <h1>Hébergement de bot Discord en France</h1>
+          <h1>Hébergement gratuit de bot Discord en France</h1>
           <p className="section-description">
-            consolex1 vous aide à héberger rapidement un bot Discord en France, avec un environnement stable, des ressources adaptées et une gestion simple via Pterodactyl.
+            consolex1 est un hébergeur français gratuit pour petits bots Discord, avec une offre à 0 €, sans carte bancaire et des serveurs à Paris chez Equinix PA5.
           </p>
         </div>
       </section>
@@ -154,6 +155,8 @@ export default function HebergementBotDiscordPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="fr" subject="un petit bot Discord" />
 
       <section className="cta-banner">
         <div>

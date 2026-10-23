@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HostingFaqs from '@/components/HostingFaqs';
 
 export const metadata = {
     alternates: {
@@ -8,7 +9,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/nodejs-hosting',
       },
     },
-  title: 'Hébergement Node.js en France | consolex1',
+  title: 'Hébergement gratuit Node.js en France | consolex1',
   description:
     'Hébergez vos applications Node.js en France avec consolex1, Pterodactyl, deployment simple et ressources adaptées aux APIs et services web.',
   keywords: [
@@ -57,7 +58,7 @@ export default function HebergementNodejsPage() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Node.js • France</span>
-          <h1>Hébergement Node.js en France</h1>
+          <h1>Hébergement gratuit Node.js en France</h1>
           <p className="section-description">
             consolex1 est une solution d’hébergement pour les projets Node.js, des APIs aux bots Discord, avec une infrastructure basée en France et un panel Pterodactyl.
           </p>
@@ -90,6 +91,8 @@ export default function HebergementNodejsPage() {
           ))}
         </div>
       </section>
+
+      <HostingFaqs locale="fr" subject="une petite application Node.js" />
 
       <section className="cta-banner">
         <div>

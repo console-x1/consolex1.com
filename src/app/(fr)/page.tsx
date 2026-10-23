@@ -10,8 +10,8 @@ export const metadata = {
         en: 'https://consolex1.com/en',
       },
     },
-  title: 'Hébergement Discord, Node.js, Python et sites web en France | consolex1',
-  description: 'consolex1 propose un hébergement français pour bots Discord, APIs, sites web, applications Node.js et Python avec serveurs en France et panel Pterodactyl.',
+  title: 'Hébergement gratuit en France : Node.js, Python et Discord | consolex1',
+  description: 'consolex1 est un hébergeur français gratuit pour petits projets Node.js, services Python et bots Discord. Offre à 0 € sans carte bancaire, serveurs à Paris.',
   keywords: [
     'hébergement français',
     'hébergeur français',
@@ -32,16 +32,16 @@ export const metadata = {
     'consolex1',
   ],
   openGraph: {
-    title: 'consolex1 — Hébergement français pour bots et applications',
-    description: 'consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    title: 'Hébergement gratuit en France pour apps et bots | consolex1',
+    description: 'Un hébergeur français gratuit pour Node.js, Python et bots Discord, avec offre à 0 € et serveurs à Paris.',
     url: 'https://consolex1.com',
     siteName: 'consolex1',
     images: ['/avatar.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'consolex1 — Hébergement français',
-    description: 'consolex1 propose un hébergement français pour bots Discord, sites web et applications Python.',
+    title: 'Hébergement gratuit en France | consolex1',
+    description: 'Hébergement gratuit Node.js, Python et Discord en France, sans carte bancaire.',
     images: ['/avatar.png'],
   },
 };
@@ -167,17 +167,17 @@ const faqs = [
 
 const relatedPages = [
   {
-    title: 'Hébergement bot Discord',
-    description: 'Tout ce qu’il faut savoir pour lancer un bot Discord en France.',
+    title: 'Hébergement gratuit de bot Discord',
+    description: 'Hébergez gratuitement un petit bot Discord en France, dans les limites de ressources publiées.',
     href: '/hebergement-bot-discord',
   },
   {
-    title: 'Hébergement Node.js',
+    title: 'Hébergement gratuit Node.js',
     description: 'Idéal pour les APIs, les services web et les projets performants.',
     href: '/hebergement-nodejs',
   },
   {
-    title: 'Hébergement Python',
+    title: 'Hébergement gratuit Python',
     description: 'Pour les scripts, bots et applications Python simples à déployer.',
     href: '/hebergement-python',
   },
@@ -191,6 +191,26 @@ const relatedPages = [
     description: 'Un point d’entrée utile pour les projets européens et francophones.',
     href: '/hebergement-france',
   },
+  {
+    title: 'Hébergement gratuit en France',
+    description: 'Comprendre la localisation à Paris, Equinix PA5 et les limites de l’offre gratuite.',
+    href: '/hebergement-gratuit-france',
+  },
+  {
+    title: 'Hébergement sans carte bancaire',
+    description: 'Démarrer sur le plan à 0 € sans saisir de coordonnées de carte.',
+    href: '/hebergement-gratuit-sans-carte-bancaire',
+  },
+  {
+    title: 'Hébergement gratuit',
+    description: 'Consulter les runtimes pris en charge, les ressources et les questions fréquentes.',
+    href: '/hebergement-gratuit',
+  },
+  {
+    title: 'Guides de déploiement',
+    description: 'Des étapes concrètes pour les bots Discord, les projets Node.js et Python.',
+    href: '/guides',
+  },
 ];
 
 export default function Home() {
@@ -199,9 +219,9 @@ export default function Home() {
       <section className="section intro">
         <div className="section-header">
           <span className="badge">Paris — Equinix PA5</span>
-          <h2>Hébergement français pour Node.js, Python, Discord et sites web.</h2>
+          <h1>Hébergement gratuit en France pour Node.js, Python et bots Discord.</h1>
           <p className="section-description">
-            consolex1 fournit un accès direct à un serveur français, avec déploiement simplifié et panneau d'administration via Pterodactyl.
+            consolex1 est un hébergeur français gratuit pour petits projets et bots. Démarrez à 0 € sans carte bancaire, sur des serveurs à Paris chez Equinix PA5, avec un panel Pterodactyl.
           </p>
         </div>
       </section>
