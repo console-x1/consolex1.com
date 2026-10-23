@@ -77,6 +77,9 @@ const faqs = [
 ];
 
 const relatedLinks = [
+  { title: 'Héberger gratuitement un bot Discord', href: '/guides/heberger-bot-discord-gratuitement' },
+  { title: 'Déployer un bot discord.js', href: '/guides/deployer-bot-discordjs' },
+  { title: 'Déployer un bot discord.py', href: '/guides/deployer-bot-discord-py' },
   { title: 'Hébergement bot Discord Node.js', href: '/hebergement-bot-discord-nodejs' },
   { title: 'Hébergement bot Discord Python', href: '/hebergement-bot-discord-python' },
   { title: 'Hébergement Node.js', href: '/hebergement-nodejs' },

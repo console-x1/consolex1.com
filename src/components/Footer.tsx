@@ -12,12 +12,14 @@ const footerLinks = {
     legal: '/mentions',
     terms: '/cgu',
     privacy: '/politique-de-confidentialite',
+    about: '/a-propos',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
     trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
     legalLabel: 'Mentions légales',
     termsLabel: 'CGU',
     privacyLabel: 'Politique de confidentialité',
+    aboutLabel: 'À propos',
     statusLabel: 'Statut',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
@@ -27,12 +29,14 @@ const footerLinks = {
     legal: '/en/legal-notice',
     terms: '/en/terms',
     privacy: '/en/privacy-policy',
+    about: '/en/about',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
     trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
     legalLabel: 'Legal notice',
     termsLabel: 'Terms',
     privacyLabel: 'Privacy policy',
+    aboutLabel: 'About',
     statusLabel: 'Status',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
@@ -54,6 +58,9 @@ export default function Footer({ locale }: FooterProps) {
         </Link>
         <Link href={links.privacy} locale={locale}>
           {links.privacyLabel}
+        </Link>
+        <Link href={links.about} locale={locale}>
+          {links.aboutLabel}
         </Link>
         <a href={links.statusUrl}>{links.statusLabel}</a>
         <a href={links.mapsUrl} target="_blank" rel="noopener noreferrer">

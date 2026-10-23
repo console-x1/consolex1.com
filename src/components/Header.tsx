@@ -12,6 +12,7 @@ const labels = {
     tariffs: 'Tarifs',
     faq: 'FAQ',
     guides: 'Guides',
+    about: 'À propos',
     plans: 'Plans',
     discord: 'Discord',
     heroButtonPrimary: 'Rejoindre Discord',
@@ -30,6 +31,7 @@ const labels = {
     tariffs: 'Pricing',
     faq: 'FAQ',
     guides: 'Guides',
+    about: 'About',
     plans: 'Plans',
     discord: 'Discord',
     heroButtonPrimary: 'Join Discord',
@@ -45,17 +47,19 @@ const labels = {
   },
 };
 
-const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; home: string }> = {
+const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; about: string; home: string }> = {
   fr: {
     pricing: '/tarif',
     faq: '/faq',
     guides: '/guides',
+    about: '/a-propos',
     home: '/',
   },
   en: {
     pricing: '/en/pricing',
     faq: '/en/faq',
     guides: '/en/guides',
+    about: '/en/about',
     home: '/en',
   },
 };
@@ -89,6 +93,9 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
             <Link href={routeMap[locale].guides}>
               {text.guides}
+            </Link>
+            <Link href={routeMap[locale].about}>
+              {text.about}
             </Link>
             <a href={`${routeMap[locale].home}#plans`}>
               {text.plans}

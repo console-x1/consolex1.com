@@ -76,6 +76,9 @@ const faqs = [
 ];
 
 const relatedLinks = [
+  { title: 'How to host a Discord bot for free', href: '/en/guides/host-discord-bot-for-free' },
+  { title: 'How to deploy a discord.js bot', href: '/en/guides/deploy-discordjs-bot' },
+  { title: 'How to deploy a discord.py bot', href: '/en/guides/deploy-discord-py-bot' },
   { title: 'Discord bot Node.js hosting', href: '/en/discord-bot-nodejs-hosting' },
   { title: 'Discord bot Python hosting', href: '/en/discord-bot-python-hosting' },
   { title: 'Node.js hosting', href: '/en/nodejs-hosting' },

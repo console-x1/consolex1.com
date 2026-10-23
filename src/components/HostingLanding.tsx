@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { HostingPageContent, Locale } from '@/lib/hosting-pages';
 import { hostingResources } from '@/lib/hosting-pages';
+import { getGuides } from '@/lib/guides';
 
 type HostingLandingProps = {
   content: HostingPageContent;
@@ -8,6 +9,8 @@ type HostingLandingProps = {
 };
 
 export default function HostingLanding({ content, locale }: HostingLandingProps) {
+  const guideIndices = content.slug.endsWith('france') ? [0, 1] : [0, 1, 2];
+  const relatedGuides = getGuides(locale).filter((_, index) => guideIndices.includes(index));
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -60,6 +63,17 @@ export default function HostingLanding({ content, locale }: HostingLandingProps)
           <h2>{locale === 'en' ? 'Hosting pages and practical guides' : 'Hébergement et guides pratiques'}</h2>
         </div>
         <div className="cards-grid">
+          {relatedGuides.map((guide) => (
+            <Link
+              className="card"
+              href={`${locale === 'en' ? '/en' : ''}/guides/${guide.slug}`}
+              key={guide.slug}
+              style={{ textDecoration: 'none' }}
+            >
+              <h3>{guide.title}</h3>
+              <p>{guide.description}</p>
+            </Link>
+          ))}
           {hostingResources[locale].map((resource) => (
             <Link className="card" href={resource.href} key={resource.href} style={{ textDecoration: 'none' }}>
               <h3>{resource.title}</h3>

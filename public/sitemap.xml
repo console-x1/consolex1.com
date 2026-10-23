@@ -31,6 +31,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://consolex1.com/a-propos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://consolex1.com/hebergement-bot-discord</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -95,6 +100,11 @@
     <loc>https://consolex1.com/en/privacy-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>  
+  </url>
+  <url>
+    <loc>https://consolex1.com/en/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://consolex1.com/en/discord-bot-hosting</loc>

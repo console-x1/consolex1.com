@@ -11,7 +11,7 @@ export const metadata = {
       },
     },
   title: 'Free Hosting in France for Node.js, Python and Discord Bots | consolex1',
-  description: 'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots. Start at €0 without a credit card, on servers in Paris.',
+  description: 'consolex1 is a French free hosting provider for Node.js, Python, Discord bot and web hosting. The €0 plan requires no credit card and includes 256 MB RAM and 512 MB storage on servers in Paris at Equinix PA5.',
   keywords: [
     'french hosting',
     'hosting in france',
@@ -48,7 +48,7 @@ const features = [
   {
     title: 'France-based server',
     description:
-      'Hosted in Paris to reduce latency for Europe, with an Equinix PA5 datacenter and high-speed network.',
+      'Hosted in Paris, France, at the Equinix PA5 datacenter. A Paris location can reduce network distance for nearby users; actual latency depends on the route.',
   },
   {
     title: 'Accessible Pterodactyl panel',
@@ -198,7 +198,7 @@ export default function EnHome() {
           <span className="badge">Paris — Equinix PA5</span>
           <h1>Free hosting in France for Node.js, Python and Discord bots.</h1>
           <p className="section-description">
-            consolex1 is a French free hosting provider for small apps and bots. Start at €0 without a credit card, with servers in Paris at Equinix PA5 and a Pterodactyl panel.
+            consolex1 is a French free hosting provider for Node.js, Python, Discord bot and small web application hosting. Its €0 plan requires no credit card and includes 256 MB RAM and 512 MB storage; services run on servers in Paris at Equinix PA5 and are managed with the Pterodactyl panel.
           </p>
         </div>
       </section>
@@ -248,6 +248,26 @@ export default function EnHome() {
               <p>{page.description}</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <h2>About consolex1</h2>
+          <p>
+            An independent French hosting project built to make it easier to learn, test and launch small projects.
+            Read about the project’s purpose, infrastructure, free-tier limits and roadmap.
+          </p>
+        </div>
+        <div className="cards-grid">
+          <Link className="card" href="/en/about" style={{ textDecoration: 'none' }}>
+            <h3>Why consolex1 exists</h3>
+            <p>Meet the project, its Paris infrastructure, philosophy and community.</p>
+          </Link>
+          <Link className="card" href="/en/guides" style={{ textDecoration: 'none' }}>
+            <h3>Deployment guides</h3>
+            <p>Follow practical guides for Discord bots, Node.js apps and Python services.</p>
+          </Link>
         </div>
       </section>
 

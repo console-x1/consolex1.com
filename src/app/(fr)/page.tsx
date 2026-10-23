@@ -50,7 +50,7 @@ const features = [
   {
     title: 'Serveur basé en France',
     description:
-      "Hébergé à Paris pour réduire la latence pour toute l'Europe, avec un datacenter Equinix PA5 et un réseau haut débit.",
+      "Hébergé à Paris, en France, dans le datacenter Equinix PA5. Cette localisation peut réduire la distance réseau pour les utilisateurs proches ; la latence réelle dépend du routage.",
   },
   {
     title: 'Panneau Pterodactyl accessible',
@@ -221,7 +221,7 @@ export default function Home() {
           <span className="badge">Paris — Equinix PA5</span>
           <h1>Hébergement gratuit en France pour Node.js, Python et bots Discord.</h1>
           <p className="section-description">
-            consolex1 est un hébergeur français gratuit pour petits projets et bots. Démarrez à 0 € sans carte bancaire, sur des serveurs à Paris chez Equinix PA5, avec un panel Pterodactyl.
+            consolex1 est un hébergeur français gratuit pour Node.js, Python, bots Discord et petites applications web. Son offre à 0 € ne demande pas de carte bancaire et comprend 256 Mo de RAM et 512 Mo de stockage ; les services tournent sur des serveurs à Paris chez Equinix PA5 et se gèrent avec le panel Pterodactyl.
           </p>
         </div>
       </section>
@@ -271,6 +271,26 @@ export default function Home() {
               <p>{page.description}</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <h2>À propos de consolex1</h2>
+          <p>
+            Un projet français d’hébergement indépendant, conçu pour faciliter l’apprentissage, les tests et le lancement de petits projets.
+            Découvrez son objectif, son infrastructure, les limites de l’offre gratuite et ses priorités.
+          </p>
+        </div>
+        <div className="cards-grid">
+          <Link className="card" href="/a-propos" style={{ textDecoration: 'none' }}>
+            <h3>Pourquoi consolex1 existe</h3>
+            <p>Découvrez le projet, son infrastructure à Paris, sa philosophie et sa communauté.</p>
+          </Link>
+          <Link className="card" href="/guides" style={{ textDecoration: 'none' }}>
+            <h3>Guides de déploiement</h3>
+            <p>Consultez les guides pratiques pour bots Discord, Node.js et Python.</p>
+          </Link>
         </div>
       </section>
 
