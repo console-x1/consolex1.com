@@ -41,7 +41,7 @@ const highlights = [
   {
     title: 'Compatible with Node.js and Python',
     description:
-      'consolex1 supports Discord bots in Node.js, Python, Java, Golang, Rust and nginx depending on project needs.',
+      'consolex1 supports Discord bots in Node.js, Python, Java, Go, Rust and nginx depending on project needs.',
   },
   {
     title: 'Great for serious projects',

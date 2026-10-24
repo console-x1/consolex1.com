@@ -61,7 +61,7 @@ const features = [
 
 const plans = [
   {
-    title: 'Free Plan',
+    title: 'Free',
     price: '0 €/mois',
     description: 'Idéal pour expérimenter : bots de test, mini-sites et prototypes.',
     accent: 'green' as const,
@@ -70,12 +70,12 @@ const plans = [
       'RAM : 256 Mo',
       'Swap : 128 Mo',
       'Stockage : 512 Mo',
-      'Bases de données : non incluses',
-      'I/O : faible priorité',
+      'Bases de données : 0',
+      'Poids d’E/S disque : 150',
     ],
   },
   {
-    title: 'Basic Plan',
+    title: 'Basic',
     price: '1,49 €/mois',
     description: "Offre d'entrée pour des projets légers avec base de données et plus de mémoire.",
     accent: 'blue' as const,
@@ -85,7 +85,7 @@ const plans = [
       'Swap : 256 Mo',
       'Stockage : 1 Go',
       'Bases de données : 1',
-      'I/O : usage standard',
+      'Poids d’E/S disque : 250',
     ],
   },
   {
@@ -99,7 +99,7 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 2 Go',
       'Bases de données : 2',
-      'I/O : priorité moyenne',
+      'Poids d’E/S disque : 400',
     ],
   },
   {
@@ -113,7 +113,7 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 3 Go',
       'Bases de données : 3',
-      'I/O : priorité élevée',
+      'Poids d’E/S disque : 500',
     ],
   },
 ];
@@ -126,12 +126,12 @@ const faqs = [
   },
   {
     question: 'Pourquoi faire un plan gratuit ?',
-    answer: 'J’ai créé ce service parce que, quand j’étais plus jeune, j’avais aussi besoin d’un free host pour apprendre et tester. Aujourd’hui, je veux pouvoir aider les autres de la même manière, tandis que les plans payants servent uniquement à financer la machine.'
+    answer: 'J’ai créé ce service parce que, quand j’étais plus jeune, j’avais aussi besoin d’un hébergeur gratuit pour apprendre et tester. Aujourd’hui, je veux pouvoir aider les autres de la même manière, tandis que les offres payantes sont prévues pour contribuer au financement de l’infrastructure.'
   },
   {
     question: 'Quelles technologies sont supportées ?',
     answer:
-      'Les technologies Node.js, Python, Java, Golang, Rust et nginx sont supportés.',
+      'Les technologies Node.js, Python, Java, Go, Rust et nginx sont prises en charge.',
   },
   {
     question: 'La gestion via Discord est-elle possible ?',
@@ -144,12 +144,12 @@ const faqs = [
       "Notre infrastructure est située en France (datacenter Equinix PA5), pour réduire la latence pour toute l'Europe.",
   },
   {
-    question: 'Combien de backups sont disponibles ?',
-    answer: 'Les plans payants incluent deux backups, tandis que le plan gratuit ne propose pas de backups intégrés.',
+    question: 'Combien de sauvegardes sont prévues ?',
+    answer: 'Les offres payantes prévoient deux sauvegardes, mais elles ne sont pas encore disponibles à l’achat. Le forfait gratuit ne propose pas de sauvegardes intégrées.',
   },
   {
     question: 'Mon serveur peut-il être suspendu pour inactivité ?',
-    answer: 'Seul les serveurs gratuit nessecitent une modification de fichier tout les 7 jours pour éviter la suspension. Les plans payants ne sont pas soumis à cette restriction.',
+    answer: 'Seuls les serveurs gratuits nécessitent une modification de fichier tous les 7 jours pour éviter leur suspension.',
   },
   {
     question: 'Mon serveur est suspendu, que faire ?',
@@ -161,7 +161,7 @@ const faqs = [
   },
   {
     question: 'Pourquoi consolex1 au lieu d\'un VPS ?',
-    answer: 'Contrairement à un VPS, vous n\'avez pas besoin de gérer l\'infrastructure. Heberger vos projets devient plus simple et rapide, avec un panneau intuitif et des ressources adaptées à vos besoins.',
+    answer: 'Contrairement à un VPS, vous n\'avez pas besoin de gérer l\'infrastructure. Héberger vos projets devient plus simple et rapide, avec un panneau intuitif et des ressources adaptées à vos besoins.',
   }
 ];
 
@@ -235,11 +235,11 @@ export default function Home() {
       <section className="section plans-section" id="plans">
         <div className="section-header">
           <h2>Nos offres</h2>
-          <p>Des options adaptées aux tests, au développement et même à la production.</p>
+          <p>Découvrez les ressources de l’offre gratuite. Les offres payantes sont affichées en vue de leur disponibilité future. Elles ne sont actuellement pas disponibles à l’achat.</p>
         </div>
         <div className="plans-grid">
           {plans.map((plan) => (
-            <PlanCard key={plan.title} {...plan} />
+            <PlanCard key={plan.title} {...plan} locale="fr" />
           ))}
         </div>
       </section>

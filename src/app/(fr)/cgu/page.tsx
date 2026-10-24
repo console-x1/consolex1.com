@@ -42,11 +42,11 @@ export default function CGUPage() {
         <p>Afin de préserver les ressources disponibles pour l’ensemble de nos utilisateurs, <strong>l’hébergement de serveurs BombSquad n’est pas autorisé sur nos offres gratuites</strong>.</p>
         <p>BombSquad peut générer une consommation importante de bande passante et de ressources serveur, incompatible avec les limites et les objectifs de nos offres gratuites.</p>
         <p>Cette restriction s’applique à <strong>tout serveur BombSquad</strong>, quel que soit le nombre de joueurs ou la configuration utilisée.</p>
-        <p>Les offres payantes peuvent être utilisées pour ce type de serveur, sous réserve du respect de nos CGU et des limites de ressources applicables.</p>
+        <p>Lorsque les offres payantes seront disponibles, elles pourront être utilisées pour ce type de serveur, sous réserve du respect de nos CGU et des limites de ressources applicables.</p>
 
         <h2>Engagement associatif</h2>
         <p>consolex1 se positionne comme un projet à vocation associative. Ce statut n’est pas encore officiel aujourd’hui.</p>
-        <p>Dans cette attente, aucun service payant ne sera vendu.</p>
+        <p>Les offres payantes sont affichées en vue de leur disponibilité future. Elles ne sont actuellement pas disponibles à l’achat.</p>
 
         <h2>Vérifications de sécurité</h2>
         <p>Des contrôles manuels et automatisés peuvent être effectués par l’administration pour vérifier les services hébergés.</p>

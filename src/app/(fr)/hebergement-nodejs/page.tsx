@@ -48,7 +48,7 @@ const useCases = [
 const checklist = [
   'Choisissez un plan adapté à la RAM, au stockage et à la fréquence d’usage de votre application.',
   'Utilisez la console et le SFTP pour déployer vos fichiers et configurer votre projet.',
-  'Privilégiez des backups réguliers pour sécuriser la base de données et les fichiers critiques.',
+  'Privilégiez des sauvegardes régulières pour sécuriser la base de données et les fichiers critiques.',
   'Testez votre application via le domaine, les ports et les variables d’environnement.',
 ];
 

@@ -12,7 +12,7 @@ const plans = [
       'Swap : 128 Mo',
       'Stockage : 512 Mo',
       'Bases de données : 0',
-      'Block IO Weight : 150',
+      'Poids d’E/S disque : 150',
     ],
   },
   {
@@ -26,7 +26,7 @@ const plans = [
       'Swap : 256 Mo',
       'Stockage : 1 Go',
       'Bases de données : 1',
-      'Block IO Weight : 250',
+      'Poids d’E/S disque : 250',
     ],
   },
   {
@@ -40,7 +40,7 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 2 Go',
       'Bases de données : 2',
-      'Block IO Weight : 400',
+      'Poids d’E/S disque : 400',
     ],
   },
   {
@@ -54,7 +54,7 @@ const plans = [
       'Swap : 512 Mo',
       'Stockage : 3 Go',
       'Bases de données : 3',
-      'Block IO Weight : 500',
+      'Poids d’E/S disque : 500',
     ],
   },
 ];
@@ -76,11 +76,11 @@ export default function TarifPage() {
     <section className="section">
       <div className="section-header">
         <h1>Nos tarifs</h1>
-        <p>Options simples et transparents pour tester, développer et mettre en production.</p>
+        <p>Options simples et transparentes pour tester, développer et mettre en production. Les offres payantes sont affichées en vue de leur disponibilité future et ne sont actuellement pas disponibles à l’achat.</p>
       </div>
       <div className="plans-grid">
         {plans.map((plan) => (
-          <PlanCard key={plan.title} {...plan} />
+          <PlanCard key={plan.title} {...plan} locale="fr" />
         ))}
       </div>
     </section>

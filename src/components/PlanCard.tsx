@@ -4,9 +4,12 @@ type PlanCardProps = {
   description: string;
   features: string[];
   accent: 'green' | 'blue' | 'yellow' | 'orange';
+  locale: 'en' | 'fr';
 };
 
-export default function PlanCard({ title, price, description, features, accent }: PlanCardProps) {
+export default function PlanCard({ title, price, description, features, accent, locale }: PlanCardProps) {
+  const isFreePlan = price.startsWith('0 €/');
+
   return (
     <article className={`plan-card plan-card-${accent}`}>
       <div className="plan-header">
@@ -21,7 +24,11 @@ export default function PlanCard({ title, price, description, features, accent }
       </ul>
       <div className="plan-action">
         <a className="button button-secondary" href="https://discord.consolex1.com">
-          {price.startsWith("0 €/") ? 'Discord' : 'Unavailable'}
+          {isFreePlan
+            ? 'Discord'
+            : locale === 'fr'
+              ? 'Indisponible pour le moment'
+              : 'Not available yet'}
         </a>
       </div>
     </article>

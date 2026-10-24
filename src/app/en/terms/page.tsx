@@ -42,11 +42,11 @@ export default function EnTermsPage() {
         <p>To preserve available resources for all our users, <strong>hosting BombSquad servers is not permitted on our free plans</strong>.</p>
         <p>BombSquad can generate significant bandwidth and server resource usage, which is incompatible with the limits and objectives of our free plans.</p>
         <p>This restriction applies to <strong>any BombSquad server</strong>, regardless of the number of players or the configuration used.</p>
-        <p>Paid plans may be used for this type of server, provided that our Terms of Service and applicable resource limits are respected.</p>
+        <p>Once paid plans become available, they may be used for this type of server, provided that our Terms of Service and applicable resource limits are respected.</p>
 
         <h2>Association plans</h2>
         <p>consolex1 is intended as an association-style project. This status is not yet official.</p>
-        <p>No paid services are offered until the status is formalized.</p>
+        <p>Paid plans are displayed for future availability. They are currently not available for purchase.</p>
 
         <h2>Security reviews</h2>
         <p>Manual and automated checks may be performed by the administration to verify hosted services.</p>

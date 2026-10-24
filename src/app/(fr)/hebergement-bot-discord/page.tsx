@@ -11,7 +11,7 @@ export const metadata = {
     },
   title: 'Hébergement gratuit de bot Discord en France | consolex1',
   description:
-    'Hébergez votre bot Discord en France sur consolex1 avec Node.js, Python, Pterodactyl, backups et infrastructure locale.',
+    'Hébergez votre bot Discord en France sur consolex1 avec Node.js, Python, Pterodactyl, sauvegardes et infrastructure locale.',
   keywords: [
     'hébergement bot discord',
     'bot discord france',
@@ -42,7 +42,7 @@ const highlights = [
   {
     title: 'Compatible Node.js et Python',
     description:
-      'consolex1 prend en charge les bots Discord Node.js, Python, Java, Golang, Rust et nginx selon les besoins du projet.',
+      'consolex1 prend en charge les bots Discord Node.js, Python, Java, Go et Rust selon les besoins du projet.',
   },
   {
     title: 'Idéal pour les projets sérieux',

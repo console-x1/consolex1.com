@@ -47,7 +47,7 @@ const useCases = [
 const notes = [
   'Choisissez le plan le plus adapté au nombre de services, à la mémoire RAM et au stockage nécessaire.',
   'Pterodactyl permet de gérer les instances avec un accès direct à la console et aux fichiers.',
-  'Un bon monitoring et des backups réguliers sont essentiels pour les projets Python en production.',
+  'Une bonne supervision et des sauvegardes régulières sont essentielles pour les projets Python en production.',
 ];
 
 export default function HebergementPythonPage() {

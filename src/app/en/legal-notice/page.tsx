@@ -31,7 +31,7 @@ export default function EnMentionsPage() {
 
         <h2>Status</h2>
         <p>The project is currently being structured and is not yet formally registered as an association.</p>
-        <p>Until that status is official, no paid services are sold through the platform.</p>
+        <p>Paid plans are displayed for future availability. They are currently not available for purchase.</p>
         <p>I created consolex1 because, when I was younger, I also needed a free host to test, learn, and develop my projects. Today, with the means and capabilities available, I want to offer the same help to others, allowing everyone to start for free. Paid plans exist only to help finance the infrastructure and support the project in the long term.</p>
 
         <h2>Hosting</h2>

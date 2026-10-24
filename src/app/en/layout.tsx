@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: {
@@ -75,6 +76,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-shell">
       <Header locale="en" />
+      <Breadcrumbs />
       <main lang="en">{children}</main>
       <Footer locale="en" />
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: {
@@ -85,6 +86,7 @@ export default function FrLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-shell">
       <Header locale="fr" />
+      <Breadcrumbs />
       <main lang="fr">{children}</main>
       <Footer locale="fr" />
     </div>

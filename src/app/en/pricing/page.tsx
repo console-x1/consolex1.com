@@ -82,11 +82,11 @@ export default function EnTarifPage() {
     <section className="section">
       <div className="section-header">
         <h1>Pricing</h1>
-        <p>Simple, transparent options for testing, development, and production.</p>
+        <p>Simple, transparent options for testing, development, and production. Paid plans are displayed for future availability. They are currently not available for purchase.</p>
       </div>
       <div className="plans-grid">
         {plans.map((plan) => (
-          <PlanCard key={plan.title} {...plan} />
+          <PlanCard key={plan.title} {...plan} locale="en" />
         ))}
       </div>
     </section>

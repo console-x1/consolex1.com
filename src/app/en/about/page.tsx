@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     siteName: 'consolex1',
     type: 'website',
     locale: 'en_US',
+    images: ['/avatar.png'],
   },
   robots: { index: true, follow: true },
 };

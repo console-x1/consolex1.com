@@ -8,7 +8,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/faq',
       },
     },
-  title: 'FAQ',
+  title: 'FAQ sur l’hébergement consolex1 | consolex1',
   description: "Réponses aux questions courantes sur l'offre, la localisation des serveurs et les limitations.",
   keywords: ['FAQ', 'consolex1 comment', 'consolex1 suspend', 'hébergement français', 'discord bot', 'pterodactyl', 'questions'],
   openGraph: {
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'Quelles technologies sont prises en charge ?',
-    answer: 'Les environnements Node.js et Python, nginx, Java, Golang et Rust sont pris en charge via Pterodactyl.',
+    answer: 'Les environnements Node.js et Python, nginx, Java, Go et Rust sont pris en charge via Pterodactyl.',
   },
   {
     question: 'Où est situé le serveur ?',
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'Puis-je obtenir une base de données ?',
-    answer: 'Oui, ou presque. Seuls les offres payantes incluent une ou plusieurs bases de données.',
+    answer: 'Les offres payantes sont prévues pour inclure une ou plusieurs bases de données, mais elles ne sont pas encore disponibles à l’achat.',
   },
 ];
 
@@ -46,7 +46,7 @@ export default function FAQPage() {
   return (
     <section className="section faq-overview">
       <div className="section-header">
-        <h1>FAQ</h1>
+        <h1>Questions fréquentes</h1>
         <p>Réponses claires pour comprendre l’offre, les services disponibles et leurs limites.</p>
       </div>
       <div className="faq-grid">

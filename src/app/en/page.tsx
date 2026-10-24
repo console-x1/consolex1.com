@@ -59,7 +59,7 @@ const features = [
 
 const plans = [
   {
-    title: 'Free Plan',
+    title: 'Free',
     price: '0 €/month',
     description: 'Ideal for testing: bots, mini-sites and prototypes.',
     accent: 'green' as const,
@@ -68,12 +68,12 @@ const plans = [
       'RAM: 256 MB',
       'Swap: 128 MB',
       'Storage: 512 MB',
-      'Databases: not included',
-      'I/O: low priority',
+      'Databases: 0',
+      'Block IO Weight: 150',
     ],
   },
   {
-    title: 'Basic Plan',
+    title: 'Basic',
     price: '1.49 €/month',
     description: 'Entry-level offer for light projects with database support.',
     accent: 'blue' as const,
@@ -83,7 +83,7 @@ const plans = [
       'Swap: 256 MB',
       'Storage: 1 GB',
       'Databases: 1',
-      'I/O: standard usage',
+      'Block IO Weight: 250',
     ],
   },
   {
@@ -97,7 +97,7 @@ const plans = [
       'Swap: 512 MB',
       'Storage: 2 GB',
       'Databases: 2',
-      'I/O: medium priority',
+      'Block IO Weight: 400',
     ],
   },
   {
@@ -111,7 +111,7 @@ const plans = [
       'Swap: 512 MB',
       'Storage: 3 GB',
       'Databases: 3',
-      'I/O: high priority',
+      'Block IO Weight: 500',
     ],
   },
 ];
@@ -123,11 +123,11 @@ const faqs = [
   },
   {
     question: 'Why offer a free plan?',
-    answer: 'I created this service because, when I was younger, I also needed a free host to learn and test. Today, with the means and capabilities available, I want to offer the same help to others, allowing everyone to start for free. The paid plans exist only to help finance the infrastructure and support the project in the long term.',
+    answer: 'I created this service because, when I was younger, I also needed free hosting to learn and test. Today, I want to offer the same help to others and let everyone get started for free. Paid plans are displayed for future availability. They are currently not available for purchase.',
   },
   {
     question: 'Which technologies are supported?',
-    answer: 'Node.js, Python, Java, Golang, Rust, and nginx are supported.',
+    answer: 'Node.js, Python, Java, Go, Rust, and nginx are supported.',
   },
   {
     question: 'Can I manage my instance via Discord?',
@@ -138,8 +138,8 @@ const faqs = [
     answer: 'The infrastructure is located in France at the Equinix PA5 datacenter in Paris.',
   },
   {
-    question: 'How many backups are available?',
-    answer: 'Paid plans include two backups, while the free plan does not include automated backups.',
+    question: 'How many backups are planned?',
+    answer: 'Paid plans are planned to include two backups, but they are currently not available for purchase. The free plan does not include automated backups.',
   },
   {
     question: 'Why consolex1 instead of a VPS?',
@@ -198,7 +198,7 @@ export default function EnHome() {
           <span className="badge">Paris — Equinix PA5</span>
           <h1>Free hosting in France for Node.js, Python and Discord bots.</h1>
           <p className="section-description">
-            consolex1 is a French free hosting provider for Node.js, Python, Discord bot and small web application hosting. Its €0 plan requires no credit card and includes 256 MB RAM and 512 MB storage; services run on servers in Paris at Equinix PA5 and are managed with the Pterodactyl panel.
+            consolex1 is a French free hosting provider for small Node.js and Python apps, Discord bots, and web services. Its €0 plan requires no credit card and includes 256 MB RAM and 512 MB storage; services run on servers in Paris at Equinix PA5 and are managed with the Pterodactyl panel.
           </p>
         </div>
       </section>
@@ -212,11 +212,11 @@ export default function EnHome() {
       <section className="section plans-section" id="plans">
         <div className="section-header">
           <h2>Our plans</h2>
-          <p>Options for testing, development, and even production workloads.</p>
+          <p>Review the free plan’s resources. Paid plans are displayed for future availability. They are currently not available for purchase.</p>
         </div>
         <div className="plans-grid">
           {plans.map((plan) => (
-            <PlanCard key={plan.title} {...plan} />
+            <PlanCard key={plan.title} {...plan} locale="en" />
           ))}
         </div>
       </section>

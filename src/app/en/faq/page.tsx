@@ -8,7 +8,7 @@ export const metadata = {
         en: 'https://consolex1.com/en/faq',
       },
     },
-  title: 'FAQ',
+  title: 'Hosting FAQ | consolex1',
   description: 'Answers to common questions about consolex1 hosting, server location, and limitations.',
   keywords: ['FAQ', 'consolex1 help', 'hosting questions', 'discord bot', 'pterodactyl', 'French hosting'],
   openGraph: {
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'Which technologies are supported?',
-    answer: 'Node.js, Python, nginx, Java, Golang and Rust are supported through Pterodactyl.',
+    answer: 'Node.js, Python, nginx, Java, Go and Rust are supported through Pterodactyl.',
   },
   {
     question: 'Where is the server located?',
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'Can I get a database?',
-    answer: 'Yes, paid plans include one or more databases.',
+    answer: 'Paid plans are planned to include one or more databases, but they are not currently available for purchase.',
   },
 ];
 
@@ -46,7 +46,7 @@ export default function EnFAQPage() {
   return (
     <section className="section faq-overview">
       <div className="section-header">
-        <h1>FAQ</h1>
+        <h1>Frequently asked questions</h1>
         <p>Clear answers to help you understand the offering, available services, and limits.</p>
       </div>
       <div className="faq-grid">

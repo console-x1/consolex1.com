@@ -25,7 +25,7 @@ const content = {
         heading: 'The free tier and our philosophy',
         paragraphs: [
           'The €0 plan does not require a credit card and includes 256 MB RAM and 512 MB storage. It is best suited to learning, testing and lightweight apps or bots; databases and automated backups are not included.',
-          'We value clear limits, learning by doing and being honest about what a small project can provide. Paid plans are presented to help fund infrastructure over time; please check the legal notice for the project’s current status and availability.',
+          'We value clear limits, learning by doing and being honest about what a small project can provide. Paid plans are displayed for future availability. They are currently not available for purchase.',
         ],
       },
       {
@@ -47,6 +47,7 @@ const content = {
     pricingLink: 'Compare plans',
     communityLink: 'Join Discord',
     emailLink: 'Email consolex1',
+    statusLink: 'View live status and uptime',
   },
   fr: {
     title: 'À propos de consolex1',
@@ -71,7 +72,7 @@ const content = {
         heading: 'Offre gratuite et philosophie',
         paragraphs: [
           'L’offre à 0 € ne demande pas de carte bancaire et comprend 256 Mo de RAM et 512 Mo de stockage. Elle convient surtout à l’apprentissage, aux tests et aux petits projets ; les bases de données et les sauvegardes automatiques ne sont pas incluses.',
-          'Nous privilégions des limites claires, l’apprentissage par la pratique et la transparence sur ce qu’un petit projet peut offrir. Les offres payantes sont présentées pour contribuer au financement de l’infrastructure à terme ; consultez les mentions légales pour connaître le statut et la disponibilité actuels du projet.',
+          'Nous privilégions des limites claires, l’apprentissage par la pratique et la transparence sur ce qu’un petit projet peut offrir. Les offres payantes sont affichées en vue de leur disponibilité future. Elles ne sont actuellement pas disponibles à l’achat.',
         ],
       },
       {
@@ -93,6 +94,7 @@ const content = {
     pricingLink: 'Comparer les offres',
     communityLink: 'Rejoindre Discord',
     emailLink: 'Écrire à consolex1',
+    statusLink: 'Consulter le statut et la disponibilité en direct',
   },
 } satisfies Record<Locale, {
   title: string;
@@ -104,6 +106,7 @@ const content = {
   pricingLink: string;
   communityLink: string;
   emailLink: string;
+  statusLink: string;
 }>;
 
 export default function AboutPage({ locale }: { locale: Locale }) {
@@ -171,6 +174,9 @@ export default function AboutPage({ locale }: { locale: Locale }) {
             <Link className="card" href={isEnglish ? '/en/legal-notice' : '/mentions'}>{text.legalLink}</Link>
             <Link className="card" href={isEnglish ? '/en/guides' : '/guides'}>{text.guidesLink}</Link>
             <Link className="card" href={isEnglish ? '/en/pricing' : '/tarif'}>{text.pricingLink}</Link>
+            <a className="card" href="https://status.consolex1.com/" target="_blank" rel="noopener noreferrer">
+              {text.statusLink}
+            </a>
           </div>
         </section>
         <section className="cta-banner">
