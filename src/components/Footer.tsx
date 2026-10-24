@@ -13,13 +13,15 @@ const footerLinks = {
     terms: '/cgu',
     privacy: '/politique-de-confidentialite',
     about: '/a-propos',
+    panelUrl: 'https://panel.consolex1.com/',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
-    trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
+    trustpilotUrl: 'https://fr.trustpilot.com/review/consolex1.com',
     legalLabel: 'Mentions légales',
     termsLabel: 'CGU',
     privacyLabel: 'Politique de confidentialité',
     aboutLabel: 'À propos',
+    panelLabel: 'Panel Pterodactyl',
     statusLabel: 'Statut',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
@@ -30,6 +32,7 @@ const footerLinks = {
     terms: '/en/terms',
     privacy: '/en/privacy-policy',
     about: '/en/about',
+    panelUrl: 'https://panel.consolex1.com/',
     statusUrl: 'https://status.consolex1.com',
     mapsUrl: 'https://maps.app.goo.gl/K8AQ4841f52D5dqA9',
     trustpilotUrl: 'https://www.trustpilot.com/review/consolex1.com',
@@ -37,6 +40,7 @@ const footerLinks = {
     termsLabel: 'Terms',
     privacyLabel: 'Privacy policy',
     aboutLabel: 'About',
+    panelLabel: 'Pterodactyl panel',
     statusLabel: 'Status',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
@@ -62,6 +66,7 @@ export default function Footer({ locale }: FooterProps) {
         <Link href={links.about} locale={locale}>
           {links.aboutLabel}
         </Link>
+        <a href={links.panelUrl}>{links.panelLabel}</a>
         <a href={links.statusUrl}>{links.statusLabel}</a>
         <a href={links.mapsUrl} target="_blank" rel="noopener noreferrer">
           {links.mapsLabel}

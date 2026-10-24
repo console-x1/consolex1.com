@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
     alternates: {
       canonical: 'https://consolex1.com/en/faq',
@@ -32,7 +34,7 @@ const faqs = [
   },
   {
     question: 'How do I manage my instance from Discord?',
-    answer: 'Currently, all account creation and server setup is triggered through our Discord bot.',
+    answer: 'Join the consolex1 Discord and verify your account in the verification channel. Then run /account register followed by /server create in the commands channel. Both commands must be used in that commands channel.',
   },
   {
     question: 'Can I get a database?',
@@ -54,6 +56,11 @@ export default function EnFAQPage() {
             <p>{item.answer}</p>
           </article>
         ))}
+      </div>
+      <div className="section-header" style={{ marginTop: '2rem' }}>
+        <Link className="button button-primary" href="/en/guides/create-consolex1-server">
+          Read the step-by-step server creation guide
+        </Link>
       </div>
     </section>
   );

@@ -148,6 +148,24 @@ export default function AboutPage({ locale }: { locale: Locale }) {
           </section>
         ))}
         <section className="section">
+          <div className="section-header">
+            <h2>{isEnglish ? 'Custom Pterodactyl eggs' : 'Eggs Pterodactyl personnalisés'}</h2>
+            <p className="section-description">
+              {isEnglish
+                ? 'The Node.js Universal and Python Universal eggs are developed by the consolex1 hosting provider. Their source code is publicly available on GitHub.'
+                : 'Les eggs Node.js Universal et Python Universal sont développés par l’hébergeur consolex1. Leur code source est disponible publiquement sur GitHub.'}
+            </p>
+          </div>
+          <div className="cards-grid">
+            <a className="card" href="https://github.com/console-x1/pterodactyl-node" target="_blank" rel="noopener noreferrer">
+              {isEnglish ? 'consolex1 Node.js egg — GitHub' : 'Egg Node.js consolex1 — GitHub'}
+            </a>
+            <a className="card" href="https://github.com/console-x1/pterodactyl-python" target="_blank" rel="noopener noreferrer">
+              {isEnglish ? 'consolex1 Python egg — GitHub' : 'Egg Python consolex1 — GitHub'}
+            </a>
+          </div>
+        </section>
+        <section className="section">
           <div className="cards-grid">
             <a className="card" href="https://me.consolex1.com">{text.profileLink}</a>
             <Link className="card" href={isEnglish ? '/en/legal-notice' : '/mentions'}>{text.legalLink}</Link>

@@ -178,6 +178,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://consolex1.com/guides/creer-un-serveur-consolex1</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://consolex1.com/en/free-hosting</loc>
     <priority>0.8</priority>
   </url>
@@ -211,6 +215,10 @@
   </url>
   <url>
     <loc>https://consolex1.com/en/guides/deploy-discord-py-bot</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://consolex1.com/en/guides/create-consolex1-server</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

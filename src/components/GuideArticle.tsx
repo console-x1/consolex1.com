@@ -21,6 +21,20 @@ export default function GuideArticle({
     publisher: { '@type': 'Organization', name: 'consolex1', url: 'https://consolex1.com' },
     mainEntityOfPage: `https://consolex1.com${locale === 'en' ? '/en' : ''}/guides/${guide.slug}`,
   };
+  const isServerCreationGuide =
+    guide.slug === 'create-consolex1-server' || guide.slug === 'creer-un-serveur-consolex1';
+  const eggRepository =
+    guide.slug.includes('nodejs') || guide.slug.includes('discordjs')
+      ? {
+          name: 'Node.js Universal',
+          url: 'https://github.com/console-x1/pterodactyl-node',
+        }
+      : guide.slug.includes('python') || guide.slug.includes('discord-py')
+        ? {
+            name: 'Python Universal',
+            url: 'https://github.com/console-x1/pterodactyl-python',
+          }
+        : undefined;
 
   return (
     <>
@@ -36,6 +50,48 @@ export default function GuideArticle({
             <p className="section-description">{guide.lead}</p>
           </div>
         </section>
+        {isServerCreationGuide && (
+          <section className="section">
+            <div className="section-header">
+              <h2>{locale === 'en' ? 'Open the right Discord channel' : 'Accéder au bon salon Discord'}</h2>
+            </div>
+            <div className="cards-grid">
+              <a
+                className="card"
+                href="https://discord.com/channels/1533218460975370332/1533401219043692737"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {locale === 'en' ? 'Open the verification channel' : 'Ouvrir le salon de vérification'}
+              </a>
+              <a
+                className="card"
+                href="https://discord.com/channels/1533218460975370332/1540032329559310446"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {locale === 'en' ? 'Open the commands channel' : 'Ouvrir le salon commandes'}
+              </a>
+            </div>
+          </section>
+        )}
+        {eggRepository && (
+          <section className="section">
+            <div className="section-header">
+              <h2>{locale === 'en' ? 'The consolex1 custom egg' : 'L’egg personnalisé consolex1'}</h2>
+              <p className="section-description">
+                {locale === 'en'
+                  ? `The ${eggRepository.name} egg is developed by the consolex1 hosting provider. Its source code is public on GitHub.`
+                  : `L’egg ${eggRepository.name} est développé par l’hébergeur consolex1. Son code source est public sur GitHub.`}
+              </p>
+            </div>
+            <div className="cards-grid">
+              <a className="card" href={eggRepository.url} target="_blank" rel="noopener noreferrer">
+                {locale === 'en' ? `View ${eggRepository.name} on GitHub` : `Voir ${eggRepository.name} sur GitHub`}
+              </a>
+            </div>
+          </section>
+        )}
         {guide.sections.map((section) => (
           <section className="section" key={section.heading}>
             <div className="section-header">
