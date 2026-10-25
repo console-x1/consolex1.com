@@ -52,6 +52,9 @@ export default function CGUPage() {
         <p>Des contrôles manuels et automatisés peuvent être effectués par l’administration pour vérifier les services hébergés.</p>
         <p>Ces contrôles ont uniquement pour objectif de garantir la sécurité et le respect des conditions d’utilisation.</p>
         <p>Ils ne récupèrent ni mots de passe, ni clés privées, ni informations de connexion utilisateur.</p>
+        <p>Pour des raisons de sécurité, nous vous recommandons vivement de ne pas stocker de mots de passe ou de clés API en clair.</p>
+        <p>Utilisez un fichier .env ! Les tests automatisés utilisent une IA, tout mot de passe ou clé API lu par l’IA pourrait potentiellement se retrouver sur Internet !</p>
+        <p>Les fichiers .env et config.json ne sont JAMAIS lus par notre équipe ni par les tests automatisés.</p>
 
         <h2>Responsabilité</h2>
         <p>consolex1 ne peut garantir une disponibilité ininterrompue du service.</p>

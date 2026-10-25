@@ -52,6 +52,9 @@ export default function EnTermsPage() {
         <p>Manual and automated checks may be performed by the administration to verify hosted services.</p>
         <p>These checks are intended to ensure security and compliance only.</p>
         <p>They do not collect passwords, private keys, or user authentication data.</p>
+        <p>For security reasons, we strongly recommend that you do not store passwords or API keys in plain text.</p>
+        <p>Use a .env file! Automated tests utilize AI, any password or API key read by the AI could potentially end up on the internet!</p>
+        <p>The .env and config.json files are NEVER read by our team or by automated tests.</p>
 
         <h2>Liability</h2>
         <p>consolex1 cannot guarantee uninterrupted availability.</p>
