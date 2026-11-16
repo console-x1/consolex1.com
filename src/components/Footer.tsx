@@ -75,6 +75,15 @@ export default function Footer({ locale }: FooterProps) {
           {links.trustpilotLabel}
         </a>
       </div>
+      <iframe
+        src="https://status.consolex1.com/badge?theme=dark"
+        title="Statut des services consolex1"
+        width="250"
+        height="30"
+        frameBorder="0"
+        scrolling="no"
+        style={{ colorScheme: 'normal' }}
+      />
     </footer>
   );
 }
