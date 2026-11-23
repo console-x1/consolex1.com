@@ -66,9 +66,7 @@ export default function ConsentBanner() {
         return;
       }
       const data = JSON.parse(stored);
-      if (data?.accepted) {
-        loadGtag(Boolean(data.anonymize));
-      }
+      if (data?.accepted) loadGtag(Boolean(data.anonymize));
     } catch (e) {
       setVisible(true);
     }
@@ -109,36 +107,19 @@ export default function ConsentBanner() {
   const m = locale === 'en' ? messages.en : messages.fr;
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        left: 12,
-        right: 12,
-        bottom: 12,
-        zIndex: 9999,
-        background: 'rgba(17, 24, 39, 0.95)',
-        color: '#f9fafb',
-        border: '1px solid rgba(148, 163, 184, 0.5)',
-        padding: 16,
-        borderRadius: 12,
-        boxShadow: '0 12px 28px rgba(15, 23, 42, 0.28)',
-        backdropFilter: 'blur(8px)',
-      }}
-    >
-      <div style={{ display: 'flex', gap: 16, alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-        <div style={{ flex: 1, minWidth: 240 }}>
-          <strong style={{ display: 'block', fontSize: 16 }}>{m.title}</strong>
-          <div style={{ marginTop: 6, lineHeight: 1.5, fontSize: 14 }}>
-            {m.desc}
-          </div>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10, fontSize: 14, cursor: 'pointer' }}>
-            <input type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />
+    <div className="fixed bottom-4 left-1/2 z-[9999] w-[min(720px,calc(100%-1.5rem))] animate-slide-up rounded-[20px] border border-white/16 bg-[rgba(10,14,22,.92)] px-5 py-[1.1rem] text-ink shadow-[0_24px_70px_rgba(0,0,0,.6)] backdrop-blur-[18px] [transform:translateX(-50%)]" role="dialog" aria-live="polite" aria-label={m.title}>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="min-w-[240px] flex-1 [&_p]:mt-[.35rem] [&_p]:mb-0 [&_p]:text-[.86rem] [&_p]:leading-[1.55] [&_p]:text-soft [&_strong]:block [&_strong]:text-[.98rem] [&_strong]:text-white">
+          <strong>{m.title}</strong>
+          <p>{m.desc}</p>
+          <label className="mt-[.7rem] flex cursor-pointer items-center gap-2 text-[.85rem] text-soft">
+            <input className="accent-brand" type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />
             {m.anonymizeLabel}
           </label>
         </div>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <button onClick={decline} style={{ padding: '10px 14px', background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', borderRadius: 8, cursor: 'pointer' }}>{m.decline}</button>
-          <button onClick={accept} style={{ padding: '10px 14px', background: '#8b5cf6', color: '#ffffff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>{m.accept}</button>
+        <div className="flex gap-2">
+          <button onClick={decline} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-[var(--bx,0px)] translate-y-[var(--by,0px)] transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-[250ms] ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] border-white/16 bg-transparent text-soft hover:border-white/30 hover:bg-white/[.028] hover:text-white" data-btn>{m.decline}</button>
+          <button onClick={accept} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-[var(--bx,0px)] translate-y-[var(--by,0px)] transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-[250ms] ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] bg-[linear-gradient(100deg,#4da3ff,#5eead4)] text-[#04101c] shadow-[0_10px_30px_-10px_rgba(77,163,255,.7)] hover:shadow-[0_16px_44px_-8px_rgba(77,163,255,.85)] after:absolute after:inset-0 after:-translate-x-[120%] after:transition-transform after:duration-700 after:ease-soft after:bg-[linear-gradient(105deg,transparent_30%,rgba(255,255,255,.5)_50%,transparent_70%)] hover:after:translate-x-[120%]" data-btn>{m.accept}</button>
         </div>
       </div>
     </div>

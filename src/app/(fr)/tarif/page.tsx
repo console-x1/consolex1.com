@@ -60,25 +60,25 @@ const plans = [
 ];
 
 export const metadata = {
-    alternates: {
-      canonical: 'https://consolex1.com/tarif',
-      languages: {
-        fr: 'https://consolex1.com/tarif',
-        en: 'https://consolex1.com/en/pricing',
-      },
+  alternates: {
+    canonical: 'https://consolex1.com/tarif',
+    languages: {
+      fr: 'https://consolex1.com/tarif',
+      en: 'https://consolex1.com/en/pricing',
     },
+  },
   title: 'Tarifs',
   description: "Comparez les offres consolex1 et choisissez celle qui convient à votre projet.",
 };
 
 export default function TarifPage() {
   return (
-    <section className="section">
-      <div className="section-header">
+    <section className="my-[clamp(3.5rem,8vw,5.5rem)]">
+      <div className="mb-9 max-w-[720px] [&_h1]:text-[clamp(2.1rem,4.6vw,3.3rem)] [&_h1]:tracking-[-.035em] [&_h2]:text-[clamp(1.6rem,3vw,2.3rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-[46rem] [&_p]:text-[1.04rem] [&_p]:leading-[1.75] [&_p]:text-soft [&_[data-btn]]:mt-2" data-reveal="header">
         <h1>Nos tarifs</h1>
         <p>Options simples et transparentes pour tester, développer et mettre en production. Les offres payantes sont affichées en vue de leur disponibilité future et ne sont actuellement pas disponibles à l’achat.</p>
       </div>
-      <div className="plans-grid">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-4">
         {plans.map((plan) => (
           <PlanCard key={plan.title} {...plan} locale="fr" />
         ))}

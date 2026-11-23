@@ -90,22 +90,12 @@ export default function Breadcrumbs() {
   if (path === '/' || path === '/en') return null;
 
   const parts = (isEnglish ? path.slice(4) : path.slice(1)).split('/').filter(Boolean);
-  const crumbs: Crumb[] = [
-    { label: isEnglish ? 'Home' : 'Accueil', href: isEnglish ? '/en' : '/' },
-  ];
+  const crumbs: Crumb[] = [{ label: isEnglish ? 'Home' : 'Accueil', href: isEnglish ? '/en' : '/' },];
 
-  if (parts[0] === 'guides' && parts.length > 1) {
-    crumbs.push({
-      label: routeLabels[locale].guides,
-      href: `${isEnglish ? '/en' : ''}/guides`,
-    });
-  }
+  if (parts[0] === 'guides' && parts.length > 1) crumbs.push({ label: routeLabels[locale].guides, href: `${isEnglish ? '/en' : ''}/guides` });
 
   const slug = parts[parts.length - 1];
-  crumbs.push({
-    label: routeLabels[locale][slug] ?? humanize(slug),
-    href: path,
-  });
+  crumbs.push({ label: routeLabels[locale][slug] ?? humanize(slug), href: path });
 
   const schema = {
     '@context': 'https://schema.org',
@@ -126,14 +116,17 @@ export default function Breadcrumbs() {
           __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
         }}
       />
-      <nav className="breadcrumbs" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
-        <ol>
+      <nav className="mt-7 text-[.82rem] text-mute" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
+        <ol className="m-0 flex list-none flex-wrap gap-[.45rem] p-0">
           {crumbs.map((crumb, index) => (
-            <li key={crumb.href}>
+            <li
+              key={crumb.href}
+              className="[&:not(:first-child)]:before:mr-[.45rem] [&:not(:first-child)]:before:opacity-60 [&:not(:first-child)]:before:content-['›']"
+            >
               {index === crumbs.length - 1 ? (
-                <span aria-current="page">{crumb.label}</span>
+                <span className="text-soft" aria-current="page">{crumb.label}</span>
               ) : (
-                <Link href={crumb.href}>{crumb.label}</Link>
+                <Link className="no-underline transition-colors hover:text-white" href={crumb.href}>{crumb.label}</Link>
               )}
             </li>
           ))}

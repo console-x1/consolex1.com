@@ -11,7 +11,7 @@ export default function TrafficTradeBanner() {
   const [isEnglish, setIsEnglish] = useState(false);
 
   useEffect(() => {
-    setIsEnglish(pathname?.startsWith("/en") ?? false);
+    setIsEnglish(pathname?.startsWith('/en') ?? false);
   }, [pathname]);
 
   useEffect(() => {
@@ -29,12 +29,12 @@ export default function TrafficTradeBanner() {
   }, []);
 
   return (
-    <div className="ad-slot">
-      <div className="ad-slot-inner">
-        <span className="ad-slot-label">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
-        <div ref={containerRef} className="ad-slot-frame" />
+    <div className="relative z-[1] mx-auto mb-10 flex w-[min(1080px,100%)] justify-center px-6">
+      <div className="flex w-fit max-w-full flex-col items-center gap-2 rounded-[14px] border border-white/8 bg-white/[.028] px-4 py-[.85rem]">
+        <span className="text-[.65rem] tracking-[.2em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
+        <div ref={containerRef} className="block h-[68px] w-[728px] max-w-full overflow-hidden rounded-[10px] [&_iframe]:block [&_iframe]:h-[90px] [&_iframe]:w-full [&_iframe]:border-0" />
         <a
-          className="ad-slot-credit"
+          className="m-0 text-[.68rem] text-mute no-underline transition-colors hover:text-brand"
           href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}
           target="_blank"
           rel="noopener noreferrer"

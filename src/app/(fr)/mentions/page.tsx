@@ -1,11 +1,11 @@
 export const metadata = {
-    alternates: {
-      canonical: 'https://consolex1.com/mentions',
-      languages: {
-        fr: 'https://consolex1.com/mentions',
-        en: 'https://consolex1.com/en/legal-notice',
-      },
+  alternates: {
+    canonical: 'https://consolex1.com/mentions',
+    languages: {
+      fr: 'https://consolex1.com/mentions',
+      en: 'https://consolex1.com/en/legal-notice',
     },
+  },
   title: 'Mentions légales',
   description: 'Mentions légales de consolex1, expliquant l’éditeur, l’hébergement et le cadre juridique.',
   keywords: ['mentions légales', 'service consolex1', 'hébergement français', 'association'],
@@ -19,12 +19,12 @@ export const metadata = {
 
 export default function MentionsPage() {
   return (
-    <section className="section legal-page">
-      <div className="section-header">
+    <section className="my-[clamp(3.5rem,8vw,5.5rem)]">
+      <div className="mb-9 max-w-[720px] [&_h1]:text-[clamp(2.1rem,4.6vw,3.3rem)] [&_h1]:tracking-[-.035em] [&_h2]:text-[clamp(1.6rem,3vw,2.3rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-[46rem] [&_p]:text-[1.04rem] [&_p]:leading-[1.75] [&_p]:text-soft [&_[data-btn]]:mt-2" data-reveal="header">
         <h1>Mentions légales</h1>
         <p>Informations sur l’éditeur, l’hébergement et les conditions juridiques encadrant consolex1.</p>
       </div>
-      <div className="legal-content">
+      <div className="max-w-[760px] [&_h2]:mt-[2.4rem] [&_h2]:mb-[.7rem] [&_h2]:text-[1.3rem] [&_p]:mb-[.9rem] [&_p]:leading-[1.8] [&_p]:text-soft [&_li]:leading-[1.8] [&_li]:text-soft [&_a]:text-brand [&_a]:underline-offset-[3px]" data-reveal>
         <h2>Éditeur du service</h2>
         <p>consolex1 est un projet porté par une équipe indépendante basée en France.</p>
         <p>Adresse de contact : France.</p>
@@ -43,7 +43,7 @@ export default function MentionsPage() {
         <p>Des contrôles de sécurité sont réalisés par l’administration du service ainsi que par des scripts automatisés.</p>
         <p>Ces vérifications servent uniquement à s’assurer du bon usage du service, de l’intégrité des applications hébergées et du respect des conditions d’utilisation.</p>
         <p>À aucun moment ces contrôles ne récupèrent de mots de passe, de clés API ou des informations de connexion privées.</p>
-        <p>Nous ne copions pas et ne volons pas le code des applications. Les analyses portent sur la présence, la conformité et l’usage des services, sans exfiltrer le contenu des applications.</p>        
+        <p>Nous ne copions pas et ne volons pas le code des applications. Les analyses portent sur la présence, la conformité et l’usage des services, sans exfiltrer le contenu des applications.</p>
         <p>Les services déployés doivent respecter les conditions d’utilisation des plateformes tierces ; tout code qui les enfreint est interdit.</p>
         <h2>Contact</h2>
         <p>Pour toute question juridique ou de conformité, privilégiez le serveur Discord ou les coordonnées affichées sur le site.</p>

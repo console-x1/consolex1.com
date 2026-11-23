@@ -15,8 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'À propos de consolex1',
-    description:
-      'L’histoire, la philosophie et l’infrastructure parisienne du projet indépendant consolex1.',
+    description: 'L’histoire, la philosophie et l’infrastructure parisienne du projet indépendant consolex1.',
     url: 'https://consolex1.com/a-propos',
     siteName: 'consolex1',
     type: 'website',
