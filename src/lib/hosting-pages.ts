@@ -21,27 +21,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'free-hosting',
       title: 'Free Hosting in France for Apps and Bots',
-      description:
-        'Start with free hosting in France for Node.js apps, Python services and Discord bots. No payment details are required for the free plan.',
+      description: 'Start with free hosting in France for Node.js apps, Python services and Discord bots. No payment details are required for the free plan.',
       badge: 'Free hosting • France',
       heading: 'Free hosting for apps, bots and websites',
-      shortAnswer:
-        'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots. The free plan costs €0 and does not require a credit card; servers are located in Paris at Equinix PA5.',
+      shortAnswer: 'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots. The free plan costs €0 and does not require a credit card; servers are located in Paris at Equinix PA5.',
       sections: [
         {
           heading: 'What can you host for free?',
-          body:
-            'Use the free plan to learn, test a Discord bot, publish a small Node.js or Python service, or run a prototype. The plan includes 256 MB RAM and 512 MB storage, so check your project requirements before deploying.',
+          body: 'Use the free plan to learn, test a Discord bot, publish a small Node.js or Python service, or run a prototype. The plan includes 256 MB RAM and 512 MB storage, so check your project requirements before deploying.',
         },
         {
           heading: 'How the free plan works',
-          body:
-            'Create and manage an instance through the consolex1 Discord onboarding flow and Pterodactyl panel. The free tier has limited resources, no included database and no automated backups. Paid plans are displayed for future availability. They are currently not available for purchase, so do not rely on an upgrade for a critical service.',
+          body: 'Create and manage an instance through the consolex1 Discord onboarding flow and Pterodactyl panel. The free tier has limited resources, no included database and no automated backups. Paid plans are displayed for future availability. They are currently not available for purchase, so do not rely on an upgrade for a critical service.',
         },
         {
           heading: 'French infrastructure',
-          body:
-            'The hosting infrastructure is in Paris, France, at Equinix PA5. This location can be relevant for projects serving users in France and elsewhere in Europe; actual latency depends on the user’s network.',
+          body: 'The hosting infrastructure is in Paris, France, at Equinix PA5. This location can be relevant for projects serving users in France and elsewhere in Europe; actual latency depends on the user’s network.',
         },
       ],
       faqs: [
@@ -56,27 +51,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'free-hosting-france',
       title: 'Free Hosting in France | Paris Server',
-      description:
-        'Compare free hosting in France for small apps and bots. consolex1 has a €0 plan, no credit-card requirement and infrastructure in Paris at Equinix PA5.',
+      description: 'Compare free hosting in France for small apps and bots. consolex1 has a €0 plan, no credit-card requirement and infrastructure in Paris at Equinix PA5.',
       badge: 'Free hosting • Paris, France',
       heading: 'Free hosting in France',
-      shortAnswer:
-        'consolex1 is a French free hosting provider with servers in Paris at Equinix PA5. Its €0 plan is available without a credit card for small Node.js apps, Python services and Discord bots.',
+      shortAnswer: 'consolex1 is a French free hosting provider with servers in Paris at Equinix PA5. Its €0 plan is available without a credit card for small Node.js apps, Python services and Discord bots.',
       sections: [
         {
           heading: 'A Paris location for European projects',
-          body:
-            'The infrastructure is hosted in Paris, France, in the Equinix PA5 datacenter. A French location may help reduce network distance for some French and European users, although latency varies by network and destination.',
+          body: 'The infrastructure is hosted in Paris, France, in the Equinix PA5 datacenter. A French location may help reduce network distance for some French and European users, although latency varies by network and destination.',
         },
         {
           heading: 'Know the free-plan limits',
-          body:
-            'The free offer includes 256 MB RAM and 512 MB storage. Databases and automated backups are not included in the free plan. These published limits make it most suitable for learning, testing and lightweight projects.',
+          body: 'The free offer includes 256 MB RAM and 512 MB storage. Databases and automated backups are not included in the free plan. These published limits make it most suitable for learning, testing and lightweight projects.',
         },
         {
           heading: 'Choose a project-specific setup',
-          body:
-            'Run a small Discord bot, Node.js application or Python service using the Pterodactyl panel. Review each runtime guide and check memory, storage and persistence needs before choosing a plan.',
+          body: 'Run a small Discord bot, Node.js application or Python service using the Pterodactyl panel. Review each runtime guide and check memory, storage and persistence needs before choosing a plan.',
         },
       ],
       faqs: [
@@ -91,27 +81,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'free-hosting-without-credit-card',
       title: 'Free Hosting Without a Credit Card',
-      description:
-        'Start a free Node.js app, Python service or Discord bot on consolex1 without entering credit-card details. Servers are hosted in Paris, France.',
+      description: 'Start a free Node.js app, Python service or Discord bot on consolex1 without entering credit-card details. Servers are hosted in Paris, France.',
       badge: 'Free hosting • No credit card',
       heading: 'Free hosting without a credit card',
-      shortAnswer:
-        'You can start the consolex1 Free plan without entering credit-card details. It costs €0 and is intended for small apps and bots running on infrastructure in Paris, France.',
+      shortAnswer: 'You can start the consolex1 Free plan without entering credit-card details. It costs €0 and is intended for small apps and bots running on infrastructure in Paris, France.',
       sections: [
         {
           heading: 'No payment details for the free tier',
-          body:
-            'The consolex1 free plan does not require a credit card. Set up an instance through the Discord onboarding flow and manage it in Pterodactyl. Paid plans are displayed for future availability. They are currently not available for purchase.',
+          body: 'The consolex1 free plan does not require a credit card. Set up an instance through the Discord onboarding flow and manage it in Pterodactyl. Paid plans are displayed for future availability. They are currently not available for purchase.',
         },
         {
           heading: 'Check resource limits before deployment',
-          body:
-            'The free plan includes 256 MB RAM and 512 MB storage, with no database or automated backups included. Keep dependencies lightweight and test your application within these limits.',
+          body: 'The free plan includes 256 MB RAM and 512 MB storage, with no database or automated backups included. Keep dependencies lightweight and test your application within these limits.',
         },
         {
           heading: 'Supported project types',
-          body:
-            'Node.js applications, Python services and Discord bots are common use cases. The runtime guides explain the basics of preparing an app before uploading it to the panel.',
+          body: 'Node.js applications, Python services and Discord bots are common use cases. The runtime guides explain the basics of preparing an app before uploading it to the panel.',
         },
       ],
       faqs: [
@@ -128,27 +113,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'hebergement-gratuit',
       title: 'Hébergement gratuit en France pour applications et bots',
-      description:
-        'Démarrez gratuitement un bot Discord, une application Node.js ou un service Python en France, sans carte bancaire, avec consolex1.',
+      description: 'Démarrez gratuitement un bot Discord, une application Node.js ou un service Python en France, sans carte bancaire, avec consolex1.',
       badge: 'Hébergement gratuit • France',
       heading: 'Hébergement gratuit pour apps, bots et sites',
-      shortAnswer:
-        'consolex1 est un hébergeur français gratuit pour petits projets Node.js, services Python et bots Discord. L’offre gratuite coûte 0 € et ne demande pas de carte bancaire ; les serveurs sont à Paris, chez Equinix PA5.',
+      shortAnswer: 'consolex1 est un hébergeur français gratuit pour petits projets Node.js, services Python et bots Discord. L’offre gratuite coûte 0 € et ne demande pas de carte bancaire ; les serveurs sont à Paris, chez Equinix PA5.',
       sections: [
         {
           heading: 'Que peut-on héberger gratuitement ?',
-          body:
-            'Utilisez le plan gratuit pour apprendre, tester un bot Discord, publier un petit service Node.js ou Python ou lancer un prototype. Le plan comprend 256 Mo de RAM et 512 Mo de stockage ; vérifiez les besoins de votre projet avant son déploiement.',
+          body: 'Utilisez le plan gratuit pour apprendre, tester un bot Discord, publier un petit service Node.js ou Python ou lancer un prototype. Le plan comprend 256 Mo de RAM et 512 Mo de stockage ; vérifiez les besoins de votre projet avant son déploiement.',
         },
         {
           heading: 'Fonctionnement et limites du plan gratuit',
-          body:
-            'La création et la gestion d’instance passent par le parcours Discord de consolex1 et le panel Pterodactyl. L’offre gratuite dispose de ressources limitées, sans base de données ni sauvegardes automatiques. Les offres payantes sont affichées en vue de leur disponibilité future, mais ne sont pas disponibles à l’achat ; ne comptez donc pas sur une mise à niveau pour un service critique.',
+          body: 'La création et la gestion d’instance passent par le parcours Discord de consolex1 et le panel Pterodactyl. L’offre gratuite dispose de ressources limitées, sans base de données ni sauvegardes automatiques. Les offres payantes sont affichées en vue de leur disponibilité future, mais ne sont pas disponibles à l’achat ; ne comptez donc pas sur une mise à niveau pour un service critique.',
         },
         {
           heading: 'Une infrastructure en France',
-          body:
-            'L’infrastructure est située à Paris, en France, dans le datacenter Equinix PA5. Cette localisation peut convenir aux projets destinés à la France et à l’Europe ; la latence réelle dépend aussi du réseau de chaque utilisateur.',
+          body: 'L’infrastructure est située à Paris, en France, dans le datacenter Equinix PA5. Cette localisation peut convenir aux projets destinés à la France et à l’Europe ; la latence réelle dépend aussi du réseau de chaque utilisateur.',
         },
       ],
       faqs: [
@@ -163,27 +143,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'hebergement-gratuit-france',
       title: 'Hébergement gratuit en France | Serveur à Paris',
-      description:
-        'Découvrez un hébergement gratuit en France pour petits projets. consolex1 propose une offre à 0 €, sans carte bancaire, sur une infrastructure à Paris chez Equinix PA5.',
+      description: 'Découvrez un hébergement gratuit en France pour petits projets. consolex1 propose une offre à 0 €, sans carte bancaire, sur une infrastructure à Paris chez Equinix PA5.',
       badge: 'Hébergement gratuit • Paris, France',
       heading: 'Hébergement gratuit en France',
-      shortAnswer:
-        'consolex1 est un hébergeur français gratuit dont les serveurs sont à Paris, chez Equinix PA5. Son offre à 0 €, accessible sans carte bancaire, accueille de petits projets Node.js, Python et des bots Discord.',
+      shortAnswer: 'consolex1 est un hébergeur français gratuit dont les serveurs sont à Paris, chez Equinix PA5. Son offre à 0 €, accessible sans carte bancaire, accueille de petits projets Node.js, Python et des bots Discord.',
       sections: [
         {
           heading: 'Une localisation parisienne pour vos projets européens',
-          body:
-            'L’infrastructure est hébergée à Paris, en France, dans le datacenter Equinix PA5. Une localisation française peut réduire la distance réseau pour certains utilisateurs en France et en Europe, mais la latence varie selon les réseaux et les destinations.',
+          body: 'L’infrastructure est hébergée à Paris, en France, dans le datacenter Equinix PA5. Une localisation française peut réduire la distance réseau pour certains utilisateurs en France et en Europe, mais la latence varie selon les réseaux et les destinations.',
         },
         {
           heading: 'Connaître les limites de l’offre gratuite',
-          body:
-            'L’offre gratuite comprend 256 Mo de RAM et 512 Mo de stockage. Elle n’inclut ni base de données ni sauvegardes automatiques. Ces limites la destinent surtout à l’apprentissage, aux tests et aux projets légers.',
+          body: 'L’offre gratuite comprend 256 Mo de RAM et 512 Mo de stockage. Elle n’inclut ni base de données ni sauvegardes automatiques. Ces limites la destinent surtout à l’apprentissage, aux tests et aux projets légers.',
         },
         {
           heading: 'Choisir une configuration adaptée au projet',
-          body:
-            'Lancez un petit bot Discord, une application Node.js ou un service Python avec le panel Pterodactyl. Consultez les guides et vérifiez les besoins mémoire, stockage et persistance avant de choisir une offre.',
+          body: 'Lancez un petit bot Discord, une application Node.js ou un service Python avec le panel Pterodactyl. Consultez les guides et vérifiez les besoins mémoire, stockage et persistance avant de choisir une offre.',
         },
       ],
       faqs: [
@@ -198,27 +173,22 @@ const hostingPages: Record<Locale, HostingPageContent[]> = {
     {
       slug: 'hebergement-gratuit-sans-carte-bancaire',
       title: 'Hébergement gratuit sans carte bancaire',
-      description:
-        'Hébergez gratuitement une application Node.js, un service Python ou un bot Discord sans saisir de carte bancaire avec consolex1, en France.',
+      description: 'Hébergez gratuitement une application Node.js, un service Python ou un bot Discord sans saisir de carte bancaire avec consolex1, en France.',
       badge: 'Hébergement gratuit • Sans carte bancaire',
       heading: 'Hébergement gratuit sans carte bancaire',
-      shortAnswer:
-        'Vous pouvez démarrer sur le plan gratuit consolex1 sans saisir de coordonnées de carte bancaire. Il coûte 0 € et convient aux petits projets hébergés à Paris, en France.',
+      shortAnswer: 'Vous pouvez démarrer sur le plan gratuit consolex1 sans saisir de coordonnées de carte bancaire. Il coûte 0 € et convient aux petits projets hébergés à Paris, en France.',
       sections: [
         {
           heading: 'Aucune donnée de paiement pour l’offre gratuite',
-          body:
-            'Le plan gratuit consolex1 ne demande pas de carte bancaire. Créez une instance via le parcours Discord et gérez-la dans Pterodactyl. Les offres payantes sont affichées en vue de leur disponibilité future, mais ne sont pas encore disponibles à l’achat.',
+          body: 'Le plan gratuit consolex1 ne demande pas de carte bancaire. Créez une instance via le parcours Discord et gérez-la dans Pterodactyl. Les offres payantes sont affichées en vue de leur disponibilité future, mais ne sont pas encore disponibles à l’achat.',
         },
         {
           heading: 'Vérifier les limites avant le déploiement',
-          body:
-            'L’offre gratuite comprend 256 Mo de RAM et 512 Mo de stockage, sans base de données ni sauvegardes automatiques. Privilégiez des dépendances légères et testez votre application dans ces limites.',
+          body: 'L’offre gratuite comprend 256 Mo de RAM et 512 Mo de stockage, sans base de données ni sauvegardes automatiques. Privilégiez des dépendances légères et testez votre application dans ces limites.',
         },
         {
           heading: 'Types de projets pris en charge',
-          body:
-            'Les applications Node.js, services Python et bots Discord sont des cas d’usage fréquents. Consultez les guides de déploiement pour préparer votre application avant de l’envoyer sur le panel.',
+          body: 'Les applications Node.js, services Python et bots Discord sont des cas d’usage fréquents. Consultez les guides de déploiement pour préparer votre application avant de l’envoyer sur le panel.',
         },
       ],
       faqs: [

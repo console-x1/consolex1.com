@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,.07)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_55%_at_50%_0%,#000_10%,transparent_70%)]"
+          className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,.07)_1px,transparent_1px)] bg-size-[30px_30px] mask-[radial-gradient(ellipse_80%_55%_at_50%_0%,#000_10%,transparent_70%)]"
         />
         <Interactions />
         {children}

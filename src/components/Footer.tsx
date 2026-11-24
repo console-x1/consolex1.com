@@ -55,12 +55,12 @@ export default function Footer({ locale }: FooterProps) {
       <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
         <Link href={locale === 'fr' ? '/' : '/en'} className="group inline-flex items-center gap-[.6rem] text-[1.02rem] font-semibold tracking-[-.015em] text-white no-underline">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="transition-transform duration-500 ease-soft group-hover:-rotate-[8deg] group-hover:scale-[1.12]" src="/avatar.png" alt="" width={22} height={22} />
+          <img className="transition-transform duration-500 ease-soft group-hover:rotate-[-8deg] group-hover:scale-[1.12]" src="/avatar.png" alt="" width={22} height={22} />
           <span>consolex1</span>
         </Link>
         <p className="m-0">{links.text}</p>
       </div>
-      <div className="flex flex-wrap gap-x-[1.4rem] gap-y-2 [&_a]:relative [&_a]:whitespace-nowrap [&_a]:text-soft [&_a]:no-underline [&_a]:transition-colors [&_a]:after:absolute [&_a]:after:inset-x-0 [&_a]:after:-bottom-0.5 [&_a]:after:h-px [&_a]:after:origin-left [&_a]:after:scale-x-0 [&_a]:after:bg-brand [&_a]:after:transition-transform [&_a]:after:duration-[350ms] [&_a]:after:ease-soft [&_a]:hover:text-white [&_a]:hover:after:scale-x-100">
+      <div className="flex flex-wrap gap-x-[1.4rem] gap-y-2 [&_a]:relative [&_a]:whitespace-nowrap [&_a]:text-soft [&_a]:no-underline [&_a]:transition-colors [&_a]:after:absolute [&_a]:after:inset-x-0 [&_a]:after:-bottom-0.5 [&_a]:after:h-px [&_a]:after:origin-left [&_a]:after:scale-x-0 [&_a]:after:bg-brand [&_a]:after:transition-transform [&_a]:after:duration-350 [&_a]:after:ease-soft [&_a]:hover:text-white [&_a]:hover:after:scale-x-100">
         <Link href={links.legal} locale={locale}>
           {links.legalLabel}
         </Link>

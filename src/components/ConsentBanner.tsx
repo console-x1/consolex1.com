@@ -107,9 +107,9 @@ export default function ConsentBanner() {
   const m = locale === 'en' ? messages.en : messages.fr;
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-[9999] w-[min(720px,calc(100%-1.5rem))] animate-slide-up rounded-[20px] border border-white/16 bg-[rgba(10,14,22,.92)] px-5 py-[1.1rem] text-ink shadow-[0_24px_70px_rgba(0,0,0,.6)] backdrop-blur-[18px] [transform:translateX(-50%)]" role="dialog" aria-live="polite" aria-label={m.title}>
+    <div className="fixed bottom-4 left-1/2 z-9999 w-[min(720px,calc(100%-1.5rem))] animate-slide-up rounded-[20px] border border-white/16 bg-[rgba(10,14,22,.92)] px-5 py-[1.1rem] text-ink shadow-[0_24px_70px_rgba(0,0,0,.6)] backdrop-blur-[18px] transform-[translateX(-50%)]" role="dialog" aria-live="polite" aria-label={m.title}>
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="min-w-[240px] flex-1 [&_p]:mt-[.35rem] [&_p]:mb-0 [&_p]:text-[.86rem] [&_p]:leading-[1.55] [&_p]:text-soft [&_strong]:block [&_strong]:text-[.98rem] [&_strong]:text-white">
+        <div className="min-w-60 flex-1 [&_p]:mt-[.35rem] [&_p]:mb-0 [&_p]:text-[.86rem] [&_p]:leading-[1.55] [&_p]:text-soft [&_strong]:block [&_strong]:text-[.98rem] [&_strong]:text-white">
           <strong>{m.title}</strong>
           <p>{m.desc}</p>
           <label className="mt-[.7rem] flex cursor-pointer items-center gap-2 text-[.85rem] text-soft">
@@ -118,8 +118,8 @@ export default function ConsentBanner() {
           </label>
         </div>
         <div className="flex gap-2">
-          <button onClick={decline} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-[var(--bx,0px)] translate-y-[var(--by,0px)] transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-[250ms] ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] border-white/16 bg-transparent text-soft hover:border-white/30 hover:bg-white/[.028] hover:text-white" data-btn>{m.decline}</button>
-          <button onClick={accept} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-[var(--bx,0px)] translate-y-[var(--by,0px)] transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-[250ms] ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] bg-[linear-gradient(100deg,#4da3ff,#5eead4)] text-[#04101c] shadow-[0_10px_30px_-10px_rgba(77,163,255,.7)] hover:shadow-[0_16px_44px_-8px_rgba(77,163,255,.85)] after:absolute after:inset-0 after:-translate-x-[120%] after:transition-transform after:duration-700 after:ease-soft after:bg-[linear-gradient(105deg,transparent_30%,rgba(255,255,255,.5)_50%,transparent_70%)] hover:after:translate-x-[120%]" data-btn>{m.accept}</button>
+          <button onClick={decline} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] bg-transparent text-soft hover:border-white/30 hover:bg-white/[.028] hover:text-white" data-btn>{m.decline}</button>
+          <button onClick={accept} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] bg-[linear-gradient(100deg,#4da3ff,#5eead4)] text-[#04101c] shadow-[0_10px_30px_-10px_rgba(77,163,255,.7)] hover:shadow-[0_16px_44px_-8px_rgba(77,163,255,.85)] after:absolute after:inset-0 after:translate-x-[-120%] after:transition-transform after:duration-700 after:ease-soft after:bg-[linear-gradient(105deg,transparent_30%,rgba(255,255,255,.5)_50%,transparent_70%)] hover:after:translate-x-[120%]" data-btn>{m.accept}</button>
         </div>
       </div>
     </div>

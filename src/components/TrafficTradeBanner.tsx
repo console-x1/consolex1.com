@@ -29,10 +29,10 @@ export default function TrafficTradeBanner() {
   }, []);
 
   return (
-    <div className="relative z-[1] mx-auto mb-10 flex w-[min(1080px,100%)] justify-center px-6">
+    <div className="relative z-1 mx-auto mb-10 flex w-[min(1080px,100%)] justify-center px-6">
       <div className="flex w-fit max-w-full flex-col items-center gap-2 rounded-[14px] border border-white/8 bg-white/[.028] px-4 py-[.85rem]">
         <span className="text-[.65rem] tracking-[.2em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
-        <div ref={containerRef} className="block h-[68px] w-[728px] max-w-full overflow-hidden rounded-[10px] [&_iframe]:block [&_iframe]:h-[90px] [&_iframe]:w-full [&_iframe]:border-0" />
+        <div ref={containerRef} className="block h-17 w-182 max-w-full overflow-hidden rounded-[10px] [&_iframe]:block [&_iframe]:h-22.5 [&_iframe]:w-full [&_iframe]:border-0" />
         <a
           className="m-0 text-[.68rem] text-mute no-underline transition-colors hover:text-brand"
           href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}

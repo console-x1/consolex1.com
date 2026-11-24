@@ -73,15 +73,15 @@ export default function HeroTerminal({ locale }: { locale: 'fr' | 'en' }) {
         <div
             data-tilt
             aria-hidden="true"
-            className="animate-rise overflow-hidden rounded-[20px] border border-white/16 bg-[rgba(8,11,18,.72)] font-mono text-[.84rem] shadow-[0_40px_90px_-20px_rgba(0,0,0,.7),inset_0_0_0_1px_rgba(255,255,255,.02)] backdrop-blur-[12px] [animation-delay:250ms] [transform:perspective(900px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] transition-transform duration-300 ease-out max-[640px]:text-[.78rem]"
+            className="animate-rise overflow-hidden rounded-[20px] border border-white/16 bg-[rgba(8,11,18,.72)] font-mono text-[.84rem] shadow-[0_40px_90px_-20px_rgba(0,0,0,.7),inset_0_0_0_1px_rgba(255,255,255,.02)] backdrop-blur-md [animation-delay:250ms] transform-[perspective(900px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] transition-transform duration-300 ease-out max-sm:text-[.78rem]"
         >
             <div className="flex items-center gap-[.4rem] border-b border-white/8 px-4 py-[.7rem] text-[.75rem] text-mute">
-                <i className="size-[9px] rounded-full bg-[#ff5f57]/85" />
-                <i className="size-[9px] rounded-full bg-[#febc2e]/85" />
-                <i className="size-[9px] rounded-full bg-[#28c840]/85" />
+                <i className="size-2.25 rounded-full bg-[#ff5f57]/85" />
+                <i className="size-2.25 rounded-full bg-[#febc2e]/85" />
+                <i className="size-2.25 rounded-full bg-[#28c840]/85" />
                 <span className="ml-[.6rem]">discord · consolex1</span>
             </div>
-            <div className="min-h-[13.2rem] px-[1.2rem] pt-[1.1rem] pb-[1.3rem] leading-[1.85] text-soft max-[640px]:min-h-[12.4rem]">
+            <div className="min-h-[13.2rem] px-[1.2rem] pt-[1.1rem] pb-[1.3rem] leading-[1.85] text-soft max-sm:min-h-[12.4rem]">
                 {lines.map((line, i) => (
                     <div className="animate-fade-in whitespace-pre-wrap" key={i}>
                         {line.kind === 'cmd' && <span className="text-brand">› </span>}

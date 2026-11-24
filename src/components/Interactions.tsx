@@ -201,7 +201,7 @@ export default function Interactions() {
     return (
         <div
             aria-hidden="true"
-            className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-0.5 origin-left bg-[linear-gradient(100deg,#4da3ff,#5eead4)] [transform:scaleX(var(--scroll,0))]"
+            className="pointer-events-none fixed inset-x-0 top-0 z-100 h-0.5 origin-left bg-[linear-gradient(100deg,#4da3ff,#5eead4)] transform-[scaleX(var(--scroll,0))]"
         />
     );
 }

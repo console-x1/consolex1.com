@@ -121,7 +121,7 @@ export default function Breadcrumbs() {
           {crumbs.map((crumb, index) => (
             <li
               key={crumb.href}
-              className="[&:not(:first-child)]:before:mr-[.45rem] [&:not(:first-child)]:before:opacity-60 [&:not(:first-child)]:before:content-['›']"
+              className="not-first:before:mr-[.45rem] not-first:before:opacity-60 not-first:before:content-['›']"
             >
               {index === crumbs.length - 1 ? (
                 <span className="text-soft" aria-current="page">{crumb.label}</span>

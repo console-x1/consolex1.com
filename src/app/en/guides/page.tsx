@@ -3,8 +3,7 @@ import GuidesIndex from '@/components/GuidesIndex';
 
 export const metadata: Metadata = {
   title: 'Free Hosting Guides for Discord, Node.js and Python',
-  description:
-    'Practical guides to free Discord bot hosting, Node.js deployment, Python bots, discord.js and discord.py.',
+  description: 'Practical guides to free Discord bot hosting, Node.js deployment, Python bots, discord.js and discord.py.',
   alternates: {
     canonical: 'https://consolex1.com/en/guides',
     languages: {
