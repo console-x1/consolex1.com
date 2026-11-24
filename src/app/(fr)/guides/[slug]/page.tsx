@@ -9,11 +9,19 @@ export function generateStaticParams() {
   return getGuides('fr').map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const guide = getGuide('fr', params.slug);
-  const translation = getGuideTranslation('fr', params.slug);
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const guide = getGuide('fr', slug);
+  const translation = getGuideTranslation('fr', slug);
   if (!guide || !translation) return {};
+
   const canonical = `https://consolex1.com/guides/${guide.slug}`;
+  const englishUrl = `https://consolex1.com/en/guides/${translation.slug}`;
   return {
     title: guide.title,
     description: guide.description,
@@ -21,8 +29,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       canonical,
       languages: {
         fr: canonical,
-        en: `https://consolex1.com/en/guides/${translation.slug}`,
-        'x-default': `https://consolex1.com/en/guides/${translation.slug}`,
+        en: englishUrl,
+        'x-default': englishUrl,
       },
     },
     openGraph: {
@@ -39,8 +47,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function FrenchGuidePage({ params }: { params: { slug: string } }) {
-  const guide = getGuide('fr', params.slug);
+export default async function FrenchGuidePage({ params }: PageProps) {
+  const { slug } = await params;
+  const guide = getGuide('fr', slug);
   if (!guide) notFound();
   return <GuideArticle guide={guide} locale="fr" />;
 }

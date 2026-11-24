@@ -5,14 +5,16 @@ import { usePathname } from "next/navigation";
 
 const TRAFFICTRADE_TOKEN = "HW04Dr84486h3iZWdQVUM3zpdyC1ZIpv";
 
+// Le bandeau fait 728 px de large : sur téléphone on le réduit proportionnellement au lieu de le tronquer
+const AD_WIDTH = 728;
+const AD_HEIGHT = 68;
+
 export default function TrafficTradeBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const slotRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const [isEnglish, setIsEnglish] = useState(false);
-
-  useEffect(() => {
-    setIsEnglish(pathname?.startsWith('/en') ?? false);
-  }, [pathname]);
+  const isEnglish = pathname?.startsWith("/en") ?? false;
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -28,13 +30,29 @@ export default function TrafficTradeBanner() {
     container.appendChild(script);
   }, []);
 
+  useEffect(() => {
+    const slot = slotRef.current;
+    if (!slot) return;
+    const update = () => setScale(Math.min(1, slot.clientWidth / AD_WIDTH));
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(slot);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative z-1 mx-auto mb-10 flex w-[min(1080px,100%)] justify-center px-6">
-      <div className="flex w-fit max-w-full flex-col items-center gap-2 rounded-[14px] border border-white/8 bg-white/[.028] px-4 py-[.85rem]">
-        <span className="text-[.65rem] tracking-[.2em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
-        <div ref={containerRef} className="block h-17 w-182 max-w-full overflow-hidden rounded-[10px] [&_iframe]:block [&_iframe]:h-22.5 [&_iframe]:w-full [&_iframe]:border-0" />
+    <div className="relative z-1 mx-auto mb-8 flex w-full max-w-270 justify-center px-4 sm:px-6">
+      <div className="flex w-full max-w-190 flex-col items-center gap-2 rounded-xl border border-line bg-panel px-3 py-3 sm:w-fit sm:px-4">
+        <span className="font-mono text-[.65rem] tracking-[.14em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
+        <div ref={slotRef} className="w-full max-w-182 overflow-hidden rounded-lg sm:w-182" style={{ height: AD_HEIGHT * scale }}>
+          <div
+            ref={containerRef}
+            className="h-17 w-182 origin-top-left overflow-hidden [&_iframe]:block [&_iframe]:h-22.5 [&_iframe]:w-full [&_iframe]:border-0"
+            style={{ transform: `scale(${scale})` }}
+          />
+        </div>
         <a
-          className="m-0 text-[.68rem] text-mute no-underline transition-colors hover:text-brand"
+          className="m-0 inline-flex min-h-8 items-center text-[.7rem] text-mute no-underline transition-colors hover:text-brand"
           href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}
           target="_blank"
           rel="noopener noreferrer"

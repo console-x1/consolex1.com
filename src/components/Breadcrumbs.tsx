@@ -116,17 +116,17 @@ export default function Breadcrumbs() {
           __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
         }}
       />
-      <nav className="mt-7 text-[.82rem] text-mute" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
-        <ol className="m-0 flex list-none flex-wrap gap-[.45rem] p-0">
+      <nav className="mt-4 text-[.82rem] text-mute sm:mt-6" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
+        <ol className="m-0 flex list-none flex-wrap gap-x-2 gap-y-1 p-0">
           {crumbs.map((crumb, index) => (
             <li
               key={crumb.href}
-              className="not-first:before:mr-[.45rem] not-first:before:opacity-60 not-first:before:content-['›']"
+              className="not-first:before:mr-2 not-first:before:text-line-strong not-first:before:content-['/']"
             >
               {index === crumbs.length - 1 ? (
-                <span className="text-soft" aria-current="page">{crumb.label}</span>
+                <span className="inline-flex min-h-8 items-center text-soft" aria-current="page">{crumb.label}</span>
               ) : (
-                <Link className="no-underline transition-colors hover:text-white" href={crumb.href}>{crumb.label}</Link>
+                <Link className="inline-flex min-h-8 items-center no-underline transition-colors hover:text-ink hover:underline hover:underline-offset-[3px]" href={crumb.href}>{crumb.label}</Link>
               )}
             </li>
           ))}

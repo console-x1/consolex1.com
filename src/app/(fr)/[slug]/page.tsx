@@ -4,13 +4,18 @@ import HostingLanding from '@/components/HostingLanding';
 import { getHostingPage, getHostingPages } from '@/lib/hosting-pages';
 
 const baseUrl = 'https://consolex1.com';
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getHostingPages('fr').map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const page = getHostingPage('fr', params.slug);
   if (!page) return {};
 

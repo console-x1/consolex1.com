@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import HeroTerminal from './HeroTerminal';
+import StatusBanner from './StatusBanner';
+import StatusPill from './StatusPill';
+import ThemeToggle from './ThemeToggle';
 
 type Locale = 'fr' | 'en';
 
@@ -22,13 +25,16 @@ const labels = {
     discord: 'Discord',
     heroButtonPrimary: 'Rejoindre Discord',
     heroButtonSecondary: 'Découvrir nos offres',
-    eyebrow: 'Basé à Paris — datacenter Equinix PA5',
+    eyebrow: 'Paris · datacenter Equinix PA5',
     title: 'Hébergement gratuit pour vos apps, bots et sites web.',
     highlight: 'gratuit',
-    description: 'consolex1 est un hébergeur français gratuit pour vos petits projets Node.js, Python et bots Discord, sur une infrastructure à Paris.',
-    statusText: 'État des services :',
+    description:
+      'consolex1 est un hébergeur français gratuit pour vos petits projets Node.js, Python et bots Discord, sur une infrastructure à Paris.',
     alternate: 'English',
+    alternateShort: 'EN',
+    alternateLang: 'en',
     menu: 'Menu',
+    nav: 'Navigation principale',
     alert: 'Vous cherchiez le profil de consolex1 et non pas l’hébergeur ?',
   },
   en: {
@@ -41,14 +47,16 @@ const labels = {
     discord: 'Discord',
     heroButtonPrimary: 'Join Discord',
     heroButtonSecondary: 'View plans',
-    eyebrow: 'Hosted in Paris — Equinix PA5',
+    eyebrow: 'Paris · Equinix PA5 datacenter',
     title: 'Free hosting for your apps, bots and websites.',
     highlight: 'Free',
     description:
       'consolex1 is a French free hosting provider for small Node.js apps, Python services and Discord bots, with infrastructure in Paris.',
-    statusText: 'Check service status:',
     alternate: 'Français',
+    alternateShort: 'FR',
+    alternateLang: 'fr',
     menu: 'Menu',
+    nav: 'Main navigation',
     alert: 'Looking for the consolex1 profile instead of hosting?',
   },
 };
@@ -70,13 +78,34 @@ const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; a
   },
 };
 
+// Le mot mis en avant est souligné d'un trait dessiné à la main (SVG animé), pas d'un dégradé
 function renderTitle(title: string, highlight: string) {
   const i = title.indexOf(highlight);
   if (i < 0) return title;
   return (
     <>
       {title.slice(0, i)}
-      <span className="animate-shimmer bg-[linear-gradient(100deg,#4da3ff,#5eead4)] bg-size-[200%_auto] bg-clip-text text-transparent">{highlight}</span>
+      <span className="relative inline-block whitespace-nowrap">
+        {highlight}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 200 12"
+          preserveAspectRatio="none"
+          className="absolute bottom-[-0.12em] left-0 h-[.26em] w-full text-accent"
+        >
+          <path
+            d="M3 8.5C38 3 82 11 121 5.5S178 3.5 197 7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="4.5"
+            strokeLinecap="round"
+            pathLength="1"
+            strokeDasharray="1"
+            strokeDashoffset="1"
+            className="animate-draw"
+          />
+        </svg>
+      </span>
       {title.slice(i + highlight.length)}
     </>
   );
@@ -89,15 +118,24 @@ export default function Header({ locale }: HeaderProps) {
   const pathname = usePathname();
   const path = (pathname ?? '/').replace(/\/+$/, '') || '/';
   const isHome = path === '/' || path === '/en';
+  const headerRef = useRef<HTMLElement>(null);
+
+  // le menu mobile est lié à la page où il a été ouvert : il se referme tout seul à chaque navigation
   const [openFor, setOpenFor] = useState<string | null>(null);
   const open = openFor === pathname;
-  const setOpen = (value: boolean) => setOpenFor(value ? pathname : null);
 
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpenFor(null);
+    const onPointer = (e: PointerEvent) => {
+      if (!headerRef.current?.contains(e.target as Node)) setOpenFor(null);
+    };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onPointer);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', onPointer);
+    };
   }, [open]);
 
   const links = [
@@ -109,68 +147,80 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <>
-      <div className="pt-[.35rem] pb-[.6rem] text-center text-[.8rem] text-mute">
-        <p className="m-0">
-          {text.alert} <a className="text-soft underline decoration-white/16 underline-offset-[3px] transition-colors hover:text-white hover:decoration-brand" href="https://me.consolex1.com">
-            me.consolex1.com
-          </a>
-        </p>
-      </div>
+      <p className="m-0 py-2 text-center text-[.78rem] leading-[1.4] text-mute sm:text-[.8rem]">
+        {text.alert}{' '}
+        <a
+          className="text-soft underline decoration-line-strong underline-offset-[3px] transition-colors hover:text-ink hover:decoration-accent"
+          href="https://me.consolex1.com"
+        >
+          me.consolex1.com
+        </a>
+      </p>
 
-      <header className="sticky top-3 z-50">
-        <div className="flex items-center justify-between gap-4 rounded-full border border-white/8 bg-[rgba(10,14,22,.55)] py-2 pr-[.55rem] pl-4 backdrop-blur-lg backdrop-saturate-[1.4] transition-[background-color,border-color,box-shadow] duration-300 [html[data-scrolled]_&]:border-white/16 [html[data-scrolled]_&]:bg-[rgba(8,11,18,.85)] [html[data-scrolled]_&]:shadow-[0_14px_44px_rgba(0,0,0,.5)]">
-          <Link href={routes.home} className="group inline-flex items-center gap-[.6rem] text-[1.02rem] font-semibold tracking-[-.015em] text-white no-underline">
+      <StatusBanner locale={locale} />
+
+      <header
+        ref={headerRef}
+        className="sticky top-0 z-50 -mx-4 border-b border-line bg-page/90 px-4 backdrop-blur-md sm:-mx-6 sm:px-6"
+      >
+        <div className="flex h-14 items-center justify-between gap-2 sm:h-16 sm:gap-3">
+          <Link href={routes.home} className="inline-flex min-h-11 items-center gap-2.5 font-display text-[1.12rem] font-bold tracking-[-.02em] text-ink no-underline">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="transition-transform duration-500 ease-soft group-hover:rotate-[-8deg] group-hover:scale-[1.12]" src="/avatar.png" alt="" width={26} height={26} />
+            <img src="/avatar.png" alt="" width={28} height={28} />
             <span>{text.brand}</span>
           </Link>
 
           <nav
             id="main-nav"
-            className={`flex gap-[.15rem] max-[860px]:absolute max-[860px]:inset-x-0 max-[860px]:top-[calc(100%+.5rem)] max-[860px]:origin-top max-[860px]:flex-col max-[860px]:rounded-[20px] max-[860px]:border max-[860px]:border-white/16 max-[860px]:bg-[#080b12] max-[860px]:p-2 max-[860px]:shadow-[0_24px_60px_rgba(0,0,0,.55)] max-[860px]:transition-[opacity,translate,scale,visibility] max-[860px]:duration-300 ${open ? 'max-[860px]:visible max-[860px]:opacity-100' : 'max-[860px]:invisible max-[860px]:-translate-y-2 max-[860px]:scale-[.98] max-[860px]:opacity-0'}`}
-            aria-label={locale === 'en' ? 'Main navigation' : 'Navigation principale'}
-            onClick={() => setOpen(false)}
+            aria-label={text.nav}
+            onClick={() => setOpenFor(null)}
+            className={`absolute inset-x-0 top-full flex flex-col border-b border-line bg-page px-3 py-2 shadow-[0_18px_30px_-14px_rgba(0,0,0,.4)] transition-[opacity,translate,visibility] duration-200 min-[860px]:visible min-[860px]:static min-[860px]:translate-y-0 min-[860px]:flex-row min-[860px]:gap-1 min-[860px]:border-0 min-[860px]:bg-transparent min-[860px]:p-0 min-[860px]:opacity-100 min-[860px]:shadow-none ${open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0'
+              }`}
           >
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={path === link.href ? 'page' : undefined}
-                className={`relative rounded-full px-[.85rem] py-[.42rem] text-[.92rem] font-medium no-underline transition-colors hover:bg-white/5.5 hover:text-white max-[860px]:px-4 max-[860px]:py-[.8rem] max-[860px]:text-base ${path === link.href ? 'bg-white/5.5 text-white' : 'text-soft'
-                  }`}
+                className={`relative flex min-h-11 items-center rounded-lg px-3 text-[.95rem] font-medium no-underline transition-colors hover:bg-panel-hover hover:text-ink min-[860px]:min-h-10 min-[860px]:text-[.92rem] ${path === link.href ? 'text-ink after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-accent' : 'text-soft'}`}
               >
                 {link.label}
               </Link>
             ))}
-            <a
-              className="relative rounded-full px-[.85rem] py-[.42rem] text-[.92rem] font-medium text-soft no-underline transition-colors hover:bg-white/5.5 hover:text-white max-[860px]:px-4 max-[860px]:py-[.8rem] max-[860px]:text-base"
-              href={`${routes.home}#plans`}
-            >
+            <a className="relative flex min-h-11 items-center rounded-lg px-3 text-[.95rem] font-medium no-underline transition-colors hover:bg-panel-hover hover:text-ink min-[860px]:min-h-10 min-[860px]:text-[.92rem] text-soft" href={`${routes.home}#plans`}>
               {text.plans}
             </a>
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Link href={alternateHref} className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] border-white/16 bg-transparent text-soft hover:border-white/30 hover:bg-white/[.028] hover:text-white" data-btn>
-              {text.alternate}
+          <div className="flex items-center gap-1 sm:gap-2">
+            <Link
+              href={alternateHref}
+              lang={text.alternateLang}
+              hrefLang={text.alternateLang}
+              aria-label={text.alternate}
+              className="inline-flex min-h-11 items-center rounded-lg px-2.5 text-[.85rem] font-semibold text-soft no-underline transition-colors hover:bg-panel-hover hover:text-ink sm:min-h-10 sm:px-3"
+            >
+              <span className="sm:hidden">{text.alternateShort}</span>
+              <span className="hidden sm:inline">{text.alternate}</span>
             </Link>
-            <a className="max-[560px]:hidden relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-4 py-2 text-[.85rem] bg-[linear-gradient(100deg,#4da3ff,#5eead4)] text-[#04101c] shadow-[0_10px_30px_-10px_rgba(77,163,255,.7)] hover:shadow-[0_16px_44px_-8px_rgba(77,163,255,.85)] after:absolute after:inset-0 after:translate-x-[-120%] after:transition-transform after:duration-700 after:ease-soft after:bg-[linear-gradient(105deg,transparent_30%,rgba(255,255,255,.5)_50%,transparent_70%)] hover:after:translate-x-[120%]" data-btn href="https://discord.consolex1.com">
+            <ThemeToggle locale={locale} />
+            <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 bg-brand text-on-brand hover:brightness-110 max-[639px]:hidden" href="https://discord.consolex1.com">
               {text.discord}
             </a>
             <button
               type="button"
-              className="relative hidden size-10 cursor-pointer rounded-full border border-white/8 bg-white/[.028] max-[860px]:block"
+              className="relative size-11 shrink-0 cursor-pointer rounded-lg border border-line bg-transparent min-[860px]:hidden"
               aria-expanded={open}
               aria-controls="main-nav"
               aria-label={text.menu}
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpenFor(open ? null : pathname)}
             >
               <span
-                className={`absolute inset-x-3 h-0.5 rounded-sm bg-white transition-[top,rotate] duration-350 ease-soft ${open ? 'top-4.5 rotate-45' : 'top-3.75'
+                className={`absolute inset-x-3 h-0.5 rounded-sm bg-ink transition-[top,rotate] duration-200 ${open ? 'top-5.25 rotate-45' : 'top-4'
                   }`}
               />
               <span
-                className={`absolute inset-x-3 h-0.5 rounded-sm bg-white transition-[top,rotate] duration-350 ease-soft ${open ? 'top-4.5 -rotate-45' : 'top-5.5'
+                className={`absolute inset-x-3 h-0.5 rounded-sm bg-ink transition-[top,rotate] duration-200 ${open ? 'top-5.25 -rotate-45' : 'top-6.5'
                   }`}
               />
             </button>
@@ -179,27 +229,32 @@ export default function Header({ locale }: HeaderProps) {
       </header>
 
       {isHome && (
-        <section data-hero className="relative grid grid-cols-[minmax(0,1.1fr)_minmax(0,.9fr)] items-center gap-12 pt-[clamp(3rem,8vw,6rem)] pb-[clamp(2rem,5vw,3.5rem)] max-[900px]:grid-cols-1 max-[900px]:gap-10 before:pointer-events-none before:absolute before:top-[-8%] before:left-[-12%] before:-z-10 before:size-120 before:animate-float before:rounded-full before:bg-[radial-gradient(circle,rgba(77,163,255,.28),transparent_65%)] before:blur-[70px] after:pointer-events-none after:absolute after:right-[-8%] after:bottom-[-18%] after:-z-10 after:size-120 after:animate-float-slow after:rounded-full after:bg-[radial-gradient(circle,rgba(255,154,60,.16),transparent_65%)] after:blur-[70px]">
-          <div className="*:animate-rise [&>:nth-child(2)]:[animation-delay:80ms] [&>:nth-child(3)]:[animation-delay:160ms] [&>:nth-child(4)]:[animation-delay:240ms] [&>:nth-child(5)]:[animation-delay:320ms]">
-            <p className="m-0 inline-flex items-center gap-[.6rem] rounded-full border border-white/8 bg-white/[.028] py-[.35rem] pr-[.85rem] pl-[.7rem] text-[.8rem] text-soft before:size-1.75 before:animate-pulse-ring before:rounded-full before:bg-ok">{text.eyebrow}</p>
-            <p className="mt-[1.4rem] mb-0 text-[clamp(2.4rem,5.4vw,4.1rem)] leading-[1.03] font-bold tracking-[-.04em] text-white">{renderTitle(text.title, text.highlight)}</p>
-            <p className="mt-[1.4rem] mb-0 max-w-136 text-[1.08rem] text-soft">{text.description}</p>
-
-            <div className="mt-8 flex flex-wrap gap-3 max-sm:flex-col max-sm:items-stretch">
-              <a className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-transparent font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-[1.4rem] py-[.8rem] text-[.95rem] bg-[linear-gradient(100deg,#4da3ff,#5eead4)] text-[#04101c] shadow-[0_10px_30px_-10px_rgba(77,163,255,.7)] hover:shadow-[0_16px_44px_-8px_rgba(77,163,255,.85)] after:absolute after:inset-0 after:translate-x-[-120%] after:transition-transform after:duration-700 after:ease-soft after:bg-[linear-gradient(105deg,transparent_30%,rgba(255,255,255,.5)_50%,transparent_70%)] hover:after:translate-x-[120%]" data-btn href="https://discord.consolex1.com">
+        <section
+          data-hero
+          className="grid items-center gap-10 pt-10 pb-12 sm:pt-14 sm:pb-16 lg:grid-cols-[1.1fr_.9fr] lg:gap-14 lg:pt-20 lg:pb-24"
+        >
+          <div className="min-w-0 *:animate-rise [&>:nth-child(2)]:[animation-delay:70ms] [&>:nth-child(3)]:[animation-delay:140ms] [&>:nth-child(4)]:[animation-delay:210ms] [&>:nth-child(5)]:[animation-delay:280ms]">
+            <p className="m-0 inline-flex items-center gap-2 font-mono text-[.74rem] tracking-[.08em] text-mute uppercase before:size-[.45rem] before:bg-accent">
+              {text.eyebrow}
+            </p>
+            <p className="mt-5 mb-0 font-display text-[clamp(2.1rem,8.4vw,4.1rem)] leading-[1.04] font-bold tracking-[-.035em] text-ink">
+              {renderTitle(text.title, text.highlight)}
+            </p>
+            <p className="mt-5 mb-0 max-w-136 text-base leading-[1.65] text-soft sm:text-[1.1rem]">
+              {text.description}
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:brightness-110 w-full sm:w-auto" href="https://discord.consolex1.com">
                 {text.heroButtonPrimary}
               </a>
-              <a className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border font-semibold no-underline cursor-pointer translate-x-(--bx,0px) translate-y-(--by,0px) transition-[translate,scale,background-color,border-color,box-shadow,color,filter] duration-250 ease-soft active:scale-[.97] px-[1.4rem] py-[.8rem] text-[.95rem] border-white/8 bg-white/5.5 text-ink hover:border-white/16 hover:bg-white/9" data-btn href={`${routes.home}#plans`}>
+              <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-5 py-2.5 text-[.95rem] border-line-strong bg-panel text-ink hover:bg-panel-hover w-full sm:w-auto" href={`${routes.home}#plans`}>
                 {text.heroButtonSecondary}
               </a>
             </div>
-
-            <p className="mt-7 mb-0 text-[.88rem] text-mute">
-              <span className="mr-2 inline-block size-1.75 animate-pulse-ring rounded-full bg-ok" />
-              {text.statusText} <a className="text-soft underline decoration-white/16 underline-offset-[3px] hover:text-white" href="https://status.consolex1.com">status.consolex1.com</a>
-            </p>
+            <div className="mt-5">
+              <StatusPill locale={locale} />
+            </div>
           </div>
-
           <HeroTerminal locale={locale} />
         </section>
       )}

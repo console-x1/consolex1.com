@@ -11,7 +11,11 @@ export function generateStaticParams() {
   return getHostingPages('en').map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string }; }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const page = getHostingPage('en', params.slug);
   if (!page) return {};
 

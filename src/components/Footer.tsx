@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import StatusPill from './StatusPill';
 
 type Locale = 'fr' | 'en';
 
@@ -49,48 +50,59 @@ const footerLinks = {
 
 export default function Footer({ locale }: FooterProps) {
   const links = footerLinks[locale];
+  const linkClass =
+    'inline-flex min-h-9 items-center text-soft no-underline transition-colors hover:text-ink hover:underline hover:decoration-accent hover:underline-offset-[5px]';
 
   return (
-    <footer className="mt-[clamp(4rem,9vw,6.5rem)] grid gap-[1.4rem] border-t border-white/8 pt-8 text-[.9rem] text-mute">
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-        <Link href={locale === 'fr' ? '/' : '/en'} className="group inline-flex items-center gap-[.6rem] text-[1.02rem] font-semibold tracking-[-.015em] text-white no-underline">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="transition-transform duration-500 ease-soft group-hover:rotate-[-8deg] group-hover:scale-[1.12]" src="/avatar.png" alt="" width={22} height={22} />
-          <span>consolex1</span>
-        </Link>
-        <p className="m-0">{links.text}</p>
+    <footer className="mt-[clamp(3.5rem,8vw,6rem)] border-t border-line pt-8 pb-4 text-[.9rem] text-mute">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="max-w-104">
+          <Link
+            href={locale === 'fr' ? '/' : '/en'}
+            className="inline-flex min-h-10 items-center gap-2.5 font-display text-[1.05rem] font-bold tracking-[-.02em] text-ink no-underline"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/avatar.png" alt="" width={24} height={24} />
+            <span>consolex1</span>
+          </Link>
+          <p className="mt-2 mb-0 leading-[1.6]" data-six-seven>
+            {links.text}
+          </p>
+          <div className="mt-3">
+            <StatusPill locale={locale} />
+          </div>
+        </div>
+
+        <nav
+          aria-label={locale === 'en' ? 'Footer' : 'Pied de page'}
+          className="grid grid-cols-2 gap-x-8 gap-y-0.5 sm:grid-cols-2 sm:gap-x-12"
+        >
+          <Link className={linkClass} href={links.legal} locale={locale}>
+            {links.legalLabel}
+          </Link>
+          <a className={linkClass} href={links.panelUrl}>
+            {links.panelLabel}
+          </a>
+          <Link className={linkClass} href={links.terms} locale={locale}>
+            {links.termsLabel}
+          </Link>
+          <a className={linkClass} href={links.statusUrl}>
+            {links.statusLabel}
+          </a>
+          <Link className={linkClass} href={links.privacy} locale={locale}>
+            {links.privacyLabel}
+          </Link>
+          <a className={linkClass} href={links.mapsUrl} target="_blank" rel="noopener noreferrer">
+            {links.mapsLabel}
+          </a>
+          <Link className={linkClass} href={links.about} locale={locale}>
+            {links.aboutLabel}
+          </Link>
+          <a className={linkClass} href={links.trustpilotUrl} target="_blank" rel="noopener noreferrer">
+            {links.trustpilotLabel}
+          </a>
+        </nav>
       </div>
-      <div className="flex flex-wrap gap-x-[1.4rem] gap-y-2 [&_a]:relative [&_a]:whitespace-nowrap [&_a]:text-soft [&_a]:no-underline [&_a]:transition-colors [&_a]:after:absolute [&_a]:after:inset-x-0 [&_a]:after:-bottom-0.5 [&_a]:after:h-px [&_a]:after:origin-left [&_a]:after:scale-x-0 [&_a]:after:bg-brand [&_a]:after:transition-transform [&_a]:after:duration-350 [&_a]:after:ease-soft [&_a]:hover:text-white [&_a]:hover:after:scale-x-100">
-        <Link href={links.legal} locale={locale}>
-          {links.legalLabel}
-        </Link>
-        <Link href={links.terms} locale={locale}>
-          {links.termsLabel}
-        </Link>
-        <Link href={links.privacy} locale={locale}>
-          {links.privacyLabel}
-        </Link>
-        <Link href={links.about} locale={locale}>
-          {links.aboutLabel}
-        </Link>
-        <a href={links.panelUrl}>{links.panelLabel}</a>
-        <a href={links.statusUrl}>{links.statusLabel}</a>
-        <a href={links.mapsUrl} target="_blank" rel="noopener noreferrer">
-          {links.mapsLabel}
-        </a>
-        <a href={links.trustpilotUrl} target="_blank" rel="noopener noreferrer">
-          {links.trustpilotLabel}
-        </a>
-      </div>
-      <iframe
-        src="https://status.consolex1.com/badge?theme=dark"
-        title="Statut des services consolex1"
-        width="250"
-        height="30"
-        frameBorder="0"
-        scrolling="no"
-        style={{ colorScheme: 'normal' }}
-      />
     </footer>
   );
 }

@@ -23,7 +23,8 @@ export const metadata: Metadata = {
     'discord hosting',
     'consolex1',
   ],
-  description: 'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
+  description:
+    'consolex1 provides French hosting for Discord bots, APIs, websites, Node.js apps and Python services, with a France-based infrastructure and Pterodactyl panel.',
   metadataBase: new URL('https://consolex1.com'),
   icons: {
     icon: '/avatar.png',
@@ -32,7 +33,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'consolex1 | French hosting for Discord bots, Node.js, Python and web apps',
-    description: 'Host your Discord bots, APIs, websites and Python apps in France with consolex1 and a simple Pterodactyl control panel.',
+    description:
+      'Host your Discord bots, APIs, websites and Python apps in France with consolex1 and a simple Pterodactyl control panel.',
     url: 'https://consolex1.com/en',
     siteName: 'consolex1',
     type: 'website',
@@ -49,7 +51,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'consolex1 — French hosting',
-    description: 'consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
+    description:
+      'consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
     images: ['/avatar.png'],
   },
   robots: {
@@ -71,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative z-1 mx-auto w-[min(1080px,100%)] px-6 pt-3 pb-8">
+    <div className="relative z-1 mx-auto w-full max-w-270 px-4 pb-8 sm:px-6" data-shell>
       <Header locale="en" />
       <Breadcrumbs />
       <main lang="en">{children}</main>

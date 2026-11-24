@@ -73,12 +73,12 @@ export const metadata = {
 
 export default function TarifPage() {
   return (
-    <section className="my-[clamp(3.5rem,8vw,5.5rem)]">
-      <div className="mb-9 max-w-180 [&_h1]:text-[clamp(2.1rem,4.6vw,3.3rem)] [&_h1]:tracking-[-.035em] [&_h2]:text-[clamp(1.6rem,3vw,2.3rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-184 [&_p]:text-[1.04rem] [&_p]:leading-[1.75] [&_p]:text-soft **:data-btn:mt-2" data-reveal="header">
+    <section className="my-[clamp(3rem,7vw,5rem)]">
+      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
         <h1>Nos tarifs</h1>
         <p>Options simples et transparentes pour tester, développer et mettre en production. Les offres payantes sont affichées en vue de leur disponibilité future et ne sont actuellement pas disponibles à l’achat.</p>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-3 sm:gap-4">
         {plans.map((plan) => (
           <PlanCard key={plan.title} {...plan} locale="fr" />
         ))}

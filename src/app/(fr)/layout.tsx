@@ -84,7 +84,7 @@ type Locale = (typeof supportedLocales)[number];
 
 export default function FrLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative z-1 mx-auto w-[min(1080px,100%)] px-6 pt-3 pb-8">
+    <div className="relative z-1 mx-auto w-full max-w-270 px-4 pb-8 sm:px-6" data-shell>
       <Header locale="fr" />
       <Breadcrumbs />
       <main lang="fr">{children}</main>
