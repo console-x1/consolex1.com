@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative z-1 mx-auto w-full max-w-270 px-4 pb-8 sm:px-6" data-shell>
+    <div className="relative z-1 mx-auto w-full max-w-[100rem] px-4 pb-8 sm:px-6 lg:px-10 2xl:px-14" data-shell>
       <Header locale="en" />
       <Breadcrumbs />
       <main lang="en">{children}</main>

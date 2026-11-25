@@ -117,14 +117,30 @@ export default function ConsentBanner() {
         <div className="min-w-0 flex-1 [&_p]:mt-1.5 [&_p]:mb-0 [&_p]:text-[.85rem] [&_p]:leading-[1.55] [&_p]:text-soft [&_strong]:block [&_strong]:text-[.95rem] [&_strong]:text-ink">
           <strong>{m.title}</strong>
           <p>{m.desc}</p>
-          <label className="mt-2 flex min-h-9 cursor-pointer items-center gap-2.5 text-[.85rem] text-soft">
-            <input className="size-4 accent-brand" type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />
+          <label className="group mt-2 flex min-h-9 cursor-pointer items-center gap-3 text-[.85rem] text-soft select-none">
+            <input className="peer sr-only" type="checkbox" checked={anonymize} onChange={(e) => setAnonymize(e.target.checked)} />
+            <span
+              aria-hidden="true"
+              className="grid size-5 shrink-0 place-items-center rounded-md border-2 border-line-strong bg-page transition-[background-color,border-color,scale] duration-200 ease-soft group-hover:border-brand peer-checked:animate-pop peer-checked:border-brand peer-checked:bg-brand peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand peer-active:scale-90"
+            >
+              <svg viewBox="0 0 16 16" className="size-3.5 text-on-brand" fill="none">
+                <path
+                  d="M3.5 8.6l3 3 6-7.2"
+                  pathLength="1"
+                  stroke="currentColor"
+                  strokeWidth="2.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] delay-75 duration-300 ease-soft group-has-checked:[stroke-dashoffset:0]"
+                />
+              </svg>
+            </span>
             {m.anonymizeLabel}
           </label>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:flex">
-          <button onClick={decline} className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 border-line-strong bg-transparent text-soft hover:bg-panel-hover hover:text-ink w-full sm:w-auto">{m.decline}</button>
-          <button onClick={accept} className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 bg-brand text-on-brand hover:brightness-110 w-full sm:w-auto">{m.accept}</button>
+          <button onClick={decline} className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 border-line-strong bg-transparent text-soft bg-[linear-gradient(var(--c-line),var(--c-line))] bg-size-[0%_100%] bg-left bg-no-repeat hover:bg-size-[100%_100%] hover:border-ink hover:text-ink w-full sm:w-auto">{m.decline}</button>
+          <button onClick={accept} className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 bg-brand text-on-brand hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_0_var(--c-accent)] w-full sm:w-auto">{m.accept}</button>
         </div>
       </div>
     </div>

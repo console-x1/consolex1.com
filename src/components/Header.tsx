@@ -78,7 +78,19 @@ const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; a
   },
 };
 
-// Le mot mis en avant est souligné d'un trait dessiné à la main (SVG animé), pas d'un dégradé
+// Trait ondulé (masque SVG) rempli par un dégradé qui défile en continu
+const SQUIGGLE =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8.5C38 3 82 11 121 5.5S178 3.5 197 7' fill='none' stroke='black' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E\")";
+const UNDERLINE_MASK = {
+  WebkitMaskImage: SQUIGGLE,
+  maskImage: SQUIGGLE,
+  WebkitMaskSize: '100% 100%',
+  maskSize: '100% 100%',
+  WebkitMaskRepeat: 'no-repeat',
+  maskRepeat: 'no-repeat',
+} as const;
+
+// Le mot mis en avant est souligné d'un trait dessiné à la main, rempli par un dégradé animé
 function renderTitle(title: string, highlight: string) {
   const i = title.indexOf(highlight);
   if (i < 0) return title;
@@ -87,24 +99,11 @@ function renderTitle(title: string, highlight: string) {
       {title.slice(0, i)}
       <span className="relative inline-block whitespace-nowrap">
         {highlight}
-        <svg
+        <span
           aria-hidden="true"
-          viewBox="0 0 200 12"
-          preserveAspectRatio="none"
-          className="absolute bottom-[-0.12em] left-0 h-[.26em] w-full text-accent"
-        >
-          <path
-            d="M3 8.5C38 3 82 11 121 5.5S178 3.5 197 7"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="4.5"
-            strokeLinecap="round"
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset="1"
-            className="animate-draw"
-          />
-        </svg>
+          className="absolute bottom-[-0.12em] left-0 block h-[.26em] w-full animate-[slide-x_5s_linear_infinite,wipe_.9s_.5s_cubic-bezier(.65,0,.35,1)_backwards] bg-[linear-gradient(90deg,var(--c-accent),var(--c-warn),var(--c-ok),var(--c-brand),var(--c-accent))] bg-size-[200%_100%]"
+          style={UNDERLINE_MASK}
+        />
       </span>
       {title.slice(i + highlight.length)}
     </>
@@ -161,7 +160,7 @@ export default function Header({ locale }: HeaderProps) {
 
       <header
         ref={headerRef}
-        className="sticky top-0 z-50 -mx-4 border-b border-line bg-page/90 px-4 backdrop-blur-md sm:-mx-6 sm:px-6"
+        className="sticky top-0 z-50 -mx-4 border-b border-line bg-page/90 px-4 backdrop-blur-md sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10 2xl:-mx-14 2xl:px-14"
       >
         <div className="flex h-14 items-center justify-between gap-2 sm:h-16 sm:gap-3">
           <Link href={routes.home} className="inline-flex min-h-11 items-center gap-2.5 font-display text-[1.12rem] font-bold tracking-[-.02em] text-ink no-underline">
@@ -204,7 +203,7 @@ export default function Header({ locale }: HeaderProps) {
               <span className="hidden sm:inline">{text.alternate}</span>
             </Link>
             <ThemeToggle locale={locale} />
-            <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 bg-brand text-on-brand hover:brightness-110 max-[639px]:hidden" href="https://discord.consolex1.com">
+            <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-4 py-2 text-[.88rem] sm:min-h-10 bg-brand text-on-brand hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_0_var(--c-accent)] max-[639px]:hidden" href="https://discord.consolex1.com">
               {text.discord}
             </a>
             <button
@@ -244,10 +243,10 @@ export default function Header({ locale }: HeaderProps) {
               {text.description}
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:brightness-110 w-full sm:w-auto" href="https://discord.consolex1.com">
+              <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_0_var(--c-accent)] after:content-['→'] after:-ml-2 after:w-0 after:overflow-hidden after:opacity-0 after:transition-[width,margin,opacity] after:duration-200 hover:after:ml-0 hover:after:w-4 hover:after:opacity-100 w-full sm:w-auto" href="https://discord.consolex1.com">
                 {text.heroButtonPrimary}
               </a>
-              <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-5 py-2.5 text-[.95rem] border-line-strong bg-panel text-ink hover:bg-panel-hover w-full sm:w-auto" href={`${routes.home}#plans`}>
+              <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-5 py-2.5 text-[.95rem] border-line-strong bg-panel text-ink bg-[linear-gradient(var(--c-line),var(--c-line))] bg-size-[0%_100%] bg-left bg-no-repeat hover:bg-size-[100%_100%] hover:border-ink after:content-['→'] after:-ml-2 after:w-0 after:overflow-hidden after:opacity-0 after:transition-[width,margin,opacity] after:duration-200 hover:after:ml-0 hover:after:w-4 hover:after:opacity-100 w-full sm:w-auto" href={`${routes.home}#plans`}>
                 {text.heroButtonSecondary}
               </a>
             </div>

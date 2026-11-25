@@ -102,6 +102,15 @@
   --animate-shake: shake 0.5s ease-in-out infinite;
   --animate-pop: pop 0.4s var(--ease-soft) backwards;
   --animate-draw: draw 0.9s 0.5s ease-out forwards;
+  --animate-slide-x: slide-x 5s linear infinite;
+  --animate-wipe: wipe 0.9s 0.5s cubic-bezier(0.65, 0, 0.35, 1) backwards;
+  --animate-sway: sway 2.2s ease-in-out infinite;
+  --animate-flicker: flicker 1.5s ease-in-out infinite;
+  --animate-hover-y: hover-y 2s ease-in-out infinite;
+  --animate-crown: crown 1.8s ease-in-out infinite;
+  --animate-skeleton: skeleton 1.3s ease-in-out infinite;
+  --animate-bar: load-bar 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  --animate-loader-fallback: loader-fallback 0.4s 5s forwards;
 
   @keyframes rise {
     from {
@@ -109,88 +118,151 @@
       transform: translateY(12px);
     }
   }
-
   @keyframes fade-in {
     from {
       opacity: 0;
     }
   }
-
   @keyframes slide-up {
     from {
       opacity: 0;
       transform: translateY(16px);
     }
   }
-
   @keyframes pulse-dot {
     70% {
       box-shadow: 0 0 0 7px transparent;
     }
-
     100% {
       box-shadow: 0 0 0 0 transparent;
     }
   }
-
   @keyframes blink {
     to {
       visibility: hidden;
     }
   }
-
   @keyframes bob {
     from {
       transform: translateY(-14%) rotate(-3deg);
     }
-
     to {
       transform: translateY(14%) rotate(3deg);
     }
   }
-
   @keyframes fall {
     from {
       transform: translateY(-12vh) rotate(0deg);
       opacity: 0;
     }
-
     8% {
       opacity: 1;
     }
-
     to {
       transform: translateY(112vh) rotate(var(--fall-r, 40deg));
       opacity: 0.9;
     }
   }
-
   @keyframes shake {
-
     0%,
     100% {
       transform: translate(0, 0);
     }
-
     25% {
       transform: translate(-3px, 2px);
     }
-
     50% {
       transform: translate(3px, -2px);
     }
-
     75% {
       transform: translate(-2px, -2px);
     }
   }
-
   @keyframes draw {
     to {
       stroke-dashoffset: 0;
     }
   }
-
+  @keyframes slide-x {
+    to {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes wipe {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  @keyframes sway {
+    0%,
+    100% {
+      transform: rotate(-7deg);
+    }
+    50% {
+      transform: rotate(7deg);
+    }
+  }
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    40% {
+      opacity: 0.4;
+      transform: scale(0.92);
+    }
+    55% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    70% {
+      opacity: 0.6;
+    }
+  }
+  @keyframes hover-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  @keyframes crown {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    30% {
+      transform: translateY(-3px) rotate(-5deg);
+    }
+    65% {
+      transform: translateY(0) rotate(4deg);
+    }
+  }
+  @keyframes skeleton {
+    50% {
+      opacity: 0.45;
+    }
+  }
+  @keyframes load-bar {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(0.88);
+    }
+  }
+  @keyframes loader-fallback {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
   @keyframes pop {
     from {
       opacity: 0;
@@ -201,7 +273,6 @@
 
 /* Reset minimal (seul CSS « global » restant) */
 @layer base {
-
   *,
   ::before,
   ::after {

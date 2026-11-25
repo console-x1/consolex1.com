@@ -88,15 +88,21 @@ export default function Interactions() {
       q.setAttribute('aria-expanded', String(card.hasAttribute('data-open')));
     });
 
-    if (reduce || !('IntersectionObserver' in window)) return;
+    if (reduce || !('IntersectionObserver' in window)) {
+      document.querySelectorAll<HTMLElement>(REVEAL).forEach((el) => el.setAttribute('data-in', ''));
+      return;
+    }
 
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const el = entry.target as HTMLElement;
-          el.classList.remove(...HIDDEN);
-          el.classList.add(...SHOWN);
+          el.setAttribute('data-in', '');
+          if (el.classList.contains(HIDDEN[0])) {
+            el.classList.remove(...HIDDEN);
+            el.classList.add(...SHOWN);
+          }
           io.unobserve(el);
         });
       },
@@ -104,12 +110,13 @@ export default function Interactions() {
     );
 
     document.querySelectorAll<HTMLElement>(REVEAL).forEach((el) => {
-      if (el.closest('[data-intro]')) return;
-      // au premier chargement, on laisse visible ce qui est déjà à l'écran (pas de flash)
-      if (isFirst && el.getBoundingClientRect().top < window.innerHeight) return;
-      const siblings = Array.from(el.parentElement?.children ?? []).filter((c) => c.matches(REVEAL));
-      el.style.animationDelay = `${Math.min(Math.max(siblings.indexOf(el), 0), 6) * 60}ms`;
-      el.classList.add(...HIDDEN);
+      // au premier chargement, on laisse visible ce qui est déjà à l'écran (pas de flash) mais on le marque « vu »
+      const keepVisible = el.closest('[data-intro]') || (isFirst && el.getBoundingClientRect().top < window.innerHeight);
+      if (!keepVisible) {
+        const siblings = Array.from(el.parentElement?.children ?? []).filter((c) => c.matches(REVEAL));
+        el.style.animationDelay = `${Math.min(Math.max(siblings.indexOf(el), 0), 6) * 60}ms`;
+        el.classList.add(...HIDDEN);
+      }
       io.observe(el);
     });
 

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
+import Stats from '@/components/Stats';
 
 export const metadata = {
   alternates: {
@@ -226,6 +227,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Stats locale="fr" />
+
       <section className="my-[clamp(3rem,7vw,5rem)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-3 sm:gap-4">
         {features.map((feature) => (
           <Section key={feature.title} title={feature.title} description={feature.description} />
@@ -299,7 +302,7 @@ export default function Home() {
           <h2>Démarrez en quelques minutes.</h2>
           <p>Rejoignez notre Discord pour créer et déployer rapidement votre projet.</p>
         </div>
-        <a className="relative inline-flex items-center justify-center gap-2 rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[background-color,border-color,color,translate] duration-150 active:translate-y-px min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:brightness-110" data-cta href="https://discord.consolex1.com">
+        <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_0_var(--c-accent)] after:content-['→'] after:-ml-2 after:w-0 after:overflow-hidden after:opacity-0 after:transition-[width,margin,opacity] after:duration-200 hover:after:ml-0 hover:after:w-4 hover:after:opacity-100" data-cta href="https://discord.consolex1.com">
           Rejoindre Discord
         </a>
       </section>

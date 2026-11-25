@@ -51,7 +51,7 @@ const footerLinks = {
 export default function Footer({ locale }: FooterProps) {
   const links = footerLinks[locale];
   const linkClass =
-    'inline-flex min-h-9 items-center text-soft no-underline transition-colors hover:text-ink hover:underline hover:decoration-accent hover:underline-offset-[5px]';
+    'inline-flex min-h-9 items-center bg-[linear-gradient(var(--c-accent),var(--c-accent))] bg-[length:0%_2px] bg-[position:100%_calc(50%+.85em)] bg-no-repeat text-soft no-underline transition-[background-size,background-position,color] duration-300 ease-soft hover:bg-[length:100%_2px] hover:bg-[position:0%_calc(50%+.85em)] hover:text-ink';
 
   return (
     <footer className="mt-[clamp(3.5rem,8vw,6rem)] border-t border-line pt-8 pb-4 text-[.9rem] text-mute">
