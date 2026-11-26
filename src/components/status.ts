@@ -60,10 +60,11 @@ export function useStatus(): StatusData {
         if (alive) setData(next);
       });
     };
-    run();
+    const first = window.setTimeout(run, 700);
     const id = window.setInterval(run, 90_000);
     return () => {
       alive = false;
+      window.clearTimeout(first);
       window.clearInterval(id);
     };
   }, []);

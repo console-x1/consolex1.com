@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 import HostingFaqs from '@/components/HostingFaqs';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/en/python-hosting', {
   alternates: {
     canonical: 'https://consolex1.com/en/python-hosting',
     languages: {
@@ -23,7 +25,7 @@ export const metadata = {
     'pterodactyl hosting',
     'consolex1',
   ],
-};
+} as Metadata);
 
 const useCases = [
   {

@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 import HostingFaqs from '@/components/HostingFaqs';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/en/discord-bot-python-hosting', {
   alternates: {
     canonical: 'https://consolex1.com/en/discord-bot-python-hosting',
     languages: {
@@ -19,7 +21,7 @@ export const metadata = {
     'consolex1',
     'bot python',
   ],
-};
+} as Metadata);
 
 const sections = [
   {

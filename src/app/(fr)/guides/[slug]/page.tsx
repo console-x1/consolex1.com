@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogUrl } from '@/lib/social';
 import { notFound } from 'next/navigation';
 import GuideArticle from '@/components/GuideArticle';
 import { getGuide, getGuides, getGuideTranslation } from '@/lib/guides';
@@ -40,9 +41,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: 'consolex1',
       type: 'article',
       locale: 'fr_FR',
-      images: [{ url: '/avatar.png', width: 1200, height: 630, alt: guide.title }],
+      images: [{ url: ogUrl(`/guides/${guide.slug}`), width: 1200, height: 630, alt: guide.title }],
     },
-    twitter: { card: 'summary_large_image', title: guide.title, description: guide.description, images: ['/avatar.png'] },
+    twitter: { card: 'summary_large_image', title: guide.title, description: guide.description, images: [ogUrl(`/guides/${guide.slug}`)] },
     robots: { index: true, follow: true },
   };
 }

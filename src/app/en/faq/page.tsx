@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/en/faq', {
   alternates: {
     canonical: 'https://consolex1.com/en/faq',
     languages: {
@@ -17,7 +19,7 @@ export const metadata = {
     url: 'https://consolex1.com/en/faq',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 const faqs = [
   {

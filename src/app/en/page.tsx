@@ -1,9 +1,14 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
+import PlanAdvisor from '@/components/PlanAdvisor';
 import Stats from '@/components/Stats';
+import TechPills from '@/components/TechPills';
+import TrustReviews from '@/components/TrustReviews';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/en', {
   alternates: {
     canonical: 'https://consolex1.com/en',
     languages: {
@@ -43,7 +48,7 @@ export const metadata = {
     description: 'Free Node.js, Python and Discord bot hosting in France, without a credit card.',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 const features = [
   {
@@ -206,6 +211,8 @@ export default function EnHome() {
 
       <Stats locale="en" />
 
+      <TechPills locale="en" />
+
       <section className="my-[clamp(3rem,7vw,5rem)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-3 sm:gap-4">
         {features.map((feature) => (
           <Section key={feature.title} title={feature.title} description={feature.description} />
@@ -223,6 +230,8 @@ export default function EnHome() {
           ))}
         </div>
       </section>
+
+      <PlanAdvisor locale="en" />
 
       <section className="my-[clamp(3rem,7vw,5rem)]">
         <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
@@ -273,6 +282,8 @@ export default function EnHome() {
           </Link>
         </div>
       </section>
+
+      <TrustReviews locale="en" />
 
       <section className="relative mt-[clamp(3rem,7vw,5rem)] flex flex-col items-start justify-between gap-6 rounded-2xl border border-line-strong border-l-[3px] border-l-accent bg-panel p-6 sm:flex-row sm:items-center sm:p-10 [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-3 [&_p]:mb-0 [&_p]:max-w-136 [&_p]:text-soft" data-reveal>
         <div>

@@ -1,7 +1,8 @@
+import { withSocial } from '@/lib/social';
 import type { Metadata } from 'next';
 import AboutPage from '@/components/AboutPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial('/a-propos', {
   title: 'À propos de consolex1 | Pourquoi cet hébergement gratuit existe',
   description:
     'Découvrez l’histoire et la philosophie de consolex1, un projet indépendant d’hébergement français avec une infrastructure à Paris chez Equinix PA5.',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     images: ['/avatar.png'],
   },
   robots: { index: true, follow: true },
-};
+});
 
 export default function AboutPageFr() {
   return <AboutPage locale="fr" />;

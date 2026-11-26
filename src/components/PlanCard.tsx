@@ -16,7 +16,7 @@ const accents = {
 } as const;
 
 // Une icône et une animation (au survol de la carte) par offre
-function PlanIcon({ accent }: { accent: PlanCardProps['accent'] }) {
+export function PlanIcon({ accent }: { accent: PlanCardProps['accent'] }) {
   const common = {
     width: 22,
     height: 22,

@@ -1,3 +1,6 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+import PlanAdvisor from '@/components/PlanAdvisor';
 import PlanCard from '@/components/PlanCard';
 
 const plans = [
@@ -59,7 +62,7 @@ const plans = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/en/pricing', {
   alternates: {
     canonical: 'https://consolex1.com/en/pricing',
     languages: {
@@ -75,20 +78,23 @@ export const metadata = {
     url: 'https://consolex1.com/en/pricing',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function EnTarifPage() {
   return (
-    <section className="my-[clamp(3rem,7vw,5rem)]">
-      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
-        <h1>Pricing</h1>
-        <p>Simple, transparent options for testing, development, and production. Paid plans are displayed for future availability. They are currently not available for purchase.</p>
-      </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-3 sm:gap-4">
-        {plans.map((plan) => (
-          <PlanCard key={plan.title} {...plan} locale="en" />
-        ))}
-      </div>
-    </section>
+    <>
+      <section id="plans" className="my-[clamp(3rem,7vw,5rem)]">
+        <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
+          <h1>Pricing</h1>
+          <p>Simple, transparent options for testing, development, and production. Paid plans are displayed for future availability. They are currently not available for purchase.</p>
+        </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-3 sm:gap-4">
+          {plans.map((plan) => (
+            <PlanCard key={plan.title} {...plan} locale="en" />
+          ))}
+        </div>
+
+      </section><PlanAdvisor locale="en" />
+    </>
   );
 }

@@ -3,6 +3,9 @@ import type { Guide } from '@/lib/guides';
 import { getGuides } from '@/lib/guides';
 import type { Locale } from '@/lib/hosting-pages';
 import { hostingResources } from '@/lib/hosting-pages';
+import { parseHeading, readingMinutes, renderInline, slugify, splitParagraphs } from '@/lib/guide-utils';
+import GuideToc from './GuideToc';
+import ShareButton from './ShareButton';
 
 export default function GuideArticle({
   guide,
@@ -21,6 +24,31 @@ export default function GuideArticle({
     publisher: { '@type': 'Organization', name: 'consolex1', url: 'https://consolex1.com' },
     mainEntityOfPage: `https://consolex1.com${locale === 'en' ? '/en' : ''}/guides/${guide.slug}`,
   };
+  const pageUrl = `https://consolex1.com${locale === 'en' ? '/en' : ''}/guides/${guide.slug}`;
+  const english = locale === 'en';
+  const sections = guide.sections.map((section, i) => {
+    const { step, title } = parseHeading(section.heading);
+    return { ...section, step, title, id: `${slugify(title) || 'section'}-${i + 1}` };
+  });
+  const steps = sections.filter((section) => section.step);
+  const minutes = readingMinutes([guide.lead, ...guide.sections.map((x) => `${x.heading} ${x.body}`), ...guide.faqs.map((f) => `${f.question} ${f.answer}`)]);
+  const howTo =
+    steps.length >= 3
+      ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: guide.title,
+        description: guide.description,
+        inLanguage: locale,
+        step: steps.map((section, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: section.title,
+          text: section.body,
+          url: `${pageUrl}#${section.id}`,
+        })),
+      }
+      : null;
   const isServerCreationGuide =
     guide.slug === 'create-consolex1-server' || guide.slug === 'creer-un-serveur-consolex1';
   const eggRepository =
@@ -42,12 +70,38 @@ export default function GuideArticle({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
       />
+      {howTo && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howTo).replace(/</g, '\\u003c') }}
+        />
+      )}
       <article>
         <section className="my-[clamp(3rem,7vw,5rem)] mt-8! sm:mt-10! [.hero~main_&]:mt-2! **:data-[reveal=header]:animate-rise [.hero~main_&_h1]:text-[clamp(1.35rem,2.4vw,1.85rem)] [.hero~main_&_h1]:max-w-[34ch]" data-intro>
           <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
             <span className="mb-4 inline-flex items-center gap-2 font-mono text-[.72rem] font-medium uppercase tracking-[.08em] text-mute before:size-[.4rem] before:bg-accent">{locale === 'en' ? 'Practical guide' : 'Guide pratique'}</span>
             <h1>{guide.title}</h1>
             <p className="mt-4 mb-0 max-w-160 text-base leading-[1.7] text-soft sm:text-[1.05rem]">{guide.lead}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-[.88rem] text-mute">
+              <span className="inline-flex items-center gap-2 font-mono text-[.78rem] tracking-[.04em] uppercase">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+                {english ? `${minutes} min read` : `${minutes} min de lecture`}
+              </span>
+              <ShareButton title={guide.title} locale={locale} />
+            </div>
+            {sections.length > 2 && (
+              <details className="group mt-6 rounded-xl border border-line bg-panel lg:hidden">
+                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 text-[.95rem] font-semibold text-ink after:font-mono after:text-[1.3rem] after:text-mute after:content-['+'] group-open:after:content-['−']">
+                  {english ? 'In this guide' : 'Dans ce guide'}
+                </summary>
+                <div className="border-t border-line px-2 py-3">
+                  <GuideToc items={sections.map((x) => ({ id: x.id, label: x.title }))} />
+                </div>
+              </details>
+            )}
           </div>
         </section>
         {isServerCreationGuide && (
@@ -92,14 +146,52 @@ export default function GuideArticle({
             </div>
           </section>
         )}
-        {guide.sections.map((section) => (
-          <section className="my-[clamp(3rem,7vw,5rem)]" key={section.heading}>
-            <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
-              <h2>{section.heading}</h2>
-              <p className="mt-4 mb-0 max-w-160 text-base leading-[1.7] text-soft sm:text-[1.05rem]">{section.body}</p>
-            </div>
-          </section>
-        ))}
+        <div className="my-[clamp(2rem,5vw,3.5rem)] lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_18rem]">
+          <div className="min-w-0">
+            {sections.map((section) => (
+              <section
+                id={section.id}
+                key={section.id}
+                className="scroll-mt-28 border-t border-line py-8 first:border-t-0 first:pt-0 sm:py-10"
+              >
+                <div className={section.step ? 'grid gap-x-6 gap-y-2 sm:grid-cols-[3.25rem_minmax(0,1fr)]' : ''}>
+                  {section.step && (
+                    <span className="font-mono text-[1.7rem] leading-none font-semibold text-accent sm:pt-1.5" aria-hidden="true">
+                      {section.step.padStart(2, '0')}
+                    </span>
+                  )}
+                  <div className="min-w-0">
+                    <h2 className="group/h text-[clamp(1.35rem,2.6vw,1.8rem)]">
+                      {section.title}
+                      <a
+                        href={`#${section.id}`}
+                        aria-label={english ? 'Link to this section' : 'Lien vers cette section'}
+                        className="ml-2 align-middle font-mono text-[.8em] font-normal text-mute no-underline opacity-0 transition-opacity duration-200 group-hover/h:opacity-100 focus-visible:opacity-100"
+                      >
+                        #
+                      </a>
+                    </h2>
+                    {splitParagraphs(section.body).map((paragraph, i) => (
+                      <p key={i} className="mt-4 mb-0 max-w-176 text-[1.04rem] leading-[1.85] text-soft">
+                        {renderInline(paragraph)}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            ))}
+          </div>
+          {sections.length > 2 && (
+            <aside className="hidden lg:block" aria-label={english ? 'Table of contents' : 'Sommaire'}>
+              <div className="sticky top-24">
+                <p className="m-0 mb-3 font-mono text-[.72rem] tracking-[.08em] text-mute uppercase">
+                  {english ? 'In this guide' : 'Dans ce guide'}
+                </p>
+                <GuideToc items={sections.map((x) => ({ id: x.id, label: x.title }))} />
+              </div>
+            </aside>
+          )}
+        </div>
       </article>
       <section className="my-[clamp(3rem,7vw,5rem)]">
         <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">

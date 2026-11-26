@@ -1,9 +1,13 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 import Section from '@/components/Section';
 import PlanCard from '@/components/PlanCard';
+import PlanAdvisor from '@/components/PlanAdvisor';
 import Stats from '@/components/Stats';
+import TrustReviews from '@/components/TrustReviews';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/', {
   alternates: {
     canonical: 'https://consolex1.com/',
     languages: {
@@ -45,7 +49,7 @@ export const metadata = {
     description: 'Hébergement gratuit Node.js, Python et Discord en France, sans carte bancaire.',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 const features = [
   {
@@ -247,6 +251,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PlanAdvisor locale="fr" />
+
       <section className="my-[clamp(3rem,7vw,5rem)]">
         <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
           <h2>FAQ</h2>
@@ -296,6 +302,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <TrustReviews locale="fr" />
 
       <section className="relative mt-[clamp(3rem,7vw,5rem)] flex flex-col items-start justify-between gap-6 rounded-2xl border border-line-strong border-l-[3px] border-l-accent bg-panel p-6 sm:flex-row sm:items-center sm:p-10 [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-3 [&_p]:mb-0 [&_p]:max-w-136 [&_p]:text-soft" data-reveal>
         <div>

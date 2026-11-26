@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
 import Link from 'next/link';
 import HostingFaqs from '@/components/HostingFaqs';
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/hebergement-france', {
   alternates: {
     canonical: 'https://consolex1.com/hebergement-france',
     languages: {
@@ -24,7 +26,7 @@ export const metadata = {
     'hebergement france',
     'consolex1',
   ],
-};
+} as Metadata);
 
 const benefits = [
   {

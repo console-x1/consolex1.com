@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getGuides } from '@/lib/guides';
 import type { Locale } from '@/lib/hosting-pages';
 import { hostingResources } from '@/lib/hosting-pages';
+import { readingMinutes } from '@/lib/guide-utils';
 
 export default function GuidesIndex({ locale }: { locale: Locale }) {
   const guides = getGuides(locale);
@@ -31,6 +32,11 @@ export default function GuidesIndex({ locale }: { locale: Locale }) {
             >
               <h2>{guide.title}</h2>
               <p>{guide.description}</p>
+              <p className="mt-3! font-mono text-[.74rem]! tracking-[.04em] text-mute! uppercase">
+                {english
+                  ? `${readingMinutes([guide.lead, ...guide.sections.map((x) => x.body)])} min read`
+                  : `${readingMinutes([guide.lead, ...guide.sections.map((x) => x.body)])} min de lecture`}
+              </p>
             </Link>
           ))}
         </div>

@@ -85,9 +85,9 @@
 }
 
 @theme {
-  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Bricolage Grotesque Variable', 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-sans: var(--font-instrument), 'Instrument Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-bricolage), 'Bricolage Grotesque Variable', 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
   --ease-soft: cubic-bezier(0.22, 0.8, 0.24, 1);
 
@@ -118,151 +118,190 @@
       transform: translateY(12px);
     }
   }
+
   @keyframes fade-in {
     from {
       opacity: 0;
     }
   }
+
   @keyframes slide-up {
     from {
       opacity: 0;
       transform: translateY(16px);
     }
   }
+
   @keyframes pulse-dot {
     70% {
       box-shadow: 0 0 0 7px transparent;
     }
+
     100% {
       box-shadow: 0 0 0 0 transparent;
     }
   }
+
   @keyframes blink {
     to {
       visibility: hidden;
     }
   }
+
   @keyframes bob {
     from {
       transform: translateY(-14%) rotate(-3deg);
     }
+
     to {
       transform: translateY(14%) rotate(3deg);
     }
   }
+
   @keyframes fall {
     from {
       transform: translateY(-12vh) rotate(0deg);
       opacity: 0;
     }
+
     8% {
       opacity: 1;
     }
+
     to {
       transform: translateY(112vh) rotate(var(--fall-r, 40deg));
       opacity: 0.9;
     }
   }
+
   @keyframes shake {
+
     0%,
     100% {
       transform: translate(0, 0);
     }
+
     25% {
       transform: translate(-3px, 2px);
     }
+
     50% {
       transform: translate(3px, -2px);
     }
+
     75% {
       transform: translate(-2px, -2px);
     }
   }
+
   @keyframes draw {
     to {
       stroke-dashoffset: 0;
     }
   }
+
   @keyframes slide-x {
     to {
       background-position: 200% 0;
     }
   }
+
   @keyframes wipe {
     from {
       clip-path: inset(0 100% 0 0);
     }
+
     to {
       clip-path: inset(0 0 0 0);
     }
   }
+
   @keyframes sway {
+
     0%,
     100% {
       transform: rotate(-7deg);
     }
+
     50% {
       transform: rotate(7deg);
     }
   }
+
   @keyframes flicker {
+
     0%,
     100% {
       opacity: 1;
       transform: scale(1);
     }
+
     40% {
       opacity: 0.4;
       transform: scale(0.92);
     }
+
     55% {
       opacity: 1;
       transform: scale(1.12);
     }
+
     70% {
       opacity: 0.6;
     }
   }
+
   @keyframes hover-y {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-3px);
     }
   }
+
   @keyframes crown {
+
     0%,
     100% {
       transform: translateY(0) rotate(0deg);
     }
+
     30% {
       transform: translateY(-3px) rotate(-5deg);
     }
+
     65% {
       transform: translateY(0) rotate(4deg);
     }
   }
+
   @keyframes skeleton {
     50% {
       opacity: 0.45;
     }
   }
+
   @keyframes load-bar {
     from {
       transform: scaleX(0);
     }
+
     to {
       transform: scaleX(0.88);
     }
   }
+
   @keyframes loader-fallback {
     to {
       opacity: 0;
       visibility: hidden;
     }
   }
+
   @keyframes pop {
     from {
       opacity: 0;
@@ -273,6 +312,7 @@
 
 /* Reset minimal (seul CSS « global » restant) */
 @layer base {
+
   *,
   ::before,
   ::after {

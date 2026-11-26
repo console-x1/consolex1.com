@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/en/privacy-policy', {
   alternates: {
     canonical: 'https://consolex1.com/en/privacy-policy',
     languages: {
@@ -15,7 +17,7 @@ export const metadata = {
     url: 'https://consolex1.com/en/privacy-policy',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function EnPrivacyPolicyPage() {
   return (

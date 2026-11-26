@@ -18,16 +18,35 @@ export default function TrafficTradeBanner() {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || container.dataset.loaded) return;
-    container.dataset.loaded = "true";
+    const slot = slotRef.current;
+    if (!container || !slot) return;
 
-    const placeholder = document.createElement("div");
-    const script = document.createElement("script");
-    script.src = "https://traffictrade.fr/ads.js";
-    script.dataset.token = TRAFFICTRADE_TOKEN;
+    const load = () => {
+      if (container.dataset.loaded) return;
+      container.dataset.loaded = "true";
+      const placeholder = document.createElement("div");
+      const script = document.createElement("script");
+      script.src = "https://traffictrade.fr/ads.js";
+      script.dataset.token = TRAFFICTRADE_TOKEN;
+      container.appendChild(placeholder);
+      container.appendChild(script);
+    };
 
-    container.appendChild(placeholder);
-    container.appendChild(script);
+    if (!("IntersectionObserver" in window)) {
+      load();
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          load();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "500px 0px" },
+    );
+    io.observe(slot);
+    return () => io.disconnect();
   }, []);
 
   useEffect(() => {
@@ -41,17 +60,18 @@ export default function TrafficTradeBanner() {
   }, []);
 
   return (
-    <div className="relative z-[1] mx-auto mb-8 flex w-full max-w-[100rem] justify-center px-4 sm:px-6 lg:px-10 2xl:px-14">
-      <div className="flex w-full max-w-[760px] flex-col items-center gap-2 rounded-xl border border-line bg-panel px-3 py-3 sm:w-fit sm:px-4">
-        <span className="font-mono text-[.65rem] tracking-[.14em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
-        <div ref={slotRef} className="w-full max-w-[728px] overflow-hidden rounded-lg sm:w-[728px]" style={{ height: AD_HEIGHT * scale }}>
+    <div className="relative z-1 mx-auto mb-8 flex w-full max-w-[100rem] justify-center px-4 sm:px-6 lg:px-10 2xl:px-14">
+      <div className="flex w-full max-w-190 flex-col items-center gap-2 rounded-xl border border-line bg-panel px-3 py-3 sm:w-fit sm:px-4">
+        <span suppressHydrationWarning className="font-mono text-[.65rem] tracking-[.14em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
+        <div ref={slotRef} className="w-full max-w-182 overflow-hidden rounded-lg sm:w-182" style={{ height: AD_HEIGHT * scale }}>
           <div
             ref={containerRef}
-            className="h-[68px] w-[728px] origin-top-left overflow-hidden [&_iframe]:block [&_iframe]:h-[90px] [&_iframe]:w-full [&_iframe]:border-0"
+            className="h-17 w-182 origin-top-left overflow-hidden [&_iframe]:block [&_iframe]:h-22.5 [&_iframe]:w-full [&_iframe]:border-0"
             style={{ transform: `scale(${scale})` }}
           />
         </div>
         <a
+          suppressHydrationWarning
           className="m-0 inline-flex min-h-8 items-center text-[.7rem] text-mute no-underline transition-colors hover:text-brand"
           href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}
           target="_blank"

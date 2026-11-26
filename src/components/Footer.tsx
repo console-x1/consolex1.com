@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import CookieSettingsButton from './CookieSettingsButton';
+import Logo from './Logo';
 import StatusPill from './StatusPill';
 
 type Locale = 'fr' | 'en';
@@ -26,6 +28,7 @@ const footerLinks = {
     statusLabel: 'Statut',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
+    cookiesLabel: 'Gérer mes cookies',
   },
   en: {
     text: '© 2026 consolex1. French hosting for bots, apps and websites.',
@@ -45,6 +48,7 @@ const footerLinks = {
     statusLabel: 'Status',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
+    cookiesLabel: 'Manage cookies',
   },
 };
 
@@ -54,15 +58,14 @@ export default function Footer({ locale }: FooterProps) {
     'inline-flex min-h-9 items-center bg-[linear-gradient(var(--c-accent),var(--c-accent))] bg-[length:0%_2px] bg-[position:100%_calc(50%+.85em)] bg-no-repeat text-soft no-underline transition-[background-size,background-position,color] duration-300 ease-soft hover:bg-[length:100%_2px] hover:bg-[position:0%_calc(50%+.85em)] hover:text-ink';
 
   return (
-    <footer className="mt-[clamp(3.5rem,8vw,6rem)] border-t border-line pt-8 pb-4 text-[.9rem] text-mute">
+    <footer className="[content-visibility:auto] [contain-intrinsic-size:auto_360px] mt-[clamp(3.5rem,8vw,6rem)] border-t border-line pt-8 pb-4 text-[.9rem] text-mute">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-104">
           <Link
             href={locale === 'fr' ? '/' : '/en'}
             className="inline-flex min-h-10 items-center gap-2.5 font-display text-[1.05rem] font-bold tracking-[-.02em] text-ink no-underline"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/avatar.png" alt="" width={24} height={24} />
+            <Logo size={24} />
             <span>consolex1</span>
           </Link>
           <p className="mt-2 mb-0 leading-[1.6]" data-six-seven>
@@ -101,6 +104,7 @@ export default function Footer({ locale }: FooterProps) {
           <a className={linkClass} href={links.trustpilotUrl} target="_blank" rel="noopener noreferrer">
             {links.trustpilotLabel}
           </a>
+          <CookieSettingsButton label={links.cookiesLabel} className={`${linkClass} cursor-pointer border-0 bg-transparent p-0 text-left font-[inherit] text-inherit`} />
         </nav>
       </div>
     </footer>

@@ -1,10 +1,9 @@
 import './globals.css';
-import '@fontsource-variable/bricolage-grotesque';
-import '@fontsource-variable/instrument-sans';
-import '@fontsource-variable/jetbrains-mono';
+import { display, mono, sans } from './fonts';
 import BackToTop from '../components/BackToTop';
 import ConsentBanner from '../components/ConsentBanner';
 import Interactions from '../components/Interactions';
+import JsonLd from '../components/JsonLd';
 import Loader from '../components/Loader';
 import SixSeven from '../components/SixSeven';
 import TrafficTradeBanner from '../components/TrafficTradeBanner';
@@ -21,11 +20,15 @@ const themeScript = `(function(){var d=document.documentElement;d.classList.add(
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning className="scroll-smooth scroll-pt-24 selection:bg-accent/30 selection:text-ink min-[1700px]:text-[112.5%] min-[2200px]:text-[125%]">
+    <html lang="fr" suppressHydrationWarning className={`${display.variable} ${sans.variable} ${mono.variable} scroll-smooth scroll-pt-24 selection:bg-accent/30 selection:text-ink min-[1700px]:text-[112.5%] min-[2200px]:text-[125%]`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link rel="preconnect" href="https://status.consolex1.com" />
+        <link rel="preconnect" href="https://node-1.consolex1.com:10071" />
+        <link rel="dns-prefetch" href="https://traffictrade.fr" />
       </head>
       <body className="min-h-svh overflow-x-hidden bg-page font-sans text-base leading-[1.65] text-soft antialiased [&_*:focus-visible]:rounded-sm [&_*:focus-visible]:outline-2 [&_*:focus-visible]:outline-offset-[3px] [&_*:focus-visible]:outline-brand">
+        <JsonLd />
         <Loader />
         <Interactions />
         {children}

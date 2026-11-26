@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     images: [
       {
-        url: '/avatar.png',
+        url: '/og/home.png',
         width: 1200,
         height: 630,
         alt: 'consolex1 hébergement français',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'consolex1 — Hébergement français',
     description:
       'consolex1 propose un hébergement français accessible pour bots Discord, sites web, APIs et applications Python.',
-    images: ['/avatar.png'],
+    images: ['/og/home.png'],
   },
   robots: {
     index: true,

@@ -1,3 +1,6 @@
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+import PlanAdvisor from '@/components/PlanAdvisor';
 import PlanCard from '@/components/PlanCard';
 
 const plans = [
@@ -59,7 +62,7 @@ const plans = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = withSocial('/tarif', {
   alternates: {
     canonical: 'https://consolex1.com/tarif',
     languages: {
@@ -69,20 +72,24 @@ export const metadata = {
   },
   title: 'Tarifs',
   description: "Comparez les offres consolex1 et choisissez celle qui convient à votre projet.",
-};
+} as Metadata);
 
 export default function TarifPage() {
   return (
-    <section className="my-[clamp(3rem,7vw,5rem)]">
-      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
-        <h1>Nos tarifs</h1>
-        <p>Options simples et transparentes pour tester, développer et mettre en production. Les offres payantes sont affichées en vue de leur disponibilité future et ne sont actuellement pas disponibles à l’achat.</p>
-      </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-3 sm:gap-4">
-        {plans.map((plan) => (
-          <PlanCard key={plan.title} {...plan} locale="fr" />
-        ))}
-      </div>
-    </section>
+    <>
+      <section id="plans" className="my-[clamp(3rem,7vw,5rem)]">
+        <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
+          <h1>Nos tarifs</h1>
+          <p>Options simples et transparentes pour tester, développer et mettre en production. Les offres payantes sont affichées en vue de leur disponibilité future et ne sont actuellement pas disponibles à l’achat.</p>
+        </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-3 sm:gap-4">
+          {plans.map((plan) => (
+            <PlanCard key={plan.title} {...plan} locale="fr" />
+          ))}
+        </div>
+      </section>
+
+      <PlanAdvisor locale="fr" />
+    </>
   );
 }

@@ -47,10 +47,11 @@ export function useStats(): StatsData {
         if (alive) setData(next);
       });
     };
-    run();
+    const first = window.setTimeout(run, 700); // après le premier affichage
     const id = window.setInterval(run, 120_000);
     return () => {
       alive = false;
+      window.clearTimeout(first);
       window.clearInterval(id);
     };
   }, []);

@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 type Phase = 'show' | 'leaving' | 'gone';
 
-const MIN_VISIBLE = 800; // ms : évite un flash trop bref
+const MIN_VISIBLE = 500; // ms : évite un flash trop bref
 const MAX_VISIBLE = 5000; // ms : sécurité si l'événement load n'arrive jamais
 
 // Écran de chargement affiché une fois par session (le script du <head> l'ignore ensuite)
@@ -67,8 +68,7 @@ export default function Loader() {
           <span className="absolute inset-3.5 animate-spin [animation-direction:reverse] [animation-duration:3.4s]">
             <i className="absolute top-0 left-1/2 size-2 -translate-x-1/2 bg-brand" />
           </span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/avatar.png" alt="" width={56} height={56} className="size-14 animate-pop" />
+          <Logo size={56} className="size-14 animate-pop" />
         </div>
         <p className="mt-6 mb-0 font-mono text-xs tracking-[.32em] text-mute uppercase">consolex1</p>
         <div className="mt-4 h-0.5 w-40 overflow-hidden rounded-full bg-line">

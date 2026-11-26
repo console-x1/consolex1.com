@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/en/legal-notice', {
   alternates: {
     canonical: 'https://consolex1.com/en/legal-notice',
     languages: {
@@ -14,7 +16,7 @@ export const metadata = {
     url: 'https://consolex1.com/en/legal-notice',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function EnMentionsPage() {
   return (

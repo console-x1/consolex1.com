@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/politique-de-confidentialite', {
   alternates: {
     canonical: 'https://consolex1.com/politique-de-confidentialite',
     languages: {
@@ -15,7 +17,7 @@ export const metadata = {
     url: 'https://consolex1.com/politique-de-confidentialite',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function PrivacyPolicyPage() {
   return (

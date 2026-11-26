@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogUrl } from '@/lib/social';
 import { notFound } from 'next/navigation';
 import HostingLanding from '@/components/HostingLanding';
 import { getHostingPage, getHostingPages } from '@/lib/hosting-pages';
@@ -48,13 +49,13 @@ export async function generateMetadata({
       siteName: 'consolex1',
       type: 'website',
       locale: 'en_US',
-      images: [{ url: '/avatar.png', width: 1200, height: 630, alt: page.title }],
+      images: [{ url: ogUrl(`/en/${page.slug}`), width: 1200, height: 630, alt: page.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: page.title,
       description: page.description,
-      images: ['/avatar.png'],
+      images: [ogUrl(`/en/${page.slug}`)],
     },
     robots: { index: true, follow: true },
   };

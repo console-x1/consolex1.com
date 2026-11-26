@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import HeroTerminal from './HeroTerminal';
+import Logo from './Logo';
 import StatusBanner from './StatusBanner';
 import StatusPill from './StatusPill';
 import ThemeToggle from './ThemeToggle';
@@ -164,8 +165,7 @@ export default function Header({ locale }: HeaderProps) {
       >
         <div className="flex h-14 items-center justify-between gap-2 sm:h-16 sm:gap-3">
           <Link href={routes.home} className="inline-flex min-h-11 items-center gap-2.5 font-display text-[1.12rem] font-bold tracking-[-.02em] text-ink no-underline">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/avatar.png" alt="" width={28} height={28} />
+            <Logo size={28} />
             <span>{text.brand}</span>
           </Link>
 

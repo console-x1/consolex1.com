@@ -1,10 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { OPEN_CONSENT_EVENT } from "./CookieSettingsButton";
 
 const GA_ID = 'G-EJ2TRQ6G75';
 
+// Retire l'autorisation : plus aucun envoi vers Google Analytics et suppression des cookies _ga
+function disableGtag() {
+  (window as any)[`ga-disable-${GA_ID}`] = true;
+  const expired = "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+  const host = window.location.hostname;
+  const domains = ["", `; domain=${host}`, `; domain=.${host.replace(/^www\./, "")}`];
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+    if (name === "_ga" || name.startsWith("_ga_")) domains.forEach((d) => (document.cookie = name + expired + d));
+  });
+}
+
 function loadGtag(anonymize: boolean) {
+  (window as any)[`ga-disable-${GA_ID}`] = false;
   if (!GA_ID) {
     console.warn('Google Analytics ID is not defined.');
     return;
@@ -57,8 +71,9 @@ export default function ConsentBanner() {
   useEffect(() => {
     try {
       const lang = document.documentElement.lang || navigator.language || 'fr';
-      const short = lang.split('-')[0];
-      setLocale(short === 'en' ? 'en' : 'fr');
+      void lang;
+      // la langue suit l'adresse : /en/… → anglais (l'attribut lang de <html> reste « fr » partout)
+      setLocale(window.location.pathname.startsWith('/en') ? 'en' : 'fr');
 
       const stored = localStorage.getItem("ga_consent");
       if (!stored) {
@@ -70,6 +85,22 @@ export default function ConsentBanner() {
     } catch (e) {
       setVisible(true);
     }
+  }, []);
+
+  // « Gérer mes cookies » (footer) rouvre le bandeau avec le choix déjà enregistré
+  useEffect(() => {
+    const reopen = () => {
+      try {
+        const data = JSON.parse(localStorage.getItem("ga_consent") ?? "null");
+        setAnonymize(Boolean(data?.anonymize));
+      } catch {
+        /* ignore */
+      }
+      setLocale(window.location.pathname.startsWith('/en') ? 'en' : 'fr');
+      setVisible(true);
+    };
+    window.addEventListener(OPEN_CONSENT_EVENT, reopen);
+    return () => window.removeEventListener(OPEN_CONSENT_EVENT, reopen);
   }, []);
 
   const messages = {
@@ -99,6 +130,7 @@ export default function ConsentBanner() {
   function decline() {
     const data = { accepted: false, anonymize: false };
     localStorage.setItem("ga_consent", JSON.stringify(data));
+    disableGtag();
     setVisible(false);
   }
 

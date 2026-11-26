@@ -1,7 +1,8 @@
+import { withSocial } from '@/lib/social';
 import type { Metadata } from 'next';
 import GuidesIndex from '@/components/GuidesIndex';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial('/guides', {
   title: 'Guides d’hébergement Discord, Node.js et Python',
   description:
     'Guides pratiques pour héberger gratuitement un bot Discord, déployer Node.js, Python, discord.js et discord.py.',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     images: ['/avatar.png'],
   },
   robots: { index: true, follow: true },
-};
+});
 
 export default function FrenchGuidesPage() {
   return <GuidesIndex locale="fr" />;

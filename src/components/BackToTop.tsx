@@ -24,6 +24,7 @@ export default function BackToTop() {
   return (
     <button
       type="button"
+      suppressHydrationWarning
       onClick={goTop}
       aria-label={label}
       title={label}
