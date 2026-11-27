@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-// API publique du bot : { serverCount, userCount, eggCount, cached }
-export const STATS_URL = 'http://node-1.consolex1.com:10071';
+// API publique : GET / → { serverCount, userCount, eggCount, cached } et GET /stats → détail complet.
+// Elle doit autoriser le CORS pour https://consolex1.com (et http://localhost:3000 en développement).
+export const STATS_URL = 'https://consolex1-web-api.consolex1.com';
 const TTL = 60_000;
 
 export type Stats = { serverCount: number; userCount: number; eggCount: number };

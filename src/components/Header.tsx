@@ -23,6 +23,7 @@ const labels = {
     guides: 'Guides',
     about: 'À propos',
     plans: 'Plans',
+    stats: "Statistiques",
     discord: 'Discord',
     heroButtonPrimary: 'Rejoindre Discord',
     heroButtonSecondary: 'Découvrir nos offres',
@@ -45,6 +46,7 @@ const labels = {
     guides: 'Guides',
     about: 'About',
     plans: 'Plans',
+    stats: "Statistics",
     discord: 'Discord',
     heroButtonPrimary: 'Join Discord',
     heroButtonSecondary: 'View plans',
@@ -62,13 +64,14 @@ const labels = {
   },
 };
 
-const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; about: string; home: string }> = {
+const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; about: string; home: string, stats: string }> = {
   fr: {
     pricing: '/tarif',
     faq: '/faq',
     guides: '/guides',
     about: '/a-propos',
     home: '/',
+    stats: '/stats',
   },
   en: {
     pricing: '/en/pricing',
@@ -76,6 +79,7 @@ const routeMap: Record<Locale, { pricing: string; faq: string; guides: string; a
     guides: '/en/guides',
     about: '/en/about',
     home: '/en',
+    stats: '/en/stats',
   },
 };
 
@@ -143,6 +147,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: routes.faq, label: text.faq },
     { href: routes.guides, label: text.guides },
     { href: routes.about, label: text.about },
+    { href: routes.stats, label: text.stats },
   ];
 
   return (
@@ -186,9 +191,6 @@ export default function Header({ locale }: HeaderProps) {
                 {link.label}
               </Link>
             ))}
-            <a className="relative flex min-h-11 items-center rounded-lg px-3 text-[.95rem] font-medium no-underline transition-colors hover:bg-panel-hover hover:text-ink min-[860px]:min-h-10 min-[860px]:text-[.92rem] text-soft" href={`${routes.home}#plans`}>
-              {text.plans}
-            </a>
           </nav>
 
           <div className="flex items-center gap-1 sm:gap-2">

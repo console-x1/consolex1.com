@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://status.consolex1.com" />
-        <link rel="preconnect" href="https://node-1.consolex1.com:10071" />
+        <link rel="preconnect" href="https://consolex1-web-api.consolex1.com" />
         <link rel="dns-prefetch" href="https://traffictrade.fr" />
       </head>
       <body className="min-h-svh overflow-x-hidden bg-page font-sans text-base leading-[1.65] text-soft antialiased [&_*:focus-visible]:rounded-sm [&_*:focus-visible]:outline-2 [&_*:focus-visible]:outline-offset-[3px] [&_*:focus-visible]:outline-brand">

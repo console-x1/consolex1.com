@@ -26,6 +26,8 @@ const footerLinks = {
     aboutLabel: 'À propos',
     panelLabel: 'Panel Pterodactyl',
     statusLabel: 'Statut',
+    stats: '/stats',
+    statsLabel: 'Statistiques',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
     cookiesLabel: 'Gérer mes cookies',
@@ -46,6 +48,8 @@ const footerLinks = {
     aboutLabel: 'About',
     panelLabel: 'Pterodactyl panel',
     statusLabel: 'Status',
+    stats: '/en/stats',
+    statsLabel: 'Statistics',
     mapsLabel: 'Google Maps',
     trustpilotLabel: 'Trustpilot',
     cookiesLabel: 'Manage cookies',
@@ -54,8 +58,7 @@ const footerLinks = {
 
 export default function Footer({ locale }: FooterProps) {
   const links = footerLinks[locale];
-  const linkClass =
-    'inline-flex min-h-9 items-center bg-[linear-gradient(var(--c-accent),var(--c-accent))] bg-[length:0%_2px] bg-[position:100%_calc(50%+.85em)] bg-no-repeat text-soft no-underline transition-[background-size,background-position,color] duration-300 ease-soft hover:bg-[length:100%_2px] hover:bg-[position:0%_calc(50%+.85em)] hover:text-ink';
+  const linkClass = 'inline-flex min-h-9 items-center bg-[linear-gradient(var(--c-accent),var(--c-accent))] bg-[length:0%_2px] bg-[position:100%_calc(50%+.85em)] bg-no-repeat text-soft no-underline transition-[background-size,background-position,color] duration-300 ease-soft hover:bg-[length:100%_2px] hover:bg-[position:0%_calc(50%+.85em)] hover:text-ink';
 
   return (
     <footer className="[content-visibility:auto] [contain-intrinsic-size:auto_360px] mt-[clamp(3.5rem,8vw,6rem)] border-t border-line pt-8 pb-4 text-[.9rem] text-mute">
@@ -92,6 +95,9 @@ export default function Footer({ locale }: FooterProps) {
           <a className={linkClass} href={links.statusUrl}>
             {links.statusLabel}
           </a>
+          <Link className={linkClass} href={links.stats} locale={locale}>
+            {links.statsLabel}
+          </Link>
           <Link className={linkClass} href={links.privacy} locale={locale}>
             {links.privacyLabel}
           </Link>

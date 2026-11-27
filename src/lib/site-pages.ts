@@ -16,6 +16,8 @@ export type SitePage = {
 
 // Pages statiques (titres et descriptions repris des metadata de chaque page)
 const STATIC_PAGES: SitePage[] = [
+    { "path": "/stats", "title": "Statistiques de consolex1 | consolex1", "description": "Nombre de serveurs, d’utilisateurs et d’eggs, mémoire et disque utilisés en moyenne par serveur : les chiffres de l’infrastructure consolex1.", "locale": "fr", "priority": 0.6, "changeFrequency": "daily", "alternate": "/en/stats", "kind": "page" },
+    { "path": "/en/stats", "title": "consolex1 statistics | consolex1", "description": "Number of servers, users and eggs, plus average memory and disk used per server: figures from the consolex1 infrastructure.", "locale": "en", "priority": 0.6, "changeFrequency": "daily", "alternate": "/stats", "kind": "page" },
     { "path": "/a-propos", "title": "À propos de consolex1 | Pourquoi cet hébergement gratuit existe", "description": "Découvrez l’histoire et la philosophie de consolex1, un projet indépendant d’hébergement français avec une infrastructure à Paris chez Equinix PA5.", "locale": "fr", "priority": 0.5, "changeFrequency": "monthly", "alternate": "/en/about", "kind": "page" },
     { "path": "/cgu", "title": "CGU", "description": "Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.", "locale": "fr", "priority": 0.3, "changeFrequency": "monthly", "alternate": "/en/terms", "kind": "page" },
     { "path": "/faq", "title": "FAQ sur l’hébergement consolex1 | consolex1", "description": "Réponses aux questions courantes sur l'offre, la localisation des serveurs et les limitations.", "locale": "fr", "priority": 0.8, "changeFrequency": "weekly", "alternate": "/en/faq", "kind": "page" },

@@ -1,12 +1,15 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { useCountUp } from './CountUp';
 import { useStats } from './stats';
 
 const copy = {
   fr: {
     eyebrow: 'En chiffres',
     live: 'Données en direct',
+    more: 'Voir toutes les statistiques',
     unavailable: 'Statistiques momentanément indisponibles.',
     items: [
       { key: 'serverCount', label: 'Serveurs', hint: 'hébergés sur notre infrastructure à Paris' },
@@ -17,6 +20,7 @@ const copy = {
   en: {
     eyebrow: 'By the numbers',
     live: 'Live data',
+    more: 'See all statistics',
     unavailable: 'Statistics are temporarily unavailable.',
     items: [
       { key: 'serverCount', label: 'Servers', hint: 'hosted on our infrastructure in Paris' },
@@ -25,32 +29,6 @@ const copy = {
     ],
   },
 } as const;
-
-// Compte de 0 à la valeur quand la section devient visible (valeur finale directe si animations réduites)
-function useCountUp(target: number | null, start: boolean) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (target === null || !start) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const id = requestAnimationFrame(() => setValue(target));
-      return () => cancelAnimationFrame(id);
-    }
-    const duration = 1400;
-    const t0 = performance.now();
-    let raf = 0;
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - t0) / duration);
-      setValue(Math.round(target * (1 - Math.pow(2, -10 * p))));
-      if (p < 1) raf = requestAnimationFrame(tick);
-      else setValue(target);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [target, start]);
-
-  return value;
-}
 
 function Figure({ target, start, loading }: { target: number | null; start: boolean; loading: boolean }) {
   const value = useCountUp(target, start);
@@ -111,6 +89,14 @@ export default function Stats({ locale }: { locale: 'fr' | 'en' }) {
         ))}
       </dl>
       {failed ? <p className="mt-3 mb-0 text-[.82rem] text-mute">{t.unavailable}</p> : null}
+      <p className="mt-4 mb-0">
+        <Link
+          href={locale === 'en' ? '/en/stats' : '/stats'}
+          className="inline-flex min-h-9 items-center gap-1.5 text-[.92rem] font-medium text-soft no-underline transition-colors hover:text-ink"
+        >
+          {t.more} <span aria-hidden="true">→</span>
+        </Link>
+      </p>
     </section>
   );
 }
