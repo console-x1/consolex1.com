@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     question: 'Mon serveur peut-il être suspendu pour inactivité ?',
-    answer: 'Seuls les serveurs gratuits nécessitent une modification de fichier tous les 7 jours pour éviter leur suspension.',
+    answer: 'Seuls les serveurs gratuits inactif durant 7 jours sont suspendus.',
   },
   {
     question: 'Mon serveur est suspendu, que faire ?',
