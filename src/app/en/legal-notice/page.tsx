@@ -1,11 +1,13 @@
-export const metadata = {
-    alternates: {
-      canonical: 'https://consolex1.com/en/legal-notice',
-      languages: {
-        fr: 'https://consolex1.com/mentions',
-        en: 'https://consolex1.com/en/legal-notice',
-      },
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/en/legal-notice', {
+  alternates: {
+    canonical: 'https://consolex1.com/en/legal-notice',
+    languages: {
+      fr: 'https://consolex1.com/mentions',
+      en: 'https://consolex1.com/en/legal-notice',
     },
+  },
   title: 'Legal notice',
   description: 'Legal information about consolex1, including publisher details and hosting terms.',
   openGraph: {
@@ -14,16 +16,16 @@ export const metadata = {
     url: 'https://consolex1.com/en/legal-notice',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function EnMentionsPage() {
   return (
-    <section className="section legal-page">
-      <div className="section-header">
+    <section className="my-[clamp(3rem,7vw,5rem)]">
+      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
         <h1>Legal notice</h1>
         <p>Information about the publisher, hosting, and legal framework covering consolex1.</p>
       </div>
-      <div className="legal-content">
+      <div className="max-w-184 [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-[1.25rem] [&_p]:mb-4 [&_p]:leading-[1.8] [&_p]:text-soft [&_li]:leading-[1.8] [&_li]:text-soft [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-[3px]" data-reveal>
         <h2>Service publisher</h2>
         <p>consolex1 is a project run by an independent team based in France.</p>
         <p>Contact address: France.</p>

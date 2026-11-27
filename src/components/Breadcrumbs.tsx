@@ -20,6 +20,7 @@ const routeLabels: Record<'fr' | 'en', Record<string, string>> = {
     'hebergement-python': 'Hébergement Python',
     mentions: 'Mentions légales',
     'politique-de-confidentialite': 'Politique de confidentialité',
+    stats: 'Statistiques',
     tarif: 'Tarifs',
     'hebergement-gratuit': 'Hébergement gratuit',
     'hebergement-gratuit-france': 'Hébergement gratuit en France',
@@ -50,6 +51,7 @@ const routeLabels: Record<'fr' | 'en', Record<string, string>> = {
     'legal-notice': 'Legal notice',
     'nodejs-hosting': 'Node.js hosting',
     pricing: 'Pricing',
+    stats: 'Statistics',
     'privacy-policy': 'Privacy policy',
     'pterodactyl-hosting': 'Pterodactyl hosting',
     'python-hosting': 'Python hosting',
@@ -90,22 +92,12 @@ export default function Breadcrumbs() {
   if (path === '/' || path === '/en') return null;
 
   const parts = (isEnglish ? path.slice(4) : path.slice(1)).split('/').filter(Boolean);
-  const crumbs: Crumb[] = [
-    { label: isEnglish ? 'Home' : 'Accueil', href: isEnglish ? '/en' : '/' },
-  ];
+  const crumbs: Crumb[] = [{ label: isEnglish ? 'Home' : 'Accueil', href: isEnglish ? '/en' : '/' },];
 
-  if (parts[0] === 'guides' && parts.length > 1) {
-    crumbs.push({
-      label: routeLabels[locale].guides,
-      href: `${isEnglish ? '/en' : ''}/guides`,
-    });
-  }
+  if (parts[0] === 'guides' && parts.length > 1) crumbs.push({ label: routeLabels[locale].guides, href: `${isEnglish ? '/en' : ''}/guides` });
 
   const slug = parts[parts.length - 1];
-  crumbs.push({
-    label: routeLabels[locale][slug] ?? humanize(slug),
-    href: path,
-  });
+  crumbs.push({ label: routeLabels[locale][slug] ?? humanize(slug), href: path });
 
   const schema = {
     '@context': 'https://schema.org',
@@ -126,14 +118,17 @@ export default function Breadcrumbs() {
           __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
         }}
       />
-      <nav className="breadcrumbs" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
-        <ol>
+      <nav className="mt-4 text-[.82rem] text-mute sm:mt-6" aria-label={isEnglish ? 'Breadcrumb' : 'Fil d’Ariane'}>
+        <ol className="m-0 flex list-none flex-wrap gap-x-2 gap-y-1 p-0">
           {crumbs.map((crumb, index) => (
-            <li key={crumb.href}>
+            <li
+              key={crumb.href}
+              className="not-first:before:mr-2 not-first:before:text-line-strong not-first:before:content-['/']"
+            >
               {index === crumbs.length - 1 ? (
-                <span aria-current="page">{crumb.label}</span>
+                <span className="inline-flex min-h-8 items-center text-soft" aria-current="page">{crumb.label}</span>
               ) : (
-                <Link href={crumb.href}>{crumb.label}</Link>
+                <Link className="inline-flex min-h-8 items-center no-underline transition-colors hover:text-ink hover:underline hover:underline-offset-[3px]" href={crumb.href}>{crumb.label}</Link>
               )}
             </li>
           ))}

@@ -5,36 +5,74 @@ import { usePathname } from "next/navigation";
 
 const TRAFFICTRADE_TOKEN = "HW04Dr84486h3iZWdQVUM3zpdyC1ZIpv";
 
+// Le bandeau fait 728 px de large : sur téléphone on le réduit proportionnellement au lieu de le tronquer
+const AD_WIDTH = 728;
+const AD_HEIGHT = 68;
+
 export default function TrafficTradeBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const slotRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const [isEnglish, setIsEnglish] = useState(false);
-
-  useEffect(() => {
-    setIsEnglish(pathname?.startsWith("/en") ?? false);
-  }, [pathname]);
+  const isEnglish = pathname?.startsWith("/en") ?? false;
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || container.dataset.loaded) return;
-    container.dataset.loaded = "true";
+    const slot = slotRef.current;
+    if (!container || !slot) return;
 
-    const placeholder = document.createElement("div");
-    const script = document.createElement("script");
-    script.src = "https://traffictrade.fr/ads.js";
-    script.dataset.token = TRAFFICTRADE_TOKEN;
+    const load = () => {
+      if (container.dataset.loaded) return;
+      container.dataset.loaded = "true";
+      const placeholder = document.createElement("div");
+      const script = document.createElement("script");
+      script.src = "https://traffictrade.fr/ads.js";
+      script.dataset.token = TRAFFICTRADE_TOKEN;
+      container.appendChild(placeholder);
+      container.appendChild(script);
+    };
 
-    container.appendChild(placeholder);
-    container.appendChild(script);
+    if (!("IntersectionObserver" in window)) {
+      load();
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          load();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "500px 0px" },
+    );
+    io.observe(slot);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const slot = slotRef.current;
+    if (!slot) return;
+    const update = () => setScale(Math.min(1, slot.clientWidth / AD_WIDTH));
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(slot);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="ad-slot">
-      <div className="ad-slot-inner">
-        <span className="ad-slot-label">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
-        <div ref={containerRef} className="ad-slot-frame" />
+    <div className="relative z-1 mx-auto mb-8 flex w-full max-w-[100rem] justify-center px-4 sm:px-6 lg:px-10 2xl:px-14">
+      <div className="flex w-full max-w-190 flex-col items-center gap-2 rounded-xl border border-line bg-panel px-3 py-3 sm:w-fit sm:px-4">
+        <span suppressHydrationWarning className="font-mono text-[.65rem] tracking-[.14em] text-mute uppercase">{isEnglish ? "Sponsored" : "Sponsorisé"}</span>
+        <div ref={slotRef} className="w-full max-w-182 overflow-hidden rounded-lg sm:w-182" style={{ height: AD_HEIGHT * scale }}>
+          <div
+            ref={containerRef}
+            className="h-17 w-182 origin-top-left overflow-hidden [&_iframe]:block [&_iframe]:h-22.5 [&_iframe]:w-full [&_iframe]:border-0"
+            style={{ transform: `scale(${scale})` }}
+          />
+        </div>
         <a
-          className="ad-slot-credit"
+          suppressHydrationWarning
+          className="m-0 inline-flex min-h-8 items-center text-[.7rem] text-mute no-underline transition-colors hover:text-brand"
           href={`https://traffictrade.fr/?utm_source=banner&utm_medium=powered_by&utm_campaign=network&utm_content=${TRAFFICTRADE_TOKEN}`}
           target="_blank"
           rel="noopener noreferrer"

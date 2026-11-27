@@ -1,11 +1,13 @@
-export const metadata = {
-    alternates: {
-      canonical: 'https://consolex1.com/cgu',
-      languages: {
-        fr: 'https://consolex1.com/cgu',
-        en: 'https://consolex1.com/en/terms',
-      },
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/cgu', {
+  alternates: {
+    canonical: 'https://consolex1.com/cgu',
+    languages: {
+      fr: 'https://consolex1.com/cgu',
+      en: 'https://consolex1.com/en/terms',
     },
+  },
   title: 'CGU',
   description: 'Conditions générales d’utilisation de consolex1, décrivant les droits, obligations et engagements du service.',
   keywords: ['CGU', 'conditions générales', 'service consolex1', 'association'],
@@ -15,16 +17,16 @@ export const metadata = {
     url: 'https://consolex1.com/cgu',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function CGUPage() {
   return (
-    <section className="section legal-page">
-      <div className="section-header">
+    <section className="my-[clamp(3rem,7vw,5rem)]">
+      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
         <h1>Conditions générales d’utilisation</h1>
         <p>Cadre d’utilisation du service consolex1 et des ressources proposées.</p>
       </div>
-      <div className="legal-content">
+      <div className="max-w-184 [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-[1.25rem] [&_p]:mb-4 [&_p]:leading-[1.8] [&_p]:text-soft [&_li]:leading-[1.8] [&_li]:text-soft [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-[3px]" data-reveal>
         <h2>Acceptation</h2>
         <p>L’accès et l’utilisation du service impliquent l’acceptation pleine et entière des présentes conditions générales.</p>
 

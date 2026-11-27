@@ -6,19 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "next": "14.2.5",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/instrument-sans": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@fontsource/bricolage-grotesque": "5.3.0",
+    "@fontsource/instrument-sans": "5.3.0",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
-    "@types/node": "20.14.2",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "typescript": "5.5.4",
-    "eslint": "8.57.0",
-    "eslint-config-next": "14.2.5"
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@tailwindcss/postcss": "4.3.5",
+    "postcss": "8.5.33",
+    "tailwindcss": "4.3.5",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "eslint": "10.15.0",
+    "eslint-config-next": "16.4.6"
   }
 }

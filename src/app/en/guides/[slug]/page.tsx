@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ogUrl } from '@/lib/social';
 import { notFound } from 'next/navigation';
 import GuideArticle from '@/components/GuideArticle';
 import { getGuide, getGuides, getGuideTranslation } from '@/lib/guides';
@@ -32,9 +33,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       siteName: 'consolex1',
       type: 'article',
       locale: 'en_US',
-      images: [{ url: '/avatar.png', width: 1200, height: 630, alt: guide.title }],
+      images: [{ url: ogUrl(`/en/guides/${guide.slug}`), width: 1200, height: 630, alt: guide.title }],
     },
-    twitter: { card: 'summary_large_image', title: guide.title, description: guide.description, images: ['/avatar.png'] },
+    twitter: { card: 'summary_large_image', title: guide.title, description: guide.description, images: [ogUrl(`/en/guides/${guide.slug}`)] },
     robots: { index: true, follow: true },
   };
 }

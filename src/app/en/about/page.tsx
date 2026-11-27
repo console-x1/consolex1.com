@@ -1,7 +1,8 @@
+import { withSocial } from '@/lib/social';
 import type { Metadata } from 'next';
 import AboutPage from '@/components/AboutPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial('/en/about', {
   title: 'About consolex1 | Why we built free hosting in France',
   description:
     'Learn why consolex1 exists, how its independent project is built, and about its free hosting infrastructure in Paris at Equinix PA5.',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     images: ['/avatar.png'],
   },
   robots: { index: true, follow: true },
-};
+});
 
 export default function EnglishAboutPage() {
   return <AboutPage locale="en" />;

@@ -1,11 +1,13 @@
-export const metadata = {
-    alternates: {
-      canonical: 'https://consolex1.com/en/terms',
-      languages: {
-        fr: 'https://consolex1.com/cgu',
-        en: 'https://consolex1.com/en/terms',
-      },
+import type { Metadata } from 'next';
+import { withSocial } from '@/lib/social';
+export const metadata: Metadata = withSocial('/en/terms', {
+  alternates: {
+    canonical: 'https://consolex1.com/en/terms',
+    languages: {
+      fr: 'https://consolex1.com/cgu',
+      en: 'https://consolex1.com/en/terms',
     },
+  },
   title: 'Terms',
   description: 'consolex1 terms of use describing rights, obligations, and service commitments.',
   keywords: ['terms', 'consolex1 terms', 'conditions', 'hosting service'],
@@ -15,16 +17,16 @@ export const metadata = {
     url: 'https://consolex1.com/en/terms',
     images: ['/avatar.png'],
   },
-};
+} as Metadata);
 
 export default function EnTermsPage() {
   return (
-    <section className="section legal-page">
-      <div className="section-header">
+    <section className="my-[clamp(3rem,7vw,5rem)]">
+      <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
         <h1>Terms of use</h1>
         <p>The terms and conditions for using the consolex1 service.</p>
       </div>
-      <div className="legal-content">
+      <div className="max-w-184 [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-[1.25rem] [&_p]:mb-4 [&_p]:leading-[1.8] [&_p]:text-soft [&_li]:leading-[1.8] [&_li]:text-soft [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-[3px]" data-reveal>
         <h2>Acceptance</h2>
         <p>Access and use of the service imply full acceptance of these terms.</p>
 

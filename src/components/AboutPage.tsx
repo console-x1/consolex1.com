@@ -135,58 +135,58 @@ export default function AboutPage({ locale }: { locale: Locale }) {
         }}
       />
       <article>
-        <section className="section intro">
-          <div className="section-header">
-            <span className="badge">{isEnglish ? 'Independent project • France' : 'Projet indépendant • France'}</span>
+        <section className="my-[clamp(3rem,7vw,5rem)] mt-8! sm:mt-10! [.hero~main_&]:mt-2! **:data-[reveal=header]:animate-rise [.hero~main_&_h1]:text-[clamp(1.35rem,2.4vw,1.85rem)] [.hero~main_&_h1]:max-w-[34ch]" data-intro>
+          <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
+            <span className="mb-4 inline-flex items-center gap-2 font-mono text-[.72rem] font-medium uppercase tracking-[.08em] text-mute before:size-[.4rem] before:bg-accent">{isEnglish ? 'Independent project • France' : 'Projet indépendant • France'}</span>
             <h1>{text.title}</h1>
-            <p className="section-description">{text.intro}</p>
+            <p className="mt-4 mb-0 max-w-160 text-base leading-[1.7] text-soft sm:text-[1.05rem]">{text.intro}</p>
           </div>
         </section>
         {text.sections.map((section) => (
-          <section className="section" key={section.heading}>
-            <div className="section-header">
+          <section className="my-[clamp(3rem,7vw,5rem)]" key={section.heading}>
+            <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
               <h2>{section.heading}</h2>
-              {section.paragraphs.map((paragraph) => <p className="section-description" key={paragraph}>{paragraph}</p>)}
+              {section.paragraphs.map((paragraph) => <p className="mt-4 mb-0 max-w-160 text-base leading-[1.7] text-soft sm:text-[1.05rem]" key={paragraph}>{paragraph}</p>)}
             </div>
           </section>
         ))}
-        <section className="section">
-          <div className="section-header">
+        <section className="my-[clamp(3rem,7vw,5rem)]">
+          <div className="mb-8 max-w-176 sm:mb-10 [&_h1]:text-[clamp(1.9rem,5.2vw,3.1rem)] [&_h1]:leading-[1.08] [&_h1]:tracking-[-.03em] [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-4 [&_p]:mb-0 [&_p]:max-w-160 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-soft sm:[&_p]:text-[1.05rem] **:data-cta:mt-2" data-reveal="header">
             <h2>{isEnglish ? 'Custom Pterodactyl eggs' : 'Eggs Pterodactyl personnalisés'}</h2>
-            <p className="section-description">
+            <p className="mt-4 mb-0 max-w-160 text-base leading-[1.7] text-soft sm:text-[1.05rem]">
               {isEnglish
                 ? 'The Node.js Universal and Python Universal eggs are developed by the consolex1 hosting provider. Their source code is publicly available on GitHub.'
                 : 'Les eggs Node.js Universal et Python Universal sont développés par l’hébergeur consolex1. Leur code source est disponible publiquement sur GitHub.'}
             </p>
           </div>
-          <div className="cards-grid">
-            <a className="card" href="https://github.com/console-x1/pterodactyl-node" target="_blank" rel="noopener noreferrer">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-3 sm:gap-4">
+            <a className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href="https://github.com/console-x1/pterodactyl-node" target="_blank" rel="noopener noreferrer">
               {isEnglish ? 'consolex1 Node.js egg — GitHub' : 'Egg Node.js consolex1 — GitHub'}
             </a>
-            <a className="card" href="https://github.com/console-x1/pterodactyl-python" target="_blank" rel="noopener noreferrer">
+            <a className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href="https://github.com/console-x1/pterodactyl-python" target="_blank" rel="noopener noreferrer">
               {isEnglish ? 'consolex1 Python egg — GitHub' : 'Egg Python consolex1 — GitHub'}
             </a>
           </div>
         </section>
-        <section className="section">
-          <div className="cards-grid">
-            <a className="card" href="https://me.consolex1.com">{text.profileLink}</a>
-            <Link className="card" href={isEnglish ? '/en/legal-notice' : '/mentions'}>{text.legalLink}</Link>
-            <Link className="card" href={isEnglish ? '/en/guides' : '/guides'}>{text.guidesLink}</Link>
-            <Link className="card" href={isEnglish ? '/en/pricing' : '/tarif'}>{text.pricingLink}</Link>
-            <a className="card" href="https://status.consolex1.com/" target="_blank" rel="noopener noreferrer">
+        <section className="my-[clamp(3rem,7vw,5rem)]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-3 sm:gap-4">
+            <a className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href="https://me.consolex1.com">{text.profileLink}</a>
+            <Link className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href={isEnglish ? '/en/legal-notice' : '/mentions'}>{text.legalLink}</Link>
+            <Link className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href={isEnglish ? '/en/guides' : '/guides'}>{text.guidesLink}</Link>
+            <Link className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href={isEnglish ? '/en/pricing' : '/tarif'}>{text.pricingLink}</Link>
+            <a className="relative block rounded-xl border border-line bg-panel p-5 text-soft no-underline transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-panel-hover sm:p-6 [&_h2]:mb-2 [&_h2]:text-[1.1rem] [&_h3]:mb-2 [&_h3]:text-[1.1rem] [&_p]:m-0 [&_p]:text-[.95rem] [&_p]:leading-[1.6] [&_p]:text-mute [a&]:pr-12 [a&]:after:absolute [a&]:after:top-5 [a&]:after:right-5 [a&]:after:text-mute [a&]:after:content-['→'] [a&]:after:transition-[translate,color] [a&]:after:duration-200 [a&]:hover:after:translate-x-1 [a&]:hover:after:text-accent" data-reveal href="https://status.consolex1.com/" target="_blank" rel="noopener noreferrer">
               {text.statusLink}
             </a>
           </div>
         </section>
-        <section className="cta-banner">
+        <section className="relative mt-[clamp(3rem,7vw,5rem)] flex flex-col items-start justify-between gap-6 rounded-2xl border border-line-strong border-l-[3px] border-l-accent bg-panel p-6 sm:flex-row sm:items-center sm:p-10 [&_h2]:text-[clamp(1.5rem,3.4vw,2.1rem)] [&_p]:mt-3 [&_p]:mb-0 [&_p]:max-w-136 [&_p]:text-soft" data-reveal>
           <div>
             <h2>{isEnglish ? 'Questions or feedback?' : 'Une question ou un retour ?'}</h2>
             <p>{text.sections[text.sections.length - 1].paragraphs[0]}</p>
           </div>
-          <div className="hero-actions">
-            <a className="button button-primary" href="https://discord.consolex1.com">{text.communityLink}</a>
-            <a className="button button-secondary" href="mailto:contact@consolex1.com">{text.emailLink}</a>
+          <div className="flex flex-wrap gap-3">
+            <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-5 py-2.5 text-[.95rem] bg-brand text-on-brand hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_0_var(--c-accent)] after:content-['→'] after:-ml-2 after:w-0 after:overflow-hidden after:opacity-0 after:transition-[width,margin,opacity] after:duration-200 hover:after:ml-0 hover:after:w-4 hover:after:opacity-100" data-cta href="https://discord.consolex1.com">{text.communityLink}</a>
+            <a className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent font-semibold no-underline cursor-pointer transition-[translate,box-shadow,background-color,background-size,border-color,color] duration-200 ease-soft active:translate-x-0 active:translate-y-0 active:shadow-none min-h-11 px-5 py-2.5 text-[.95rem] border-line-strong bg-panel text-ink bg-[linear-gradient(var(--c-line),var(--c-line))] bg-size-[0%_100%] bg-left bg-no-repeat hover:bg-size-[100%_100%] hover:border-ink after:content-['→'] after:-ml-2 after:w-0 after:overflow-hidden after:opacity-0 after:transition-[width,margin,opacity] after:duration-200 hover:after:ml-0 hover:after:w-4 hover:after:opacity-100" data-cta href="mailto:contact@consolex1.com">{text.emailLink}</a>
           </div>
         </section>
       </article>

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     images: [
       {
-        url: '/avatar.png',
+        url: '/og/home.png',
         width: 1200,
         height: 630,
         alt: 'consolex1 hébergement français',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'consolex1 — Hébergement français',
     description:
       'consolex1 propose un hébergement français accessible pour bots Discord, sites web, APIs et applications Python.',
-    images: ['/avatar.png'],
+    images: ['/og/home.png'],
   },
   robots: {
     index: true,
@@ -84,7 +84,7 @@ type Locale = (typeof supportedLocales)[number];
 
 export default function FrLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="page-shell">
+    <div className="relative z-1 mx-auto w-full max-w-[100rem] px-4 pb-8 sm:px-6 lg:px-10 2xl:px-14" data-shell>
       <Header locale="fr" />
       <Breadcrumbs />
       <main lang="fr">{children}</main>

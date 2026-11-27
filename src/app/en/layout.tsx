@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/avatar.png',
+        url: '/og/en.png',
         width: 1200,
         height: 630,
         alt: 'consolex1 French hosting',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: 'consolex1 — French hosting',
     description:
       'consolex1 provides affordable French hosting for Discord bots, web apps, APIs, and Python services.',
-    images: ['/avatar.png'],
+    images: ['/og/en.png'],
   },
   robots: {
     index: true,
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="page-shell">
+    <div className="relative z-1 mx-auto w-full max-w-[100rem] px-4 pb-8 sm:px-6 lg:px-10 2xl:px-14" data-shell>
       <Header locale="en" />
       <Breadcrumbs />
       <main lang="en">{children}</main>
